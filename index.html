@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhynoflow — Your Admin, Charged Through</title>
+  <meta name="description" content="Rhynoflow automates your email, calendar, and admin using your existing Google account. No new software. No subscriptions. Built for small businesses, studios, gyms, freelancers, and associations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links">
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Bygget i K&oslash;benhavn &middot; Setup free until May 1</div>
+
+      <h1>Your admin, <span class="highlight">charged through.</span></h1>
+      <p class="hero-sub">You're spending hours on emails, reminders, and admin that could just run itself. I build that into your existing Google account. No new tools, no extra logins, nothing to learn.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-cal-namespace="30min" data-cal-link="deng-awak-hzu0y1/30min" data-cal-origin="https://cal.com">Book a Free Demo</button>
+        <a href="scorecard.html" class="btn btn-ghost">Take the Free Assessment</a>
+      </div>
+
+      <!-- Morning Briefing mockup -->
+      <div class="hero-mockup">
+        <div class="mockup-chrome">
+          <div class="mockup-dots"><span></span><span></span><span></span></div>
+          <span class="mockup-title">Morning Briefing · Thursday, 6:30 AM</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-row">
+            <div class="mockup-icon-wrap">📅</div>
+            <div class="mockup-content">
+              <div class="mockup-label">TODAY</div>
+              <div class="mockup-text">10:00 — New member consultation · Studio B &nbsp;<span class="mockup-chip">2 events</span></div>
+            </div>
+          </div>
+          <div class="mockup-row">
+            <div class="mockup-icon-wrap">📬</div>
+            <div class="mockup-content">
+              <div class="mockup-label">INBOX — 3 TO ACTION</div>
+              <div class="mockup-text">Emma: booking request · James: invoice · Maria: reschedule</div>
+            </div>
+          </div>
+          <div class="mockup-row mockup-row-last">
+            <div class="mockup-icon-wrap">⚠️</div>
+            <div class="mockup-content">
+              <div class="mockup-label">DEADLINE IN 3 DAYS</div>
+              <div class="mockup-text">VAT return deadline — Apr 30 &nbsp;<span class="mockup-chip mockup-chip-warn">3 days</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mockup-footer">This email was sent automatically at 6:30 AM · Powered by Rhynoflow</div>
+      </div>
+
+      <div class="hero-proof">
+        <div class="proof-item">
+          <strong>10+</strong>
+          <span>hours saved per week</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <strong>0 kr</strong>
+          <span>in software costs</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <strong>1 week</strong>
+          <span>to get started</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-label">Sound familiar?</div>
+      <h2>You didn't start a business to live in your inbox.</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></div>
+          <h3>Same emails, different day</h3>
+          <p>"What are your opening hours?" "Did you get my payment?" "Can I reschedule?" Same questions, same replies. Every single week.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Stuff slips through</h3>
+          <p>A parent missed the update. A payment didn't get logged. When it's all manual, things slip.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>Admin eats your week</h3>
+          <p>You started this to do the actual work. To build something. Not to spend 10 hours a week on admin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2>Runs on the Google account you already have.</h2>
+      <p class="section-sub">No new apps. Everything lives in your Gmail, Calendar, and Drive.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>We talk for 30 minutes</h3>
+          <p>Tell me what eats your time. I'll figure out what to automate.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>I build it in your account</h3>
+          <p>I go in and build it. Morning briefings, reply drafts, payment tracking, reminders. Whatever you actually need. All of it lives in your Google account, nothing else required from you.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>You wake up and it's done</h3>
+          <p>Summary in your inbox. Replies drafted. Reminders sent. You didn't touch it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-label">What you get</div>
+      <h2>This stuff runs while you sleep.</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+          <h3>Morning Briefing</h3>
+          <p>6:30 AM, email in your inbox. Today's meetings, what needs a reply, what's coming up. Before you've opened anything else, you already know exactly where things stand.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3>Smart Reply Drafts</h3>
+          <p>Someone emails asking about your services, pricing, or availability. By the time you open Gmail, there's already a reply drafted. In your voice. Read it, tweak if you need to, hit send.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+          <h3>Deadline Alerts</h3>
+          <p>Tax filing next week? Contract renewal on Friday? Client proposal due soon? You get a nudge at 7 days, 3 days, and 1 day out. It won't sneak up on you again.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h3>Revenue Tracking</h3>
+          <p>Payment comes in and it's in your Google Sheet within the hour. Fee deducted, category tagged, total updated. You check the sheet and it's already done.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3>Email Categorizer</h3>
+          <p>Emails get sorted the moment they land. Clients in one place, invoices in another, leads flagged. No more opening Gmail and not knowing where to start.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+          <h3>Weekly Summary</h3>
+          <p>Friday afternoon, a summary hits your inbox. What happened, what's coming, what's still open. Two minutes to read. Monday morning you already know where to start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study — Talata Basketball -->
+  <section class="section" id="case-study">
+    <div class="container">
+      <div class="section-label">Case Study</div>
+      <h2>Built for a club. Ready for yours.</h2>
+      <p class="section-sub">Rhynoflow started as an internal tool for Talata Basketball in Copenhagen. Here's exactly what was built — and what it does every day.</p>
+
+      <!-- Live badge -->
+      <div style="display:flex; justify-content:center; margin-bottom:40px;">
+        <div class="testimonial-live-badge" style="font-size:13px; padding:8px 16px;">
+          <span class="live-dot"></span> Live at Talata Basketball, Copenhagen · 53 members · 5 automations running 24/7
+        </div>
+      </div>
+
+      <!-- Before / After -->
+      <div class="cs-before-after">
+        <div class="cs-panel cs-before">
+          <div class="cs-panel-label">Before</div>
+          <ul class="cs-list cs-list-before">
+            <li>30+ hours/week on admin</li>
+            <li>Payments logged by hand</li>
+            <li>Game reminders sent manually</li>
+            <li>Deadlines missed or forgotten</li>
+            <li>No daily overview until deep in the inbox</li>
+          </ul>
+        </div>
+        <div class="cs-arrow">&rarr;</div>
+        <div class="cs-panel cs-after">
+          <div class="cs-panel-label">After</div>
+          <ul class="cs-list cs-list-after">
+            <li>~12 hours saved every week</li>
+            <li>Payments auto-logged, fee deducted</li>
+            <li>Game reminders sent 24h before</li>
+            <li>Alerts at 7, 3, and 1 day out</li>
+            <li>Morning briefing in inbox by 6:30 AM</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- What was built -->
+      <div class="cs-built-header">
+        <div class="section-label">5 automations &mdash; running 24/7</div>
+      </div>
+      <div class="cs-automations">
+        <div class="cs-auto-card">
+          <div class="cs-auto-name">Morning Briefing</div>
+          <div class="cs-auto-desc">Calendar, flagged emails, 3-day preview &mdash; in your inbox before the first practice.</div>
+          <div class="cs-auto-tag">Weekdays &middot; 6:30 AM</div>
+        </div>
+        <div class="cs-auto-card">
+          <div class="cs-auto-name">Revenue Tracker</div>
+          <div class="cs-auto-desc">MobilePay transactions logged automatically. 1% fee deducted. Zero manual entry.</div>
+          <div class="cs-auto-tag">Daily &middot; 8:00 AM</div>
+        </div>
+        <div class="cs-auto-card">
+          <div class="cs-auto-name">Game Day Reminder</div>
+          <div class="cs-auto-desc">Game tomorrow? Parents get an email automatically &mdash; time, location, what to bring.</div>
+          <div class="cs-auto-tag">Daily &middot; 8:00 AM</div>
+        </div>
+        <div class="cs-auto-card">
+          <div class="cs-auto-name">Deadline Alerts</div>
+          <div class="cs-auto-desc">Grant deadlines, AGM notices, registrations &mdash; alerts at 7, 3, and 1 day out.</div>
+          <div class="cs-auto-tag">Daily &middot; 7:30 AM</div>
+        </div>
+        <div class="cs-auto-card">
+          <div class="cs-auto-name">Weekly Parent Email</div>
+          <div class="cs-auto-desc">Next week's schedule goes to every parent, every Friday. Written and sent automatically.</div>
+          <div class="cs-auto-tag">Fridays &middot; 4:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <div class="testimonial-block" style="margin-top:48px;">
+        <div class="quote-mark">"</div>
+        <blockquote>I barely have to manage the admin anymore. Everything just runs. Made me think: why isn't every club doing this?</blockquote>
+        <div class="testimonial-author">
+          <div>
+            <strong>Deng Awak</strong>
+            <span>Head Coach &amp; Founder, Talata Basketball</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section section-dark" id="pricing">
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h2>Simple pricing. No surprises.</h2>
+      <p class="section-sub">No contracts. Cancel anytime. Everything stays in your Google account.</p>
+
+      <!-- Early adopter banner -->
+      <div class="early-adopter-banner">
+        <span class="early-icon">🎉</span>
+        <div>
+          <strong>Launch offer — setup fee waived</strong>
+          <span>Sign before May 1, 2026 and pay only the monthly. First 5 clients get this deal.</span>
+        </div>
+      </div>
+
+      <!-- Billing Toggle -->
+      <div class="billing-toggle">
+        <span class="billing-label billing-active" id="label-monthly">Monthly</span>
+        <button class="toggle-switch" id="billing-switch" aria-label="Toggle yearly pricing">
+          <span class="toggle-knob"></span>
+        </button>
+        <span class="billing-label" id="label-yearly">Yearly <span class="save-badge">Save 20%</span></span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-tier">Solo</div>
+          <div class="pricing-price">
+            <div class="setup-line">
+              <span class="price-setup-strike">5,000 DKK setup</span>
+              <span class="free-until">Free until May 1</span>
+            </div>
+            <span class="price-monthly" data-monthly="1,500" data-yearly="14,400">1,500 DKK</span><span class="price-period">/month</span>
+            <div class="price-yearly-note" style="display:none;">billed yearly (save 3,600 DKK)</div>
+          </div>
+          <p class="pricing-for">For solo operators, freelancers &amp; independent professionals</p>
+          <ul class="pricing-features">
+            <li>Daily Morning Briefing</li>
+            <li>Smart Reply drafts (AI-powered)</li>
+            <li>Booking &amp; session tracking</li>
+            <li>Client follow-ups &amp; reminders</li>
+            <li>Deadline tracking (7/3/1 day alerts)</li>
+            <li>Revenue &amp; payment tracking</li>
+            <li>Weekly summary email</li>
+          </ul>
+          <div class="pricing-saves">5-10 hrs/week back. Worth 5,000-10,000 DKK/mo. You pay 1,500.</div>
+          <a href="#contact" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Business</div>
+          <div class="pricing-price">
+            <div class="setup-line">
+              <span class="price-setup-strike">12,000 DKK setup</span>
+              <span class="free-until">Free until May 1</span>
+            </div>
+            <span class="price-monthly" data-monthly="3,500" data-yearly="33,600">3,500 DKK</span><span class="price-period">/month</span>
+            <div class="price-yearly-note" style="display:none;">billed yearly (save 8,400 DKK)</div>
+          </div>
+          <p class="pricing-for">For clubs, gyms, studios &amp; small businesses</p>
+          <ul class="pricing-features">
+            <li>Everything in Solo</li>
+            <li>Client communication flows</li>
+            <li>Substitute finder &amp; staff scheduling</li>
+            <li>Salary hours automation (payroll-ready)</li>
+            <li>Event registration automation</li>
+            <li>Reporting dashboard (Google Sheets)</li>
+            <li>Bulk email campaigns</li>
+            <li>Board meeting summaries</li>
+            <li>Contact management</li>
+          </ul>
+          <div class="pricing-saves">10-15 hrs/week back. Worth 10,000-15,000 DKK/mo. You pay 3,500.</div>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Forening</div>
+          <div class="pricing-badge pricing-badge-green">For Associations</div>
+          <div class="pricing-price">
+            <div class="setup-line">
+              <span class="price-setup-strike">3,000 DKK setup</span>
+              <span class="free-until">Free until May 1</span>
+            </div>
+            <span class="price-monthly" data-monthly="1,500" data-yearly="14,400">1,500 DKK</span><span class="price-period">/month</span>
+            <div class="price-yearly-note" style="display:none;">billed yearly (save 3,600 DKK)</div>
+          </div>
+          <p class="pricing-for">For foreninger, sports clubs &amp; volunteer-run organizations</p>
+          <ul class="pricing-features">
+            <li>Daily Morning Briefing</li>
+            <li>Member email automation</li>
+            <li>Deadline &amp; event alerts</li>
+            <li>MobilePay payment tracking</li>
+            <li>Parent/member communication</li>
+            <li>Board meeting summaries</li>
+            <li>Weekly summary email</li>
+          </ul>
+          <div class="pricing-saves">5-10 volunteer hrs saved every week. The fee pays for itself.</div>
+          <a href="#contact" class="btn btn-outline">Get Started</a>
+        </div>
+
+      </div>
+
+      <!-- Add-on -->
+      <div class="addon-note">
+        <strong>Need just one thing automated?</strong> One-off builds start from <strong>2,500 DKK</strong>. No monthly, no commitment. Just the script, built and running. <a href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Why this works</div>
+      <h2>You're already paying for Google. Why add more tools on top?</h2>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Others</th>
+              <th class="compare-highlight">Rhynoflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Software costs</td>
+              <td>Zapier + Mailchimp + CRM = 1,000+ kr/month</td>
+              <td class="compare-highlight">Nothing extra. It's all in your Google account.</td>
+            </tr>
+            <tr>
+              <td>Setup</td>
+              <td>Here's the docs, figure it out</td>
+              <td class="compare-highlight">I build it for you, tailored to how you actually work</td>
+            </tr>
+            <tr>
+              <td>Data ownership</td>
+              <td>Your data lives on their servers</td>
+              <td class="compare-highlight">Everything stays in your Google account. You own it.</td>
+            </tr>
+            <tr>
+              <td>Technical skill needed</td>
+              <td>You need to be somewhat technical</td>
+              <td class="compare-highlight">You don't need to know anything. I handle it.</td>
+            </tr>
+            <tr>
+              <td>Agency cost</td>
+              <td>800-1,200 kr/hour and counting</td>
+              <td class="compare-highlight">Fixed price. You know what you're paying.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Security -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-label">Datasikkerhed</div>
+      <h2>Your data stays in your Google account. Period.</h2>
+      <p class="section-sub">No servers of mine. No third-party tools. Your data lives where it's always lived, in your Google account.</p>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>GDPR-venlig by design</h3>
+          <p>No third-party servers. No data moving anywhere. The scripts run inside your own Google Workspace, under your login, on Google's infrastructure.</p>
+        </div>
+        <div class="trust-item">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <h3>You control everything</h3>
+          <p>Every script, every trigger is sitting in your Google account. Open it, read it, change it. Nothing's hidden. I can't touch anything without you knowing.</p>
+        </div>
+        <div class="trust-item">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Full transparency</h3>
+          <p>Before anything goes live, I walk you through what it does and why. And if you ever want to look under the hood, it's right there in Google Apps Script. No black boxes.</p>
+        </div>
+        <div class="trust-item">
+          <div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Google's security, not mine</h3>
+          <p>Google handles the security. Same infrastructure protecting businesses and governments worldwide. I just build on top of it. Your data never touches anything I own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2>Questions I always get.</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What do I need to get started?</summary>
+          <p>A Google Workspace account (Gmail, Calendar, Drive). That's it. If you don't have one, I'll help you set it up.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to be technical?</summary>
+          <p>Not even a little bit. I set everything up. You just check your email like you normally do, except now half the work is already done for you.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I want to cancel?</summary>
+          <p>Then you cancel. No contracts, no hard feelings. Everything I built stays in your Google account. It's yours.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How fast can I get started?</summary>
+          <p>Solo is live in about a week. Business takes around two weeks. Either way, you'll see the first things working within days. Not weeks of waiting around.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I start small and add more later?</summary>
+          <p>Yeah. Most people start with Solo and add more once they see what they're getting back. I just build on top of what's already there.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if something breaks?</summary>
+          <p>That's what the monthly fee covers. I keep an eye on everything. If Google updates something or a script hiccups, I fix it. You don't have to worry about it.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is my data safe?</summary>
+          <p>Your data never leaves your Google account. I don't store it, I don't see it after setup. The scripts run inside your own workspace, same security as the rest of your Google stuff.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work with foreninger and associations?</summary>
+          <p>That's where this started. I built it for my own sports club. Foreninger and volunteer orgs are honestly the best use case because admin is brutal when nobody's getting paid to do it. There's a Forening plan in the pricing section made for exactly that.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section class="section section-cta" id="contact">
+    <div class="container">
+      <h2>Want to see what this looks like for you?</h2>
+      <p class="section-sub">30 minutes. I look at your actual inbox and calendar and tell you exactly what I'd build. No pitch, no pressure. Just an honest look at what's eating your time.</p>
+
+      <div class="onboarding-steps">
+        <div class="onboarding-step">
+          <div class="onboarding-num">1</div>
+          <div>
+            <strong>Free demo</strong>
+            <span>30 minutes, we figure out what's eating your time</span>
+          </div>
+        </div>
+        <div class="onboarding-arrow">→</div>
+        <div class="onboarding-step">
+          <div class="onboarding-num">2</div>
+          <div>
+            <strong>Setup in 5 days</strong>
+            <span>I build everything in your Google account</span>
+          </div>
+        </div>
+        <div class="onboarding-arrow">→</div>
+        <div class="onboarding-step">
+          <div class="onboarding-num">3</div>
+          <div>
+            <strong>Live by week 2</strong>
+            <span>Everything running. Hours back in your week.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-options">
+        <div id="cal-inline"></div>
+        <p class="contact-alt">or email directly: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">Rhyno<span>flow</span></a>
+        <p>Your admin, charged through.</p>
+        <p class="footer-location">K&oslash;benhavn, Danmark</p>
+      </div>
+      <div class="footer-links">
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rhynoflow. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item summary').forEach(s => {
+      s.addEventListener('click', () => {
+        const parent = s.parentElement;
+        document.querySelectorAll('.faq-item[open]').forEach(item => {
+          if (item !== parent) item.removeAttribute('open');
+        });
+      });
+    });
+
+    // Billing toggle
+    const billingSwitch = document.getElementById('billing-switch');
+    const labelMonthly = document.getElementById('label-monthly');
+    const labelYearly = document.getElementById('label-yearly');
+    let isYearly = false;
+
+    billingSwitch.addEventListener('click', () => {
+      isYearly = !isYearly;
+      billingSwitch.classList.toggle('active', isYearly);
+      labelMonthly.classList.toggle('billing-active', !isYearly);
+      labelYearly.classList.toggle('billing-active', isYearly);
+
+      document.querySelectorAll('.price-monthly[data-monthly]').forEach(el => {
+        const period = el.nextElementSibling;
+        const yearlyNote = el.closest('.pricing-price').querySelector('.price-yearly-note');
+        if (isYearly) {
+          el.textContent = el.dataset.yearly + ' DKK';
+          if (period) period.textContent = '/year';
+          if (yearlyNote) yearlyNote.style.display = 'block';
+        } else {
+          el.textContent = el.dataset.monthly + ' DKK';
+          if (period) period.textContent = '/month';
+          if (yearlyNote) yearlyNote.style.display = 'none';
+        }
+      });
+    });
+
+    // Sticky nav shadow
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Scroll-triggered fade-up animations
+    const fadeEls = document.querySelectorAll('.problem-card, .step, .feature-card, .trust-item, .pricing-card, .faq-item, .hero-mockup, .testimonial-block');
+    fadeEls.forEach(el => el.classList.add('fade-up'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Floating CTA — appears after scrolling past hero
+    const floatBtn = document.createElement('button');
+    floatBtn.setAttribute('data-cal-namespace', '30min');
+    floatBtn.setAttribute('data-cal-link', 'deng-awak-hzu0y1/30min');
+    floatBtn.setAttribute('data-cal-origin', 'https://cal.com');
+    floatBtn.className = 'float-cta';
+    floatBtn.textContent = 'Book Free Demo';
+    document.body.appendChild(floatBtn);
+    const heroSection = document.querySelector('.hero');
+    const ctaSection = document.querySelector('.section-cta');
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      const ctaTop = ctaSection.getBoundingClientRect().top;
+      floatBtn.classList.toggle('float-cta-visible', heroBottom < 0 && ctaTop > window.innerHeight);
+    });
+  </script>
+
+  <!-- Cal.eu embed -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal; let ar = arguments;
+        if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+        if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "30min", { origin: "https://cal.com" });
+
+    // Inline embed in contact section
+    Cal.ns["30min"]("inline", {
+      elementOrSelector: "#cal-inline",
+      calLink: "deng-awak-hzu0y1/30min",
+      layout: "month_view"
+    });
+
+    // Brand colour + UI settings
+    Cal.ns["30min"]("ui", {
+      styles: { branding: { brandColor: "#2563eb" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  </script>
+
+</body>
+</html>
