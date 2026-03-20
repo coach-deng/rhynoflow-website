@@ -1355,6 +1355,68 @@ blockquote {
   transform: translateY(0);
 }
 
+/* ===== Dashboard Add-on ===== */
+.addon-dashboard {
+  margin-top: 40px;
+  background: rgba(16,185,129,0.06);
+  border: 1.5px solid rgba(16,185,129,0.2);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.addon-dashboard-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.addon-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #10b981;
+  margin-bottom: 6px;
+}
+
+.addon-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 10px;
+}
+
+.addon-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0;
+}
+
+.addon-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.addon-price {
+  font-size: 28px;
+  font-weight: 900;
+  color: #f1f5f9;
+  white-space: nowrap;
+}
+
+.addon-price span {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+}
+
 /* ===== Add-on Note ===== */
 .addon-note {
   margin-top: 32px;
