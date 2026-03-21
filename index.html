@@ -554,7 +554,15 @@
     <div class="container">
       <div class="section-label">Why this works</div>
       <h2>You're already paying for Google. Why add more tools on top?</h2>
-      <div class="comparison-table">
+      <!-- Mobile fallback: shown only on small screens -->
+      <div class="comparison-mobile">
+        <div class="comp-mobile-item"><span class="comp-check">&#10003;</span><div><strong>No extra software costs</strong><p>Zapier, Mailchimp, CRM? Not needed. Everything runs inside Google.</p></div></div>
+        <div class="comp-mobile-item"><span class="comp-check">&#10003;</span><div><strong>I build it, I maintain it</strong><p>No docs to read. No setup to figure out. You show me your week and I handle the rest.</p></div></div>
+        <div class="comp-mobile-item"><span class="comp-check">&#10003;</span><div><strong>Your data never leaves Google</strong><p>No third-party servers. Everything stays in your own account, under your control.</p></div></div>
+        <div class="comp-mobile-item"><span class="comp-check">&#10003;</span><div><strong>Fixed price, no surprises</strong><p>Agencies charge 800-1,200 kr/hour. You pay one flat monthly fee and that's it.</p></div></div>
+      </div>
+      <!-- Desktop table: hidden on mobile -->
+      <div class="comparison-table comparison-desktop">
         <table>
           <thead>
             <tr>
@@ -591,6 +599,7 @@
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
     </div>
   </section>
