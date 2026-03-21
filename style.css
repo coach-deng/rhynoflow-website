@@ -930,6 +930,48 @@ blockquote {
   width: 100%;
 }
 
+/* What's included drawer */
+.included-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.02em;
+}
+.included-toggle:hover { opacity: 0.75; }
+.included-arrow {
+  font-size: 0.65rem;
+  transition: transform 0.2s ease;
+}
+.included-toggle[aria-expanded="true"] .included-arrow {
+  transform: rotate(180deg);
+}
+.included-drawer {
+  display: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+.included-drawer.open {
+  display: block;
+}
+.included-item {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.45;
+}
+.included-item:last-child { border-bottom: none; }
+.included-item strong { color: var(--text); }
+
 /* ===== Comparison ===== */
 .comparison-table {
   margin-top: 40px;

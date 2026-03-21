@@ -124,30 +124,6 @@
   </section>
 
   <!-- Stats Strip -->
-  <section class="stats-strip">
-    <div class="container stats-strip-inner">
-      <div class="stat-block">
-        <span class="stat-num">12</span>
-        <span class="stat-label">hours saved per week at Talata Basketball</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-block">
-        <span class="stat-num">6</span>
-        <span class="stat-label">automations running right now, zero maintenance</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-block">
-        <span class="stat-num">0</span>
-        <span class="stat-label">new tools added. It's all in your Google account.</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-block">
-        <span class="stat-num">48h</span>
-        <span class="stat-label">to your first automation running live</span>
-      </div>
-    </div>
-  </section>
-
   <!-- Problem -->
   <section class="section section-dark">
     <div class="container">
@@ -495,6 +471,14 @@
             <li>Payment tracking &amp; weekly summary</li>
             <li>Client follow-up reminders</li>
           </ul>
+          <button class="included-toggle" aria-expanded="false">What's included <span class="included-arrow">&#9660;</span></button>
+          <div class="included-drawer">
+            <div class="included-item"><strong>Morning Briefing</strong> — calendar, flagged emails and open tasks in your inbox by 6:30 AM</div>
+            <div class="included-item"><strong>Smart Reply Drafter</strong> — incoming emails get a draft reply ready. You review and send.</div>
+            <div class="included-item"><strong>Deadline Alerts</strong> — alerts at 7, 3 and 1 day before any deadline you set</div>
+            <div class="included-item"><strong>Payment Tracker</strong> — every payment logged on arrival, fee deducted, nothing to enter</div>
+            <div class="included-item"><strong>Client Follow-Up</strong> — outstanding follow-ups flagged every Friday automatically</div>
+          </div>
           <div class="pricing-saves">~8 hrs/week back. You pay 1,500.</div>
           <a href="#contact" class="btn btn-outline">Get Started</a>
         </div>
@@ -515,6 +499,17 @@
             <li>Event &amp; registration automation</li>
             <li>Lead notifier &amp; auto-reply</li>
           </ul>
+          <button class="included-toggle" aria-expanded="false">What's included <span class="included-arrow">&#9660;</span></button>
+          <div class="included-drawer">
+            <div class="included-item"><strong>Morning Briefing</strong> — calendar, flagged emails and open tasks in your inbox by 6:30 AM</div>
+            <div class="included-item"><strong>Smart Reply Drafter</strong> — draft replies ready for every incoming email</div>
+            <div class="included-item"><strong>Deadline Alerts</strong> — alerts at 7, 3 and 1 day before any deadline</div>
+            <div class="included-item"><strong>Payment Tracker</strong> — every payment logged automatically, nothing to enter</div>
+            <div class="included-item"><strong>Staff Scheduler</strong> — shift notifications sent automatically to your team</div>
+            <div class="included-item"><strong>Payroll Tracker</strong> — hours logged as shifts happen, export-ready</div>
+            <div class="included-item"><strong>Lead Notifier</strong> — new inquiry gets a notification and a draft reply within minutes</div>
+            <div class="included-item"><strong>Event Registration</strong> — sign-ups tracked, confirmations sent, reminders automated</div>
+          </div>
           <div class="pricing-saves">~12 hrs/week back. You pay 3,500.</div>
           <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
@@ -533,6 +528,15 @@
             <li>Game day reminders</li>
             <li>Weekly schedule emails</li>
           </ul>
+          <button class="included-toggle" aria-expanded="false">What's included <span class="included-arrow">&#9660;</span></button>
+          <div class="included-drawer">
+            <div class="included-item"><strong>Morning Briefing</strong> — calendar, deadlines and flagged emails in your inbox by 6:30 AM</div>
+            <div class="included-item"><strong>Game Day Reminder</strong> — parents get a reminder 24h before every match, automatically</div>
+            <div class="included-item"><strong>Weekly Parent Email</strong> — next week's schedule sent every Friday. You send nothing.</div>
+            <div class="included-item"><strong>MobilePay Tracker</strong> — every payment logged with 1% fee deducted. Nothing to enter.</div>
+            <div class="included-item"><strong>Deadline Alerts</strong> — grant deadlines, board meetings, key dates — alerts at 7, 3 and 1 day out</div>
+            <div class="included-item"><strong>Board Weekly Digest</strong> — board members get a Monday overview automatically</div>
+          </div>
           <div class="pricing-saves">~8 hrs/week saved. The fee pays for itself.</div>
           <a href="#contact" class="btn btn-outline">Get Started</a>
         </div>
@@ -804,6 +808,16 @@
           if (period) period.textContent = '/month';
           if (yearlyNote) yearlyNote.style.display = 'none';
         }
+      });
+    });
+
+    // What's included drawers
+    document.querySelectorAll('.included-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const drawer = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        drawer.classList.toggle('open', !expanded);
       });
     });
 
