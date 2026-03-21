@@ -141,7 +141,7 @@
   <section class="hero">
     <div class="container">
       <div class="da-badge">Til foreninger i Danmark</div>
-      <div class="hero-badge">Ops&aelig;tning gratis frem til 1. maj &middot; 3 af 5 pladser tilbage</div>
+      <div class="hero-badge">Ops&aelig;tning gratis frem til 1. maj &middot; <span class="spots-remaining-da">3 af 5 pladser tilbage</span></div>
 
       <h1>Stop med at lade <span class="highlight">&eacute;n person b&aelig;re det hele.</span></h1>
       <p class="hero-sub">I de fleste foreninger er det &eacute;n eller to frivillige, der g&oslash;r alt: emails, p&aring;mindelser, bestyrelsesm&oslash;der, tilskudsfrist, kontingentopkr&aelig;vning. Det slider. Rhynoflow automatiserer det, s&aring; I kan bruge kr&aelig;fterne p&aring; foreningen selv.</p>
@@ -248,6 +248,40 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-label">Sp&oslash;rgsm&aring;l</div>
+      <h2>Det sp&oslash;rger folk om.</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Skal vi skifte system eller k&oslash;be ny software?</summary>
+          <p>Nej. Vi bygger det direkte ind i jeres eksisterende Google-konto. Gmail, Kalender, Drev. Intet nyt at l&aelig;re, intet nyt at logge ind p&aring;.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvad sker der med vores data?</summary>
+          <p>Den forbliver i jeres Google-konto. Vi gemmer den ikke, vi kan ikke se den efter ops&aelig;tningen, og den forlader aldrig Googles servere. GDPR-venlig fra dag &eacute;t.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvad hvis vi vil stoppe?</summary>
+          <p>S&aring; stopper I. Ingen binding. Det vi har bygget forbliver i jeres konto og k&oslash;rer videre, eller I sletter det. Ingen data forsvinder, ingen str&aelig;k.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvor lang tid tager ops&aelig;tningen?</summary>
+          <p>Typisk en uge. Vi starter med det, der sparer mest tid med det samme, og bygger videre derfra. De f&oslash;rste automatiseringer k&oslash;rer inden for dage.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vi bruger ikke Google. Kan det stadig virke?</summary>
+          <p>Rhynoflow er bygget til Google Workspace. Hvis I endnu ikke er p&aring; Google, kan vi hj&aelig;lpe med at komme i gang. Det koster ikke noget ekstra at s&aelig;tte det op.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hvad hvis noget g&aring;r i stykker?</summary>
+          <p>Det er det m&aring;nedlige geb&oslash;r til. Vi holder &oslash;je med alting. Hvis Google opdaterer noget eller et script fejler, fikser vi det. I skal ikke t&aelig;nke p&aring; det.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section class="section section-dark" id="kontakt">
     <div class="container">
@@ -304,6 +338,16 @@
   </script>
 
   <script>
+    // Dynamic spots counter
+    fetch('spots.json')
+      .then(r => r.json())
+      .then(data => {
+        document.querySelectorAll('.spots-remaining-da').forEach(el => {
+          el.textContent = data.remaining + ' af ' + data.total + ' pladser tilbage';
+        });
+      })
+      .catch(() => {});
+
     // Mobile menu
     const toggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');

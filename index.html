@@ -238,6 +238,26 @@
         </div>
       </div>
 
+      <!-- Stats row -->
+      <div class="cs-stats-row">
+        <div class="cs-stat-box">
+          <div class="cs-stat-num">12 hrs</div>
+          <div class="cs-stat-lab">saved per week</div>
+        </div>
+        <div class="cs-stat-box">
+          <div class="cs-stat-num">6</div>
+          <div class="cs-stat-lab">automations running</div>
+        </div>
+        <div class="cs-stat-box">
+          <div class="cs-stat-num">0 kr</div>
+          <div class="cs-stat-lab">extra software costs</div>
+        </div>
+        <div class="cs-stat-box">
+          <div class="cs-stat-num">24/7</div>
+          <div class="cs-stat-lab">runs while you sleep</div>
+        </div>
+      </div>
+
       <!-- Before / After -->
       <div class="cs-before-after">
         <div class="cs-panel cs-before">
@@ -303,7 +323,7 @@
       <!-- Quote -->
       <div class="testimonial-block" style="margin-top:48px;">
         <div class="quote-mark">"</div>
-        <blockquote>I barely have to manage the admin anymore. Everything just runs. Made me think: why isn't every club doing this?</blockquote>
+        <blockquote>I stopped thinking about admin. The briefing is in my inbox before I even open my eyes. Game tomorrow, parents already know. Payments logged. Deadlines flagged. I built this because I needed it. It runs every single day without me touching it.</blockquote>
         <div class="testimonial-author">
           <div>
             <strong>Deng Awak</strong>
@@ -725,6 +745,16 @@
         }
       });
     });
+
+    // Dynamic spots counter
+    fetch('spots.json')
+      .then(r => r.json())
+      .then(data => {
+        document.querySelectorAll('.spots-remaining').forEach(el => {
+          el.textContent = data.remaining + ' of ' + data.total + ' spots left';
+        });
+      })
+      .catch(() => {});
 
     // Sticky nav shadow
     const nav = document.querySelector('.nav');
