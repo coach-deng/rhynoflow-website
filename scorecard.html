@@ -3,282 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Is Your Business Ready for Automation? | Rhynoflow</title>
-  <meta name="description" content="Take the free 2-minute assessment and find out how much time you could save with Rhynoflow automation.">
+  <title>Admin Audit: How Much Time Are You Losing? &mdash; Rhynoflow</title>
+  <meta name="description" content="Answer 6 questions. Find out exactly how much time your admin is costing you and what Rhynoflow would fix first.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
   <style>
-    .scorecard-hero {
-      padding: 140px 0 60px;
-      text-align: center;
-    }
-    .scorecard-hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .scorecard-hero p {
-      max-width: 540px;
-      margin: 0 auto;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
     .scorecard-wrap {
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 3rem 1.5rem 6rem;
     }
-
-    .question-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      margin-bottom: 20px;
+    .scorecard-header {
+      text-align: center;
+      margin-bottom: 3rem;
     }
-
-    .question-card h3 {
-      font-size: 1.05rem;
+    .scorecard-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .scorecard-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .progress-bar-wrap {
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+    .question-block {
+      display: none;
+      animation: fadeUp 0.3s ease;
+    }
+    .question-block.active {
+      display: block;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question-num {
+      font-size: 0.78rem;
       font-weight: 700;
-      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.5rem;
       line-height: 1.4;
     }
-
-    .question-num {
-      display: inline-block;
-      background: var(--green-soft);
-      color: var(--green);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 50px;
-      margin-bottom: 12px;
-    }
-
     .options {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0.75rem;
     }
-
     .option-btn {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 14px 18px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--bg);
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.15s;
-      text-align: left;
-    }
-
-    .option-btn:hover {
-      border-color: var(--green);
-      background: var(--green-soft);
-    }
-
-    .option-btn.selected {
-      border-color: var(--green);
-      background: var(--green-soft);
-      font-weight: 600;
-    }
-
-    .option-dot {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
       border: 2px solid var(--border);
-      flex-shrink: 0;
+      border-radius: 12px;
+      background: var(--card);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s;
+      font-size: 0.97rem;
+      color: var(--text);
+      font-family: inherit;
+      width: 100%;
+    }
+    .option-btn:hover { border-color: var(--accent); background: #fff8f3; }
+    .option-btn.selected { border-color: var(--accent); background: #fff8f3; }
+    .option-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.15s;
-    }
-
-    .option-btn.selected .option-dot {
-      border-color: var(--green);
-      background: var(--green);
-    }
-
-    .option-btn.selected .option-dot::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #fff;
-    }
-
-    /* Email capture */
-    .email-section {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .email-section h3 {
-      font-size: 1.15rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .email-section p {
       color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 20px;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
     }
-
-    .email-form {
+    .option-btn.selected .option-letter,
+    .option-btn:hover .option-letter {
+      background: var(--accent);
+      color: #fff;
+    }
+    .nav-btns {
       display: flex;
-      gap: 10px;
-      max-width: 440px;
-      margin: 0 auto;
+      justify-content: space-between;
+      margin-top: 2rem;
+      gap: 1rem;
     }
-
-    .email-form input {
-      flex: 1;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
+    .btn-back {
+      background: none;
+      border: 2px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.7rem 1.5rem;
       border-radius: 8px;
-      font-size: 0.95rem;
       font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.15s;
     }
-
-    .email-form input:focus {
-      border-color: var(--green);
-    }
-
-    .email-form button {
-      padding: 12px 24px;
+    .btn-back:hover { border-color: var(--text-muted); }
+    .btn-next {
       background: var(--accent);
       color: #fff;
       border: none;
+      padding: 0.7rem 2rem;
       border-radius: 8px;
-      font-weight: 600;
+      font-family: inherit;
       font-size: 0.9rem;
+      font-weight: 700;
       cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s;
+      transition: opacity 0.15s;
     }
-
-    .email-form button:hover {
-      background: var(--accent-light);
-    }
-
-    /* Results */
-    .results-card {
-      background: #fff;
-      border: 2px solid var(--green);
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
-      text-align: center;
-      display: none;
-    }
-
-    .results-card.show {
-      display: block;
-    }
-
+    .btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
+    .btn-next:not(:disabled):hover { opacity: 0.88; }
+    #results { display: none; text-align: center; }
     .score-circle {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      background: var(--green-soft);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
-    }
-
-    .score-num {
-      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+      font-size: 2.2rem;
       font-weight: 800;
-      color: var(--green);
     }
-
-    .score-label {
-      font-size: 1.3rem;
+    .score-circle span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .score-low    { background: #f0fdf4; color: #16a34a; border: 3px solid #86efac; }
+    .score-medium { background: #fff7ed; color: #ea580c; border: 3px solid #fdba74; }
+    .score-high   { background: #fef2f2; color: #dc2626; border: 3px solid #fca5a5; }
+    .result-headline {
+      font-size: 1.6rem;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 0.75rem;
     }
-
-    .score-desc {
+    .result-sub {
       color: var(--text-muted);
       font-size: 1rem;
-      max-width: 460px;
-      margin: 0 auto 24px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .score-breakdown {
+    .result-items {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
       text-align: left;
-      margin: 24px 0;
-      padding: 20px;
-      background: var(--bg-dark);
-      border-radius: 12px;
+      margin-bottom: 2rem;
     }
-
-    .score-breakdown h4 {
+    .result-items h3 {
       font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .breakdown-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-
-    .breakdown-item:last-child {
-      border-bottom: none;
-    }
-
-    .breakdown-score {
       font-weight: 700;
-      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
     }
-
-    .progress-bar {
-      width: 100%;
-      height: 6px;
-      background: var(--bg-dark);
-      border-radius: 3px;
-      margin-bottom: 40px;
-      overflow: hidden;
+    .result-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text);
     }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--green);
-      border-radius: 3px;
-      transition: width 0.4s ease;
-      width: 0%;
+    .result-item:last-child { border-bottom: none; }
+    .ri-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .time-saved-box {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
     }
-
-    @media (max-width: 500px) {
-      .email-form {
-        flex-direction: column;
-      }
-      .scorecard-hero {
-        padding: 120px 0 40px;
-      }
+    .time-saved-box .tsb-num {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .time-saved-box .tsb-label {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-top: 4px;
     }
   </style>
 </head>
@@ -287,11 +231,10 @@
   <!-- Nav -->
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="index.html" class="logo">Rhyno<span>flow</span></a>
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
       <div class="nav-links">
-        <a href="index.html#how">How It Works</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#contact" class="btn btn-sm">Get Started</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#contact" class="btn btn-sm">Book a Demo</a>
       </div>
       <button class="mobile-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -299,121 +242,115 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="scorecard-hero">
-    <div class="container">
-      <div class="hero-badge">Gratis. 2 minutter. Ingen tilmelding kr&aelig;vet.</div>
-      <h1>Is your business ready for <span class="highlight">automation?</span></h1>
-      <p>Answer 6 quick questions and find out how much time you're losing to admin every week. Takes about 2 minutes.</p>
-    </div>
-  </section>
-
-  <!-- Scorecard -->
   <div class="scorecard-wrap">
-    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <a href="/" style="font-size:0.9rem; color:var(--text-muted); text-decoration:none; display:inline-block; margin-bottom:2rem;">&larr; Back</a>
+
+    <div class="scorecard-header">
+      <div class="hero-badge" style="display:inline-block; margin-bottom:1rem;">Free &middot; Takes 2 minutes</div>
+      <h1>How much time is your admin really costing you?</h1>
+      <p>Answer 6 questions. Get a personalized breakdown of what to automate first and how many hours you'd get back.</p>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress" style="width:0%"></div>
+    </div>
 
     <!-- Q1 -->
-    <div class="question-card" data-q="1">
-      <div class="question-num">1 of 6</div>
-      <h3>How many hours per week do you spend on email and admin?</h3>
+    <div class="question-block active" id="q1">
+      <div class="question-num">Question 1 of 6</div>
+      <div class="question-text">How many hours a week do you spend on repetitive emails?</div>
       <div class="options">
-        <button class="option-btn" data-score="1"><span class="option-dot"></span>Less than 2 hours</button>
-        <button class="option-btn" data-score="2"><span class="option-dot"></span>2-5 hours</button>
-        <button class="option-btn" data-score="3"><span class="option-dot"></span>5-10 hours</button>
-        <button class="option-btn" data-score="4"><span class="option-dot"></span>More than 10 hours</button>
+        <button class="option-btn" data-q="1" data-score="1" onclick="selectOption(this)"><span class="option-letter">A</span>Less than 1 hour — pretty manageable</button>
+        <button class="option-btn" data-q="1" data-score="3" onclick="selectOption(this)"><span class="option-letter">B</span>1-3 hours — annoying but I get through it</button>
+        <button class="option-btn" data-q="1" data-score="5" onclick="selectOption(this)"><span class="option-letter">C</span>3-6 hours — it's eating into real work time</button>
+        <button class="option-btn" data-q="1" data-score="8" onclick="selectOption(this)"><span class="option-letter">D</span>More than 6 hours — email basically runs my week</button>
       </div>
+      <div class="nav-btns"><span></span><button class="btn-next" id="next1" disabled onclick="nextQ(1)">Next &rarr;</button></div>
     </div>
 
     <!-- Q2 -->
-    <div class="question-card" data-q="2">
-      <div class="question-num">2 of 6</div>
-      <h3>Do you find yourself typing the same email replies over and over?</h3>
+    <div class="question-block" id="q2">
+      <div class="question-num">Question 2 of 6</div>
+      <div class="question-text">Do you have a clear picture of today — meetings, emails, deadlines — before you open anything?</div>
       <div class="options">
-        <button class="option-btn" data-score="1"><span class="option-dot"></span>Rarely</button>
-        <button class="option-btn" data-score="2"><span class="option-dot"></span>Sometimes</button>
-        <button class="option-btn" data-score="3"><span class="option-dot"></span>A few times a week</button>
-        <button class="option-btn" data-score="4"><span class="option-dot"></span>Every single day</button>
+        <button class="option-btn" data-q="2" data-score="1" onclick="selectOption(this)"><span class="option-letter">A</span>Yes — I have a system and it works</button>
+        <button class="option-btn" data-q="2" data-score="4" onclick="selectOption(this)"><span class="option-letter">B</span>Sort of — I piece it together from different places</button>
+        <button class="option-btn" data-q="2" data-score="7" onclick="selectOption(this)"><span class="option-letter">C</span>Not really — I find out as things come up</button>
+        <button class="option-btn" data-q="2" data-score="9" onclick="selectOption(this)"><span class="option-letter">D</span>No — I'm always catching up, never ahead</button>
       </div>
+      <div class="nav-btns"><button class="btn-back" onclick="prevQ(2)">&larr; Back</button><button class="btn-next" id="next2" disabled onclick="nextQ(2)">Next &rarr;</button></div>
     </div>
 
     <!-- Q3 -->
-    <div class="question-card" data-q="3">
-      <div class="question-num">3 of 6</div>
-      <h3>How often do deadlines, reminders, or follow-ups slip through the cracks?</h3>
+    <div class="question-block" id="q3">
+      <div class="question-num">Question 3 of 6</div>
+      <div class="question-text">How do you track payments and invoices right now?</div>
       <div class="options">
-        <button class="option-btn" data-score="1"><span class="option-dot"></span>Almost never</button>
-        <button class="option-btn" data-score="2"><span class="option-dot"></span>Once in a while</button>
-        <button class="option-btn" data-score="3"><span class="option-dot"></span>At least once a week</button>
-        <button class="option-btn" data-score="4"><span class="option-dot"></span>All the time. It's a problem.</button>
+        <button class="option-btn" data-q="3" data-score="1" onclick="selectOption(this)"><span class="option-letter">A</span>Accounting software — it's sorted</button>
+        <button class="option-btn" data-q="3" data-score="4" onclick="selectOption(this)"><span class="option-letter">B</span>A spreadsheet I update manually</button>
+        <button class="option-btn" data-q="3" data-score="7" onclick="selectOption(this)"><span class="option-letter">C</span>I check my bank app and kind of keep track in my head</button>
+        <button class="option-btn" data-q="3" data-score="9" onclick="selectOption(this)"><span class="option-letter">D</span>Honestly I don't have a good system</button>
       </div>
+      <div class="nav-btns"><button class="btn-back" onclick="prevQ(3)">&larr; Back</button><button class="btn-next" id="next3" disabled onclick="nextQ(3)">Next &rarr;</button></div>
     </div>
 
     <!-- Q4 -->
-    <div class="question-card" data-q="4">
-      <div class="question-num">4 of 6</div>
-      <h3>Do you track payments (MobilePay, bank transfers) manually?</h3>
+    <div class="question-block" id="q4">
+      <div class="question-num">Question 4 of 6</div>
+      <div class="question-text">Have you missed a deadline, renewal, or grant application in the last 12 months?</div>
       <div class="options">
-        <button class="option-btn" data-score="1"><span class="option-dot"></span>No, we have a system for that</button>
-        <button class="option-btn" data-score="2"><span class="option-dot"></span>Sort of, it's a messy spreadsheet</button>
-        <button class="option-btn" data-score="3"><span class="option-dot"></span>Yes, I check MobilePay and type it into a sheet</button>
-        <button class="option-btn" data-score="4"><span class="option-dot"></span>I don't really track it properly</button>
+        <button class="option-btn" data-q="4" data-score="1" onclick="selectOption(this)"><span class="option-letter">A</span>No — I'm on top of deadlines</button>
+        <button class="option-btn" data-q="4" data-score="5" onclick="selectOption(this)"><span class="option-letter">B</span>Almost — I cut it close a few times</button>
+        <button class="option-btn" data-q="4" data-score="8" onclick="selectOption(this)"><span class="option-letter">C</span>Yes — at least once something slipped</button>
+        <button class="option-btn" data-q="4" data-score="10" onclick="selectOption(this)"><span class="option-letter">D</span>Yes, more than once — deadlines are a weak spot</button>
       </div>
+      <div class="nav-btns"><button class="btn-back" onclick="prevQ(4)">&larr; Back</button><button class="btn-next" id="next4" disabled onclick="nextQ(4)">Next &rarr;</button></div>
     </div>
 
     <!-- Q5 -->
-    <div class="question-card" data-q="5">
-      <div class="question-num">5 of 6</div>
-      <h3>How do you keep members, parents, or clients updated?</h3>
+    <div class="question-block" id="q5">
+      <div class="question-num">Question 5 of 6</div>
+      <div class="question-text">How often do you send the same type of message to clients, members, or parents?</div>
       <div class="options">
-        <button class="option-btn" data-score="1"><span class="option-dot"></span>We have a good system (Holdsport, newsletter tool, etc.)</button>
-        <button class="option-btn" data-score="2"><span class="option-dot"></span>Mostly email, one at a time</button>
-        <button class="option-btn" data-score="3"><span class="option-dot"></span>Group chats, Facebook, whatever works</button>
-        <button class="option-btn" data-score="4"><span class="option-dot"></span>Honestly, we forget to update people half the time</button>
+        <button class="option-btn" data-q="5" data-score="1" onclick="selectOption(this)"><span class="option-letter">A</span>Rarely — my comms are mostly one-off</button>
+        <button class="option-btn" data-q="5" data-score="4" onclick="selectOption(this)"><span class="option-letter">B</span>Sometimes — a few templates I reuse</button>
+        <button class="option-btn" data-q="5" data-score="7" onclick="selectOption(this)"><span class="option-letter">C</span>Often — reminders and updates go out weekly</button>
+        <button class="option-btn" data-q="5" data-score="9" onclick="selectOption(this)"><span class="option-letter">D</span>Constantly — I feel like I'm sending the same thing over and over</button>
       </div>
+      <div class="nav-btns"><button class="btn-back" onclick="prevQ(5)">&larr; Back</button><button class="btn-next" id="next5" disabled onclick="nextQ(5)">Next &rarr;</button></div>
     </div>
 
     <!-- Q6 -->
-    <div class="question-card" data-q="6">
-      <div class="question-num">6 of 6</div>
-      <h3>When you wake up in the morning, do you know exactly what's on your plate for the day?</h3>
+    <div class="question-block" id="q6">
+      <div class="question-num">Question 6 of 6</div>
+      <div class="question-text">How would you describe your current use of Google Workspace?</div>
       <div class="options">
-        <button class="option-btn" data-score="1"><span class="option-dot"></span>Yes, I'm very organized</button>
-        <button class="option-btn" data-score="2"><span class="option-dot"></span>I check my calendar and inbox, takes a few minutes</button>
-        <button class="option-btn" data-score="3"><span class="option-dot"></span>I spend 15-30 minutes figuring out my day</button>
-        <button class="option-btn" data-score="4"><span class="option-dot"></span>No, I just react to whatever comes in</button>
+        <button class="option-btn" data-q="6" data-score="2" onclick="selectOption(this)"><span class="option-letter">A</span>I don't use it — I'm on Outlook or something else</button>
+        <button class="option-btn" data-q="6" data-score="4" onclick="selectOption(this)"><span class="option-letter">B</span>Just Gmail and Calendar — not much else</button>
+        <button class="option-btn" data-q="6" data-score="7" onclick="selectOption(this)"><span class="option-letter">C</span>Gmail, Calendar, Drive — but nothing's connected</button>
+        <button class="option-btn" data-q="6" data-score="9" onclick="selectOption(this)"><span class="option-letter">D</span>All of the above but I know I'm barely using the potential</button>
       </div>
-    </div>
-
-    <!-- Email capture -->
-    <div class="email-section" id="emailCapture" style="display:none;">
-      <h3>Almost done. Where should I send your results?</h3>
-      <p>I'll email you a breakdown of your score plus specific recommendations for your business. No spam, just the results.</p>
-      <div class="email-form">
-        <input type="email" id="userEmail" placeholder="your@email.dk" required>
-        <button id="submitBtn">See My Score</button>
-      </div>
+      <div class="nav-btns"><button class="btn-back" onclick="prevQ(6)">&larr; Back</button><button class="btn-next" id="next6" disabled onclick="showResults()">See My Results &rarr;</button></div>
     </div>
 
     <!-- Results -->
-    <div class="results-card" id="results">
-      <div class="score-circle">
-        <span class="score-num" id="scoreNum">0</span>
+    <div id="results">
+      <div class="score-circle" id="score-circle">
+        <div id="score-num">—</div>
+        <span>/ 100</span>
       </div>
-      <div class="score-label" id="scoreLabel"></div>
-      <p class="score-desc" id="scoreDesc"></p>
-
-      <div class="score-breakdown">
-        <h4>Your breakdown</h4>
-        <div class="breakdown-item"><span>Time on email & admin</span><span class="breakdown-score" id="b1"></span></div>
-        <div class="breakdown-item"><span>Repetitive replies</span><span class="breakdown-score" id="b2"></span></div>
-        <div class="breakdown-item"><span>Missed deadlines/follow-ups</span><span class="breakdown-score" id="b3"></span></div>
-        <div class="breakdown-item"><span>Payment tracking</span><span class="breakdown-score" id="b4"></span></div>
-        <div class="breakdown-item"><span>Communication with members</span><span class="breakdown-score" id="b5"></span></div>
-        <div class="breakdown-item"><span>Morning planning</span><span class="breakdown-score" id="b6"></span></div>
+      <div class="result-headline" id="result-headline"></div>
+      <p class="result-sub" id="result-sub"></p>
+      <div class="time-saved-box">
+        <div class="tsb-num" id="time-saved">—</div>
+        <div class="tsb-label">hours per week you could get back</div>
       </div>
-
-      <a href="mailto:hello@rhynoflow.dk?subject=Scorecard%20Result%20-%20I%27m%20interested" class="btn btn-primary btn-lg">Book a Free Demo</a>
-      <p style="margin-top:12px;font-size:0.85rem;color:var(--text-muted);">or email me directly: <a href="mailto:hello@rhynoflow.dk" style="color:var(--green);">hello@rhynoflow.dk</a></p>
+      <div class="result-items">
+        <h3>What I'd automate first for you</h3>
+        <div id="result-fixes"></div>
+      </div>
+      <a href="/#contact" class="btn btn-primary" style="display:block; text-align:center; margin-bottom:1rem; font-size:1rem; padding:1rem 2rem;">Book a free 30-min demo &rarr;</a>
+      <p style="text-align:center; font-size:0.85rem; color:var(--text-muted);">No commitment. I'll look at your actual setup and tell you exactly what I'd build.</p>
     </div>
   </div>
 
@@ -421,113 +358,103 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo">Rhyno<span>flow</span></a>
+        <a href="/" class="logo">Rhyno<span>flow</span></a>
         <p>Your admin, charged through.</p>
         <p class="footer-location">K&oslash;benhavn, Danmark</p>
       </div>
       <div class="footer-links">
-        <a href="index.html#how">How It Works</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#contact">Contact</a>
+        <a href="privacy.html">Privacy</a>
       </div>
-      <div class="footer-copy">
-        &copy; 2026 Rhynoflow. All rights reserved.
-      </div>
+      <div class="footer-copy">&copy; 2026 Rhynoflow. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Mobile menu
+    const scores = {};
+    const totalQ = 6;
+
+    function selectOption(btn) {
+      const q = btn.dataset.q;
+      document.querySelectorAll(`[data-q="${q}"]`).forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      scores[q] = parseInt(btn.dataset.score);
+      document.getElementById(`next${q}`).disabled = false;
+    }
+
+    function updateProgress(step) {
+      document.getElementById('progress').style.width = ((step / totalQ) * 100) + '%';
+    }
+
+    function nextQ(current) {
+      document.getElementById(`q${current}`).classList.remove('active');
+      document.getElementById(`q${current + 1}`).classList.add('active');
+      updateProgress(current);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function prevQ(current) {
+      document.getElementById(`q${current}`).classList.remove('active');
+      document.getElementById(`q${current - 1}`).classList.add('active');
+      updateProgress(current - 2);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showResults() {
+      document.getElementById('q6').classList.remove('active');
+      updateProgress(6);
+
+      const total = Object.values(scores).reduce((a, b) => a + b, 0);
+      const maxScore = 53;
+      const pct = Math.round((total / maxScore) * 100);
+
+      const circle = document.getElementById('score-circle');
+      const fixes = document.getElementById('result-fixes');
+
+      document.getElementById('score-num').textContent = pct;
+
+      const fixList = [];
+      if (scores[1] >= 5) fixList.push({ icon: '📧', text: 'Smart reply drafts: incoming emails get drafted before you open them' });
+      if (scores[2] >= 7) fixList.push({ icon: '📅', text: 'Morning Briefing: daily overview in your inbox at 6:30 AM' });
+      if (scores[3] >= 4) fixList.push({ icon: '💸', text: 'Payment tracker: every payment logged automatically, nothing to enter' });
+      if (scores[4] >= 5) fixList.push({ icon: '⏰', text: 'Deadline alerts: 7, 3, and 1 day reminders for everything that matters' });
+      if (scores[5] >= 7) fixList.push({ icon: '🔁', text: 'Recurring comms: reminders and updates sent automatically' });
+      if (scores[6] >= 7) fixList.push({ icon: '⚙️', text: 'Google Workspace unlock: connect Gmail, Calendar and Drive into one flow' });
+      if (fixList.length === 0) fixList.push({ icon: '✅', text: "You're in solid shape. Even small automations would free up meaningful time." });
+
+      fixes.innerHTML = fixList.map(f =>
+        `<div class="result-item"><span class="ri-icon">${f.icon}</span><span>${f.text}</span></div>`
+      ).join('');
+
+      if (pct < 35) {
+        circle.className = 'score-circle score-low';
+        document.getElementById('result-headline').textContent = "You're in decent shape. But there's time to recover.";
+        document.getElementById('result-sub').textContent = "Your admin isn't out of control yet, but there are clear gaps. A few automations would give you back a meaningful chunk of your week with very little effort.";
+        document.getElementById('time-saved').textContent = '3-5';
+      } else if (pct < 65) {
+        circle.className = 'score-circle score-medium';
+        document.getElementById('result-headline').textContent = "Admin is eating real time. This is fixable.";
+        document.getElementById('result-sub').textContent = "You're spending more hours on manual work than you should. Email, tracking, reminders — all of it automatable. You're probably losing 5-10 hours a week you could have back.";
+        document.getElementById('time-saved').textContent = '5-10';
+      } else {
+        circle.className = 'score-circle score-high';
+        document.getElementById('result-headline').textContent = "Your admin is running you. Let's flip that.";
+        document.getElementById('result-sub').textContent = "This is exactly what Rhynoflow was built for. Based on your answers, we could recover most of your admin hours in about a week.";
+        document.getElementById('time-saved').textContent = '10+';
+      }
+
+      document.getElementById('results').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     const toggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
     });
-
-    // Sticky nav
-    const nav = document.querySelector('.nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    });
-
-    // Scorecard logic
-    const scores = {};
-    const totalQ = 6;
-    const progress = document.getElementById('progress');
-    const labels = ['Time on admin', 'Repetitive replies', 'Missed deadlines', 'Payment tracking', 'Communication', 'Morning planning'];
-
-    document.querySelectorAll('.option-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const card = btn.closest('.question-card');
-        const q = card.dataset.q;
-        const score = parseInt(btn.dataset.score);
-
-        // Deselect others in this card
-        card.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-
-        scores[q] = score;
-
-        // Update progress
-        const answered = Object.keys(scores).length;
-        progress.style.width = (answered / totalQ * 100) + '%';
-
-        // Show email capture when all answered
-        if (answered === totalQ) {
-          setTimeout(() => {
-            document.getElementById('emailCapture').style.display = 'block';
-            document.getElementById('emailCapture').scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 400);
-        }
-      });
-    });
-
-    // Submit
-    document.getElementById('submitBtn').addEventListener('click', () => {
-      const email = document.getElementById('userEmail').value;
-      if (!email || !email.includes('@')) {
-        document.getElementById('userEmail').style.borderColor = '#e53935';
-        return;
-      }
-
-      const total = Object.values(scores).reduce((a, b) => a + b, 0);
-      const maxScore = totalQ * 4;
-      const pct = Math.round((total / maxScore) * 100);
-
-      // Score labels
-      const scoreLabels = ['Low', 'Medium', 'High', 'Critical'];
-      for (let i = 1; i <= 6; i++) {
-        document.getElementById('b' + i).textContent = scoreLabels[scores[i] - 1];
-      }
-
-      document.getElementById('scoreNum').textContent = total + '/' + maxScore;
-
-      let label, desc;
-      if (total <= 8) {
-        label = "You're in decent shape.";
-        desc = "You've got some admin, but it's manageable. A Starter setup would still save you a few hours a week and make sure nothing slips.";
-      } else if (total <= 15) {
-        label = "You're losing serious time.";
-        desc = "You're spending 5-10+ hours a week on stuff that could run on its own. A Pro setup would give you back most of that time.";
-      } else {
-        label = "Admin is running your life.";
-        desc = "You're deep in it. Emails, payments, follow-ups, none of it is automated. The good news: this is exactly what Rhynoflow is built for. A 30-minute call and I can show you what changes.";
-      }
-
-      document.getElementById('scoreLabel').textContent = label;
-      document.getElementById('scoreDesc').textContent = desc;
-
-      // Hide email section, show results
-      document.getElementById('emailCapture').style.display = 'none';
-      document.getElementById('results').classList.add('show');
-      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // Log to console (replace with actual email service later)
-      console.log('Scorecard submission:', { email, scores, total, pct });
-    });
   </script>
-
 </body>
 </html>
