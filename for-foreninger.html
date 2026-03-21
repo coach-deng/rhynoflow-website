@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhynoflow til foreninger: Stop med at lade &eacute;n person b&aelig;re det hele</title>
+  <meta name="description" content="Rhynoflow automatiserer email, kalender og admin for din forening i Google. Ingen ny software. Klar p&aring; en uge.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rhynoflow.com/for-foreninger">
+  <meta property="og:title" content="Rhynoflow til foreninger">
+  <meta property="og:description" content="Stop med at lade &eacute;n person b&aelig;re det hele. Vi automatiserer din forenings admin i Google.">
+  <meta property="og:site_name" content="Rhynoflow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <style>
+    .da-badge {
+      display: inline-block;
+      background: #e8f4fd;
+      color: #1a6fa8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+    .pain-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .pain-item .pain-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .pain-item p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .solution-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .solution-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .solution-list li:last-child {
+      border-bottom: none;
+    }
+    .solution-list .check {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .forening-price-box {
+      background: var(--card);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 480px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .forening-price-box .price-big {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .forening-price-box .price-sub {
+      color: var(--text-muted);
+      margin: 0.5rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .forening-price-box .setup-note {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .cta-center {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links">
+        <a href="#hvad">Hvad vi g&oslash;r</a>
+        <a href="#pris">Pris</a>
+        <a href="#kontakt" class="btn btn-sm">Book en demo</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="da-badge">Til foreninger i Danmark</div>
+      <div class="hero-badge">Ops&aelig;tning gratis frem til 1. maj &middot; 3 af 5 pladser tilbage</div>
+
+      <h1>Stop med at lade <span class="highlight">&eacute;n person b&aelig;re det hele.</span></h1>
+      <p class="hero-sub">I de fleste foreninger er det &eacute;n eller to frivillige, der g&oslash;r alt: emails, p&aring;mindelser, bestyrelsesm&oslash;der, tilskudsfrist, kontingentopkr&aelig;vning. Det slider. Rhynoflow automatiserer det, s&aring; I kan bruge kr&aelig;fterne p&aring; foreningen selv.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-cal-namespace="30min" data-cal-link="deng-awak-hzu0y1/30min" data-cal-origin="https://cal.com">Book en gratis demo</button>
+        <a href="mailto:hello@rhynoflow.com" class="btn btn-outline">Skriv til os</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain points -->
+  <section class="section" id="hvad">
+    <div class="container">
+      <div class="section-label">Kender du det her?</div>
+      <h2>Det burde ikke k&aelig;ve s&aring; meget tid.</h2>
+      <p class="section-sub">Vi h&oslash;rer det igen og igen fra formanden, sekret&aelig;ren og den frivillige, der ender med at g&oslash;re det hele.</p>
+
+      <div class="pain-grid">
+        <div class="pain-item">
+          <div class="pain-icon">📧</div>
+          <p>"Jeg sender de samme emails til medlemmerne hver m&aring;ned."</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">⏰</div>
+          <p>"Vi overser tilskudsfrister, fordi ingen har styr p&aring; kalenderen."</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">💸</div>
+          <p>"Kontingentopkr&aelig;vning er et mareridt. Halvdelen betaler ikke til tiden."</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">🤹</div>
+          <p>"Bestyrelsen ved ikke hvad der sker. Jeg skal huske det hele selv."</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">📅</div>
+          <p>"Jeg bruger en weekend p&aring; at sende p&aring;mindelser om generalforsamlingen."</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">😮&zwj;💨</div>
+          <p>"Det er frivilligt arbejde. Det m&aring; ikke f&oslash;les som et fuldtidsjob."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-label">Hvad Rhynoflow g&oslash;r</div>
+      <h2>Alt det manuelle. Automatiseret.</h2>
+      <p class="section-sub">Vi bygger det direkte ind i jeres eksisterende Google-konto. Ingen ny software, ingen log-ins, ingen l&aelig;ring.</p>
+
+      <ul class="solution-list">
+        <li>
+          <span class="check">&#10003;</span>
+          <div><strong>Morgenbriefing hver dag</strong> &mdash; hvad der er i indbakken, hvad der sker i dag, og hvad der n&aelig;rmer sig af frister.</div>
+        </li>
+        <li>
+          <span class="check">&#10003;</span>
+          <div><strong>Automatiske kladder til emails</strong> &mdash; n&aring;r der kommer en email ind, udkastes et svar. Du genneml&aelig;ser og sender.</div>
+        </li>
+        <li>
+          <span class="check">&#10003;</span>
+          <div><strong>Tilskuds- og fristadvarsel</strong> &mdash; alerts 7, 3 og 1 dag f&oslash;r DIF/DGI-frister, GA, indsendelser, m&oslash;der.</div>
+        </li>
+        <li>
+          <span class="check">&#10003;</span>
+          <div><strong>Betalingsopf&oslash;lgning</strong> &mdash; automatisk log over indbetalinger med ugentligt overblik.</div>
+        </li>
+        <li>
+          <span class="check">&#10003;</span>
+          <div><strong>Bestyrelsesp&aring;mindelser</strong> &mdash; m&oslash;dep&aring;mindelser, dagsordener og opf&oslash;lgninger sendes automatisk.</div>
+        </li>
+        <li>
+          <span class="check">&#10003;</span>
+          <div><strong>Kommunikation til medlemmer</strong> &mdash; tr&aelig;ningsp&aring;mindelser, aflysninge, events. Skrives og sendes af systemet.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pris">
+    <div class="container">
+      <div class="section-label">Pris</div>
+      <h2>Simpelt. Ingen overraskelser.</h2>
+      <p class="section-sub">Ingen biding. Ingen sl&oslash;r. Alt k&oslash;rer i jeres Google-konto.</p>
+
+      <div class="forening-price-box">
+        <div class="price-big">1.500 kr</div>
+        <div class="price-sub">per m&aring;ned &middot; ingen binding</div>
+        <div class="setup-note">Ops&aelig;tning gratis frem til 1. maj 2026 (normalt 3.000 kr)</div>
+        <ul class="pricing-features" style="text-align:left; margin-bottom:1.5rem;">
+          <li>Morgenbriefing i indbakken hver dag</li>
+          <li>AI-udkast til indg&aring;ende emails</li>
+          <li>Fristadvarsler ved 7, 3 og 1 dag</li>
+          <li>Betalingsopf&oslash;lgning og ugeoverblik</li>
+          <li>Bestyrelses- og medlemskommunikation</li>
+        </ul>
+        <button class="btn btn-primary" data-cal-namespace="30min" data-cal-link="deng-awak-hzu0y1/30min" data-cal-origin="https://cal.com" style="width:100%;">Book en gratis demo</button>
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.75rem;">Klar p&aring; en uge. Ingen abonnement f&oslash;r I er tilfredse.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="section founder-section">
+    <div class="container">
+      <div class="founder-inner">
+        <div class="founder-photo-wrap">
+          <img src="deng.jpg" alt="Deng Awak, stifter af Rhynoflow" class="founder-photo">
+        </div>
+        <div class="founder-text">
+          <div class="section-label">Hvem har bygget det her</div>
+          <h2>Hej, jeg hedder Deng.</h2>
+          <p>Jeg er basketballtr&aelig;ner og klubchef i K&oslash;benhavn. Jeg har bygget Rhynoflow, fordi jeg selv druknede i admin: emails, fakturaer, tids- og betalingsopf&oslash;lgning, p&aring;mindelser, bestyrelseskommunikation. Alt manuelt. Alt tidskr&aelig;vende.</p>
+          <p>S&aring; jeg automatiserede det. Alle v&aelig;rkt&oslash;jerne p&aring; denne side er noget, jeg byggede til mig selv f&oslash;rst. Nu bygger jeg det til jer.</p>
+          <div class="founder-sig">Deng Awak &middot; Tr&aelig;ner, bygger, stifter</div>
+          <a href="#kontakt" class="btn btn-primary" style="margin-top:1.5rem;">Book et opkald med mig</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-dark" id="kontakt">
+    <div class="container">
+      <div class="section-label">Kom i gang</div>
+      <h2>Book en gratis demo.</h2>
+      <p class="section-sub">20 minutter. Jeg viser jer hvad det kan, og I beslutter selv om det giver mening.</p>
+      <div class="contact-options">
+        <div id="cal-inline-da"></div>
+        <p class="contact-alt">eller skriv direkte: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">Rhyno<span>flow</span></a>
+        <p>Your admin, charged through.</p>
+        <p class="footer-location">K&oslash;benhavn, Danmark</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">English</a>
+        <a href="#hvad">Hvad vi g&oslash;r</a>
+        <a href="#pris">Pris</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rhynoflow. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "30min", { origin: "https://cal.com" });
+
+    Cal.ns["30min"]("inline", {
+      elementOrSelector: "#cal-inline-da",
+      calLink: "deng-awak-hzu0y1/30min",
+      layout: "month_view",
+    });
+
+    Cal.ns["30min"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view",
+    });
+  </script>
+
+  <script>
+    // Mobile menu
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

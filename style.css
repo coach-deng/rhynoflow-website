@@ -1690,6 +1690,73 @@ blockquote {
     gap: 8px;
     text-align: center;
   }
+
+  .founder-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .founder-photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* =====================
+   Spots Remaining
+   ===================== */
+.spots-remaining {
+  color: #f97316;
+  font-weight: 700;
+}
+
+/* =====================
+   Founder Section
+   ===================== */
+.founder-section {
+  background: var(--bg);
+}
+
+.founder-inner {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.founder-photo-wrap {
+  flex-shrink: 0;
+}
+
+.founder-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 4px solid var(--accent);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.founder-text h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.founder-text p {
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  line-height: 1.7;
+}
+
+.founder-sig {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1.25rem;
+  letter-spacing: 0.01em;
 }
 
 
