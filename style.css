@@ -1227,16 +1227,20 @@ blockquote {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
 }
 
 .footer-brand p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 4px;
   line-height: 1.5;
+}
+
+.footer-brand .logo {
+  font-size: 0.95rem;
 }
 
 .footer-location {
@@ -1363,7 +1367,7 @@ blockquote {
 
   .footer-inner {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .footer-brand {
