@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhynoflow — One Pager</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 32px;
+      border-bottom: 2px solid #1a1a1a;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .logo span { color: #22c55e; }
+
+    .header-tag {
+      font-size: 12px;
+      color: #888;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 48px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span { color: #22c55e; }
+
+    .hero p {
+      font-size: 16px;
+      color: #444;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* Proof strip */
+    .proof {
+      display: flex;
+      gap: 32px;
+      background: #1a1a1a;
+      color: white;
+      padding: 20px 28px;
+      border-radius: 8px;
+      margin-bottom: 48px;
+    }
+
+    .proof-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .proof-item .number {
+      font-size: 26px;
+      font-weight: 900;
+      color: #22c55e;
+      letter-spacing: -0.5px;
+    }
+
+    .proof-item .label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 3px;
+    }
+
+    /* How it works */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #22c55e;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    /* Automations list */
+    .automations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .auto-item {
+      background: white;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .auto-item .name {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #1a1a1a;
+    }
+
+    .auto-item .desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .step-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Pricing */
+    .pricing-box {
+      background: white;
+      border: 2px solid #1a1a1a;
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .pricing-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .price span {
+      font-size: 16px;
+      font-weight: 400;
+      color: #888;
+    }
+
+    .price-badge {
+      background: #22c55e;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pricing-includes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .inc-item {
+      font-size: 13px;
+      color: #333;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .inc-item::before {
+      content: "✓";
+      color: #22c55e;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pricing-note {
+      font-size: 12px;
+      color: #888;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 16px;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 40px 0 20px;
+      border-top: 1px solid #e8e8e8;
+      margin-top: 48px;
+    }
+
+    .cta-section h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .cta-section p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #1a1a1a;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+
+    .cta-btn:hover { background: #333; }
+
+    .cta-contact {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .cta-contact a {
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: #bbb;
+      padding-top: 24px;
+      border-top: 1px solid #ebebeb;
+      margin-top: 32px;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 40px; }
+    }
+
+    @media (max-width: 560px) {
+      .automations { grid-template-columns: 1fr; }
+      .pricing-includes { grid-template-columns: 1fr; }
+      .proof { gap: 16px; }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <a href="https://rhynoflow.com" class="logo">Rhyno<span>flow</span></a>
+      <div class="header-tag">
+        rhynoflow.com<br>
+        hello@rhynoflow.com
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Your admin,<br><span>charged through.</span></h1>
+      <p>We build automations inside your existing Google account. Emails, reminders, payments, board updates — all handled automatically. Nothing new to install. Live in 5 days.</p>
+    </div>
+
+    <!-- Proof -->
+    <div class="proof">
+      <div class="proof-item">
+        <div class="number">25+</div>
+        <div class="label">hours saved per week</div>
+      </div>
+      <div class="proof-item">
+        <div class="number">5</div>
+        <div class="label">days to go live</div>
+      </div>
+      <div class="proof-item">
+        <div class="number">0</div>
+        <div class="label">new tools to learn</div>
+      </div>
+      <div class="proof-item">
+        <div class="number">24/7</div>
+        <div class="label">runs without you</div>
+      </div>
+    </div>
+
+    <!-- What we automate -->
+    <div class="section">
+      <div class="section-label">What we build</div>
+      <h2>5 automations. One setup.</h2>
+      <div class="automations">
+        <div class="auto-item">
+          <div class="name">Morning Briefing</div>
+          <div class="desc">Daily email at 6:30 AM — calendar, flagged inbox, what needs attention today.</div>
+        </div>
+        <div class="auto-item">
+          <div class="name">Smart Reply Drafts</div>
+          <div class="desc">Incoming emails get a draft reply waiting. You review and send.</div>
+        </div>
+        <div class="auto-item">
+          <div class="name">Deadline Alerts</div>
+          <div class="desc">Alerts at 7, 3, and 1 day before every deadline you set. Nothing falls through.</div>
+        </div>
+        <div class="auto-item">
+          <div class="name">Board Weekly Digest</div>
+          <div class="desc">Every Monday, the board gets a summary. Nobody has to write it.</div>
+        </div>
+        <div class="auto-item">
+          <div class="name">Event Countdown Emails</div>
+          <div class="desc">Members get automatic reminders at 28, 14, 7 days and day-before any event.</div>
+        </div>
+        <div class="auto-item">
+          <div class="name">Payment Tracking</div>
+          <div class="desc">Incoming payments logged automatically. Unpaid members flagged without checking.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="section">
+      <div class="section-label">How it works</div>
+      <h2>We build it. You use it.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>30-minute call</strong>
+            <span>We look at your inbox and calendar and map out exactly what to automate.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>We build it inside your Google account</strong>
+            <span>No new software. We access your Gmail and Calendar and build everything there.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>Live in 5 days</strong>
+            <span>Everything tested and running. Monday morning looks different from day one.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="section">
+      <div class="section-label">Pricing</div>
+      <h2>Simple. No surprises.</h2>
+      <div class="pricing-box">
+        <div class="pricing-top">
+          <div>
+            <div class="price">1,500 DKK <span>/ month</span></div>
+            <div style="font-size: 13px; color: #888; margin-top: 4px;">For foreninger and small orgs</div>
+          </div>
+          <div class="price-badge">Setup free until May 1</div>
+        </div>
+        <div class="pricing-includes">
+          <div class="inc-item">All 5 automations included</div>
+          <div class="inc-item">Done-for-you setup</div>
+          <div class="inc-item">Ongoing maintenance</div>
+          <div class="inc-item">Support within 1 business day</div>
+          <div class="inc-item">Month-to-month</div>
+          <div class="inc-item">Cancel anytime</div>
+        </div>
+        <div class="pricing-note">
+          No auto-charges. Manual invoice each month via Billy. Pay by MobilePay or bank transfer.
+          First payment only after you confirm everything is live and working.
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3>Ready to get 25 hours back?</h3>
+      <p>30-minute demo. We look at your actual setup and show you exactly what we'd build.</p>
+      <a href="https://rhynoflow.com/#contact" class="cta-btn">Book a Free Demo</a>
+      <div class="cta-contact">
+        Or reach out directly: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Rhynoflow &middot; CVR 43367994 &middot; Copenhagen, Denmark &middot; rhynoflow.com
+    </div>
+
+  </div>
+</body>
+</html>
