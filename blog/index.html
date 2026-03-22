@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog and Resources - Rhynoflow</title>
+  <meta name="description" content="Practical guides on automation for Danish businesses and foreninger. Learn what to automate, how to do it in Google, and what it actually saves you.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rhynoflow.com/blog/">
+  <meta property="og:title" content="Blog and Resources - Rhynoflow">
+  <meta property="og:description" content="Practical guides on automation for Danish businesses and foreninger.">
+  <meta property="og:site_name" content="Rhynoflow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=2">
+
+  <style>
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .blog-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .blog-card h3 { font-size: 1.2rem; margin-bottom: 10px; line-height: 1.3; }
+    .blog-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; }
+    .blog-read { font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+    .blog-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 16px; }
+    @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/for-foreninger.html">Til foreninger</a>
+        <a href="/#contact" class="btn btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="section-label">Resources</div>
+      <h1>Automation guides for Danish businesses and foreninger.</h1>
+      <p class="hero-sub">Practical posts on what to automate, how to do it in Google, and what it actually saves you.</p>
+
+      <div class="blog-grid">
+
+        <!-- Card 1 -->
+        <div class="blog-card">
+          <div class="blog-tag">Foreninger</div>
+          <h3><a href="/blog/google-automatisering-foreninger.html" style="color: inherit; text-decoration: none;">Spar 10 timer om ugen: Google automatisering for foreninger</a></h3>
+          <p>Saadan bruger danske foreninger Google Apps Script til at automatisere emails, betalinger og bestyrelseskommunikation. En praktisk gennemgang af hvad der faktisk virker.</p>
+          <a href="/blog/google-automatisering-foreninger.html" class="blog-read">Read more &rarr;</a>
+          <div class="blog-meta">6 min read</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="blog-card">
+          <div class="blog-tag">Foreninger</div>
+          <h3><a href="/blog/5-opgaver-din-forening-boer-automatisere.html" style="color: inherit; text-decoration: none;">5 opgaver din forening boer automatisere i dag</a></h3>
+          <p>De 5 mest tidskraevende adminopgaver i danske foreninger og hvad du kan goere ved dem i dag med Google. Ingen ny software, ingen teknisk viden kraevet.</p>
+          <a href="/blog/5-opgaver-din-forening-boer-automatisere.html" class="blog-read">Read more &rarr;</a>
+          <div class="blog-meta">4 min read</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">Rhyno<span>flow</span></a>
+        <p>Your admin, charged through.</p>
+        <p class="footer-location">K&oslash;benhavn, Danmark</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/scorecard.html">Free Scorecard</a>
+        <a href="/#contact">Contact</a>
+        <a href="/for-foreninger.html">Til foreninger</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rhynoflow &middot; CVR 43367994 &middot; <a href="/privacy.html" style="color:inherit;">Privacy Policy</a> &middot; <a href="/terms.html" style="color:inherit;">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

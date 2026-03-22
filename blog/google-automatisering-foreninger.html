@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spar 10 timer om ugen: Google automatisering for foreninger - Rhynoflow</title>
+  <meta name="description" content="Saadan bruger danske foreninger Google Apps Script til at automatisere emails, betalinger og bestyrelseskommunikation. Gratis guide.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rhynoflow.com/blog/google-automatisering-foreninger.html">
+  <meta property="og:title" content="Spar 10 timer om ugen: Google automatisering for foreninger">
+  <meta property="og:description" content="Saadan bruger danske foreninger Google Apps Script til at automatisere emails, betalinger og bestyrelseskommunikation.">
+  <meta property="og:site_name" content="Rhynoflow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=2">
+
+  <style>
+    .post-hero { padding: 100px 0 60px; }
+    .post-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); margin-top: 16px; margin-bottom: 0; }
+    .post-body { max-width: 720px; margin: 0 auto; padding: 60px 24px 100px; }
+    .post-body h2 { font-size: 1.5rem; margin-top: 48px; margin-bottom: 16px; line-height: 1.3; }
+    .post-body p { font-size: 1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+    .post-body ul { padding-left: 20px; margin-bottom: 20px; }
+    .post-body ul li { font-size: 1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 8px; }
+    .post-body strong { color: var(--text); }
+    .post-cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; margin-top: 60px; text-align: center; }
+    .post-cta-box h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .post-cta-box p { margin-bottom: 24px; }
+    .post-back { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/for-foreninger.html">Til foreninger</a>
+        <a href="/#contact" class="btn btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Post hero -->
+  <section class="post-hero">
+    <div class="container" style="max-width: 720px;">
+      <a href="/blog/" class="post-back">&larr; Tilbage til blog</a>
+      <div class="post-tag" style="margin-top: 24px;">Foreninger</div>
+      <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; margin-bottom: 0;">Spar 10 timer om ugen: Google automatisering for foreninger</h1>
+      <p class="post-meta">6 min laesning &middot; Rhynoflow</p>
+    </div>
+  </section>
+
+  <!-- Post body -->
+  <div class="post-body">
+
+    <p>Hvis du driver en forening i Danmark, kender du det her scenarie. Det er soendag aften, og du sidder og skriver de samme emails du skrev for to uger siden. Pamindsler om kontingent. Besked til foraeldre om traeningstider. Opdatering til bestyrelsen om hvad der sker. Mandag morgen starter du med 20 ulaeeste beskeder og ingen overblik.</p>
+
+    <p>Det er ikke et organisationsproblem. Det er et automatiseringsproblem. Og det kan loeses gratis, i det Google-setup du allerede har.</p>
+
+    <h2>Hvad kan automatiseres?</h2>
+
+    <p>Her er de fire omraader, hvor danske foreninger sparer mest tid med Google Apps Script.</p>
+
+    <p><strong>Morgenbriefing kl. 6:30</strong></p>
+    <p>Et script korer hver hverdag kl. 6:30 og sender dig en email med dagens kalenderaftaler, flaggede emails fra indbakken og en oversigt over hvad der sker de naeste tre dage. Du aabner Gmail og ved allerede hvad dagen kraever, inden du har tabt en minut paa at sortere.</p>
+
+    <p><strong>Automatiske remindere ved frister</strong></p>
+    <p>Ansogningsfrister, generalforsamlingsindkaldelse, tilmeldingsfrister til staevner. Scriptet tjekker din Google Sheet med frister og sender dig en notifikation 7, 3 og 1 dag foer. Ingenting bliver glemt mere.</p>
+
+    <p><strong>Ugentlig bestyrelsesdigest</strong></p>
+    <p>Hver mandag morgen sender systemet automatisk en kort opdatering til bestyrelsen. Hvad sker der denne uge, hvad er der af opfoelgningspunkter, og hvilke beslutninger venter. Ingen manuel koordinering, ingen "glemte du at sende referatet?".</p>
+
+    <p><strong>Betalingsopfoelgning</strong></p>
+    <p>Hvert indgaaende belob via MobilePay eller bankoverfoersel registreres automatisk i en Google Sheet med dato, belob og afsender. Gebyr traekkes fra. Du har altid styr paa hvad der er kommet ind og hvad der mangler.</p>
+
+    <h2>Hvad kraever det teknisk?</h2>
+
+    <p>Mindre end du tror. Her er hvad du faktisk har brug for:</p>
+
+    <ul>
+      <li>En Google-konto (gmail.com er nok. Google Workspace er bedre, men ikke nodvendigt)</li>
+      <li>Google Apps Script, som er gratis og allerede inkluderet i din Google-konto</li>
+      <li>En Google Sheet som fungerer som database for frister og betalinger</li>
+      <li>Ca. 30 minutter per automatisering til opsaetning</li>
+    </ul>
+
+    <p>Google Apps Script er Googles eget programmeringssproget der koerer direkte i din browser. Det kraver ingen installationer, ingen servere og ingen abonnementer. Det koerer i skyen og stopper ikke naer du lukker computeren.</p>
+
+    <h2>Hvad sparer du?</h2>
+
+    <p>Talata Basketball i Kobenhavn korer i dag seks automatiseringer. De sparer ca. 12 timer om ugen paa admin. Det er ikke spekulation, det er det faktiske resultat efter to maaneders drift.</p>
+
+    <p>Eksempel: Foer automatisering sendte de ugentlige traeningstider til foraeldre manuelt. Det tog 1,5 til 2 timer om ugen nar man regner koordinering, skrivning og opfoelgning med. Nu korer det hvert fredag kl. 16 uden at nogen rorer det.</p>
+
+    <p>Lidt matematisk: 2 timer om ugen er 104 timer om aaret. Hvis din tid er 300 DKK i timen, er det 31.200 DKK i tabt tid per ar bare paa den ene automatisering.</p>
+
+    <p>De fleste foreninger har 5 til 10 opgaver af den her type.</p>
+
+    <h2>Vil du have det sat op for dig?</h2>
+
+    <p>Vi bygger det direkte ind i din Google-konto. Du behoever ikke vide noget om kode, og du behoever ikke finde ud af det selv. Vi taler med dig i 30 minutter om hvad der aeder din tid, og saa bygger vi det. Det koerer typisk inden for en uge.</p>
+
+    <div class="post-cta-box">
+      <h3>Book en gratis demo</h3>
+      <p>Vi kigger paa dit konkrete setup og fortaeller dig praecis hvad vi ville automatisere foerst. Ingen salg, ingen forpligtelse. Bare et aerlighed kig.</p>
+      <a href="/#contact" class="btn btn-primary">Book en gratis demo</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">Rhyno<span>flow</span></a>
+        <p>Your admin, charged through.</p>
+        <p class="footer-location">K&oslash;benhavn, Danmark</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/scorecard.html">Free Scorecard</a>
+        <a href="/#contact">Contact</a>
+        <a href="/for-foreninger.html">Til foreninger</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rhynoflow &middot; CVR 43367994 &middot; <a href="/privacy.html" style="color:inherit;">Privacy Policy</a> &middot; <a href="/terms.html" style="color:inherit;">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>
