@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I got 12 hours a week back (and kept coaching) | Rhynoflow</title>
+  <meta name="description" content="Running a basketball club in Copenhagen taught me one thing about admin: it doesn't stop. Here's how I fixed it with Google — and what I'd do differently.">
+  <meta property="og:title" content="How I got 12 hours a week back (and kept coaching)">
+  <meta property="og:description" content="Running a 53-member basketball club taught me one thing about admin: it doesn't stop. Here's exactly what I automated and how.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rhynoflow.com/blog/how-i-got-12-hours-back.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=2">
+  <style>
+    .post-hero {
+      padding: 120px 0 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .post-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(34,197,94,0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .post-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+    .post-intro {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .post-body {
+      padding: 60px 0 80px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .post-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .post-body p strong {
+      color: var(--text);
+    }
+    .post-body h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 48px 0 16px;
+      letter-spacing: -0.5px;
+    }
+    .automation-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .automation-card strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .automation-card p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+    .post-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .post-cta-box {
+      background: var(--card-dark, #0a0a0a);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      margin-top: 56px;
+      text-align: center;
+    }
+    .post-cta-box h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .post-cta-box p {
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    .big-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .numbers-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .number-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .number-box span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    @media (max-width: 768px) {
+      .numbers-row { grid-template-columns: 1fr; }
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/scorecard.html">Scorecard</a>
+        <a href="/for-foreninger.html">Til foreninger</a>
+        <a href="/#contact" class="btn btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-meta">
+        <span class="post-tag">Small Business</span>
+        <span>6 min read</span>
+        <span>March 2026</span>
+      </div>
+      <h1>How I got 12 hours a week back (and kept coaching)</h1>
+      <p class="post-intro">Running a basketball club in Copenhagen taught me one thing about admin: it doesn't stop. Here's exactly what I automated and how.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="post-body">
+
+      <p>I'm a basketball coach. That's the job.</p>
+
+      <p>But if you looked at my week two years ago, you'd think I ran an email business with a side hustle in basketball.</p>
+
+      <p>Every week: game reminders to parents. Payment follow-ups. Board updates. Grant deadlines. Training schedules. Gym bookings. And somewhere in there, actual coaching.</p>
+
+      <p>I counted once. <strong>12 hours a week on admin.</strong> For a 53-member club where nobody gets paid to do it.</p>
+
+      <p>That's the thing about running a club, a forening, or a small business in Denmark. The admin doesn't care that you're also the coach, the manager, and the person who sets up the cones.</p>
+
+      <div class="numbers-row">
+        <div class="number-box">
+          <span class="big-number">53</span>
+          <span>members to manage</span>
+        </div>
+        <div class="number-box">
+          <span class="big-number">12</span>
+          <span>hours/week on admin</span>
+        </div>
+        <div class="number-box">
+          <span class="big-number">0 kr</span>
+          <span>extra software cost</span>
+        </div>
+      </div>
+
+      <h2>So I did something about it.</h2>
+
+      <p>I'm not a developer. But I know Google. And Google Apps Script — the free tool built into every Google account — can automate almost anything that runs through Gmail and Calendar.</p>
+
+      <p>Six weeks of evenings. Six scripts. Here's what we built:</p>
+
+      <div class="automation-card">
+        <strong>Morning Briefing</strong>
+        <p>Every day at 6:30, an email hits my inbox. Calendar, flagged messages, open tasks, upcoming deadlines. I used to spend the first 30 minutes of every morning figuring out what the day looked like. Now I read it in 3 minutes over coffee.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Game Day Reminders</strong>
+        <p>Parents get a reminder 24 hours before every game. Date, time, location, what to bring. Sent automatically. I haven't typed one of these in months.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Payment Tracking</strong>
+        <p>Every MobilePay payment gets logged the moment it lands. Amount, date, member name, net after fees. I used to do this by hand in a spreadsheet every Sunday night.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Deadline Alerts</strong>
+        <p>Any deadline I care about gets flagged at 7, 3, and 1 day out. Grant applications, gym booking windows, board meeting prep. Nothing slips anymore.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Weekly Board Digest</strong>
+        <p>Every Monday, the board gets a one-page summary of the week. I didn't write it. It wrote itself.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Smart Reply Drafts</strong>
+        <p>Incoming emails that need a response get a draft reply ready in my Gmail. I review and send. Two minutes instead of fifteen.</p>
+      </div>
+
+      <hr class="post-divider">
+
+      <p>Total setup time: about 3 weeks of evenings. Cost: 0 kr. All of it runs inside our existing Google account. No new tools, no new logins. It's all in Gmail and Calendar.</p>
+
+      <p><strong>The 12 hours dropped to maybe 2.</strong> The 2 hours that are left are things that actually need a human.</p>
+
+      <h2>The problem is most clubs don't have 3 weeks of evenings.</h2>
+
+      <p>Most foreninger, gyms, and small businesses in Denmark are run by one or two people who are already doing three jobs at once. Building this yourself takes time you don't have.</p>
+
+      <p>That's why we turned it into a service.</p>
+
+      <p>Rhynoflow takes exactly what we built for Talata Basketball and builds it for your organisation. Same tools. Same approach. All inside your existing Google account. We build it, we maintain it, and it runs while you focus on the actual work.</p>
+
+      <p>Setup fee is waived until May 1 for the first 5 clients. 3 spots are left.</p>
+
+      <div class="post-cta-box">
+        <h3>See what we'd build for you.</h3>
+        <p>Book a free 30-minute call. We look at your actual setup and tell you exactly what to automate first. No pitch, no pressure.</p>
+        <a href="/#contact" class="btn btn-primary">Book a Free Demo</a>
+        <p style="margin-top:16px; font-size:0.82rem;">or email: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo">Rhyno<span>flow</span></a>
+        <p class="footer-location">København, Danmark</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#how">How It Works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Rhynoflow · CVR 43367994 · <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>
