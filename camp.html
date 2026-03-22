@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Culture — Talata Basketball</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --orange: #f97316;
+      --orange-dim: #c2530d;
+      --green: #22c55e;
+      --green-dim: #16a34a;
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --surface2: #242424;
+      --text: #ffffff;
+      --text-muted: #9ca3af;
+      --border: #2d2d2d;
+      --transition: 420ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--orange);
+      transition: width var(--transition);
+      z-index: 100;
+    }
+
+    /* Slide counter */
+    #slide-counter {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      z-index: 100;
+    }
+
+    /* Keyboard hint */
+    #kb-hint {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #555;
+      letter-spacing: 0.04em;
+      z-index: 100;
+      transition: opacity 0.6s ease;
+    }
+
+    /* Nav buttons */
+    #nav-prev, #nav-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, opacity 0.2s;
+      font-size: 1.1rem;
+    }
+    #nav-prev { left: 16px; }
+    #nav-next { right: 70px; }
+    #nav-prev:hover, #nav-next:hover {
+      background: rgba(249,115,22,0.15);
+      color: var(--orange);
+      border-color: var(--orange);
+    }
+    #nav-prev.hidden, #nav-next.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Slide wrapper */
+    #slides-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 80px;
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity var(--transition), transform var(--transition);
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    .slide.exit-left {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    /* Headlines */
+    .headline {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    .headline-xl {
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+    }
+
+    .subtext {
+      font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    .interactive-cue {
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-weight: 600;
+      color: var(--orange);
+      margin-top: 24px;
+      align-self: flex-start;
+    }
+
+    /* Poll buttons */
+    .poll-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .poll-btn {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      font-weight: 700;
+      padding: 20px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+      user-select: none;
+    }
+
+    .poll-btn:hover {
+      border-color: var(--orange);
+      background: rgba(249,115,22,0.08);
+    }
+
+    .poll-btn:active {
+      transform: scale(0.97);
+    }
+
+    .poll-btn.selected-orange {
+      background: rgba(249,115,22,0.18);
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .poll-btn.selected-green {
+      background: rgba(34,197,94,0.18);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .poll-btn.funny {
+      font-style: italic;
+      font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+    }
+
+    /* Stat boxes */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: 100%;
+      margin: 24px 0 16px;
+    }
+
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: var(--orange);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Points list */
+    .points-list {
+      list-style: none;
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .points-list li {
+      font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+      font-weight: 700;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      line-height: 1.3;
+    }
+
+    .points-list li:last-child {
+      border-bottom: none;
+    }
+
+    .point-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* Numbered list */
+    .numbered-list {
+      list-style: none;
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .numbered-list li {
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 700;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      line-height: 1.3;
+    }
+
+    .numbered-list li:last-child {
+      border-bottom: none;
+    }
+
+    .num-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #000;
+      font-weight: 900;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Scenario cards */
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      width: 100%;
+      margin: 16px 0;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 18px;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    /* Two-column compare */
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      margin: 16px 0;
+    }
+
+    .compare-col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px;
+    }
+
+    .compare-col.most { border-color: #ef4444; }
+    .compare-col.elite { border-color: var(--green); }
+
+    .compare-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .compare-label.red { color: #ef4444; }
+    .compare-label.green { color: var(--green); }
+
+    .compare-item {
+      font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+      font-weight: 500;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .compare-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Big rule */
+    .big-rule {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--orange);
+      text-align: center;
+      padding: 28px 32px;
+      border: 2px solid var(--orange);
+      border-radius: 16px;
+      width: 100%;
+      margin: 20px 0;
+      letter-spacing: -0.01em;
+    }
+
+    /* Code slots (slide 10) */
+    .code-slots {
+      width: 100%;
+      margin: 16px 0;
+    }
+
+    .code-slot {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 2px dashed var(--border);
+    }
+
+    .code-slot:last-child {
+      border-bottom: none;
+    }
+
+    .code-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--orange);
+      min-width: 40px;
+    }
+
+    .code-line {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+    }
+
+    /* Commitment buttons */
+    .commit-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .commit-btn {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-weight: 700;
+      padding: 18px 28px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+      user-select: none;
+    }
+
+    .commit-btn::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .commit-btn:hover {
+      border-color: var(--green);
+      background: rgba(34,197,94,0.06);
+    }
+
+    .commit-btn:active {
+      transform: scale(0.99);
+    }
+
+    .commit-btn.selected-green {
+      background: rgba(34,197,94,0.15);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .commit-btn.selected-green::before {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    /* Slide 1 specific */
+    .be-honest {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #555;
+      margin-top: 16px;
+      font-style: italic;
+      align-self: flex-start;
+    }
+
+    /* Slide 12 close */
+    .slide-close {
+      text-align: center;
+    }
+
+    .close-big {
+      font-size: clamp(4rem, 9vw, 8rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+    }
+
+    .close-sub {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .close-pause {
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      font-weight: 500;
+      color: #555;
+      margin-top: 40px;
+      line-height: 1.6;
+    }
+
+    .close-brand {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #3a3a3a;
+      margin-top: 48px;
+    }
+
+    .accent { color: var(--orange); }
+    .accent-green { color: var(--green); }
+
+    /* Orange highlight text */
+    .highlight {
+      color: var(--orange);
+    }
+
+    /* Emphasis line */
+    .emphasis-line {
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: var(--surface2);
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      align-self: flex-start;
+      width: 100%;
+      line-height: 1.4;
+    }
+
+    /* Full width constraint */
+    .slide-inner {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .slide-center {
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide {
+        padding: 48px 32px;
+      }
+
+      .poll-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-row {
+        grid-template-columns: 1fr;
+      }
+
+      .card-row {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-row {
+        grid-template-columns: 1fr;
+      }
+
+      #nav-prev { display: none; }
+      #nav-next { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="slide-counter">1 / 12</div>
+<div id="kb-hint">&#8592; &#8594; to navigate</div>
+
+<button id="nav-prev" class="hidden" aria-label="Previous slide">&#8592;</button>
+<button id="nav-next" aria-label="Next slide">&#8594;</button>
+
+<div id="slides-wrapper">
+
+  <!-- SLIDE 1: HOOK -->
+  <div class="slide active" data-slide="1">
+    <div class="slide-inner">
+      <div class="section-label">Let's start here</div>
+      <h1 class="headline">How long were you on your phone yesterday?</h1>
+      <div class="poll-grid" data-group="s1" data-mode="orange">
+        <button class="poll-btn">Less than 2 hours</button>
+        <button class="poll-btn">2 to 4 hours</button>
+        <button class="poll-btn">4 to 6 hours</button>
+        <button class="poll-btn">More than 6 hours</button>
+      </div>
+      <p class="be-honest">Be honest.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: THE REALITY -->
+  <div class="slide" data-slide="2">
+    <div class="slide-inner">
+      <div class="section-label">The Numbers</div>
+      <h1 class="headline">The average kid your age: <span class="highlight">5 hours a day.</span></h1>
+      <p class="subtext">That's 35 hours a week. More than a full-time job.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-number">1,825</div>
+          <div class="stat-label">hours / year on a phone</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">35 hrs</div>
+          <div class="stat-label">average screen time per week</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">2 hrs less</div>
+          <div class="stat-label">sleep than 10 years ago</div>
+        </div>
+      </div>
+      <p class="interactive-cue">Raise your hand if you think you use it more than average.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: SLEEP -->
+  <div class="slide" data-slide="3">
+    <div class="slide-inner">
+      <div class="section-label">Sleep</div>
+      <h1 class="headline">No sleep. No game.</h1>
+      <ul class="points-list">
+        <li><span class="point-dot"></span>Phone before bed = 1 hour less sleep</li>
+        <li><span class="point-dot"></span>Less sleep = slower reaction time</li>
+        <li><span class="point-dot"></span>Slower reactions = you get beaten to the ball</li>
+      </ul>
+      <p class="interactive-cue">Who checks their phone right before they sleep? Be honest. Hands up.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: FOCUS -->
+  <div class="slide" data-slide="4">
+    <div class="slide-inner">
+      <div class="section-label">Focus</div>
+      <h1 class="headline">Every notification breaks your focus for <span class="highlight">23 minutes.</span></h1>
+      <p class="subtext">That's not us making it up. That's science.</p>
+      <p class="subtext" style="margin-bottom: 12px;">At training, how many times does your mind wander to your phone?</p>
+      <div class="poll-grid" data-group="s4" data-mode="orange">
+        <button class="poll-btn">Never</button>
+        <button class="poll-btn">Sometimes</button>
+        <button class="poll-btn">Often</button>
+        <button class="poll-btn funny">My coach has to yell at me</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: THE TEAM THING -->
+  <div class="slide" data-slide="5">
+    <div class="slide-inner">
+      <div class="section-label">Team</div>
+      <h1 class="headline">The phone is a wall.</h1>
+      <p class="subtext">When you're on your phone around your teammates, you're not really there.</p>
+      <div class="card-row">
+        <div class="card">In the locker room before a game</div>
+        <div class="card">On the bus to away games</div>
+        <div class="card">After training, cooling down together</div>
+      </div>
+      <p class="subtext" style="margin-top: 4px;">What are you missing when you're scrolling?</p>
+      <p class="interactive-cue">Shout out your answers.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: GAME DAY -->
+  <div class="slide" data-slide="6">
+    <div class="slide-inner">
+      <div class="section-label">Game Day</div>
+      <h1 class="headline">Game day is different.</h1>
+      <div class="big-rule">Phone goes away 2 hours before tip-off.</div>
+      <ul class="points-list">
+        <li><span class="point-dot"></span>Your mind needs to get into the game</li>
+        <li><span class="point-dot"></span>Scrolling puts you in consumer mode, not competitor mode</li>
+        <li><span class="point-dot"></span>Your teammates need your energy, not your screen</li>
+      </ul>
+      <p class="interactive-cue">Who thinks they can do this? Hands up.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: TRAINING -->
+  <div class="slide" data-slide="7">
+    <div class="slide-inner">
+      <div class="section-label">Training</div>
+      <h1 class="headline">The court is a phone-free zone.</h1>
+      <ol class="numbered-list">
+        <li><span class="num-badge">1</span>Phone in your bag before we start</li>
+        <li><span class="num-badge">2</span>No checking between drills</li>
+        <li><span class="num-badge">3</span>If it rings, it can wait</li>
+      </ol>
+      <div class="emphasis-line">The player who is fully present at training improves faster. Every time.</div>
+      <p class="interactive-cue" style="margin-top: 20px;">What would change about your training if your phone wasn't there?</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: THE MORNING -->
+  <div class="slide" data-slide="8">
+    <div class="slide-inner">
+      <div class="section-label">Morning</div>
+      <h1 class="headline">How you start the morning sets the day.</h1>
+      <div class="compare-row">
+        <div class="compare-col most">
+          <div class="compare-label red">Most Players</div>
+          <div class="compare-item">Wake up</div>
+          <div class="compare-item">Check phone, scroll for 20 min</div>
+          <div class="compare-item">Rush breakfast</div>
+          <div class="compare-item">Arrive distracted</div>
+        </div>
+        <div class="compare-col elite">
+          <div class="compare-label green">Elite Players</div>
+          <div class="compare-item">Wake up</div>
+          <div class="compare-item">No phone for 30 min, eat</div>
+          <div class="compare-item">Visualise</div>
+          <div class="compare-item">Arrive focused</div>
+        </div>
+      </div>
+      <p class="subtext">This is a choice you make every single morning.</p>
+      <p class="interactive-cue">Who wakes up and checks their phone within 5 minutes? Hands up.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 9: THE SCIENCE -->
+  <div class="slide" data-slide="9">
+    <div class="slide-inner">
+      <div class="section-label">Why It Matters</div>
+      <h1 class="headline">Your brain at 12-13 is literally still being built.</h1>
+      <ul class="points-list">
+        <li><span class="point-dot"></span>Dopamine hits from likes rewire how your brain seeks reward</li>
+        <li><span class="point-dot"></span>The habits you build now stick for life</li>
+        <li><span class="point-dot"></span>Athletes who control their phone use report better focus and confidence</li>
+      </ul>
+      <div class="emphasis-line">You have a choice most adults never got to make at your age.</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10: BUILD YOUR CODE -->
+  <div class="slide" data-slide="10">
+    <div class="slide-inner">
+      <div class="section-label">Your Rules</div>
+      <h1 class="headline">What's our phone code?</h1>
+      <p class="subtext">You decide. We write it together.</p>
+      <div class="code-slots">
+        <div class="code-slot">
+          <span class="code-num">1.</span>
+          <div class="code-line"></div>
+        </div>
+        <div class="code-slot">
+          <span class="code-num">2.</span>
+          <div class="code-line"></div>
+        </div>
+        <div class="code-slot">
+          <span class="code-num">3.</span>
+          <div class="code-line"></div>
+        </div>
+        <div class="code-slot">
+          <span class="code-num">4.</span>
+          <div class="code-line"></div>
+        </div>
+      </div>
+      <p class="interactive-cue">Shout out your ideas. These are YOUR rules. Not the coach's rules. Yours.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 11: THE COMMITMENT -->
+  <div class="slide" data-slide="11">
+    <div class="slide-inner">
+      <div class="section-label">Your Move</div>
+      <h1 class="headline">One thing. Starting today.</h1>
+      <p class="subtext" style="margin-bottom: 4px;">Pick one thing from this list you'll actually do:</p>
+      <div class="commit-grid" data-group="s11" data-mode="green">
+        <button class="commit-btn">No phone 30 min after waking up</button>
+        <button class="commit-btn">Phone in my bag during training</button>
+        <button class="commit-btn">No phone 2 hours before games</button>
+        <button class="commit-btn">No phone in the locker room</button>
+        <button class="commit-btn">No phone after 10pm</button>
+      </div>
+      <p class="be-honest" style="margin-top: 20px; color: #555;">Remember what you picked.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 12: CLOSE -->
+  <div class="slide" data-slide="12">
+    <div class="slide-inner slide-center" style="align-items: center; width: 100%; text-align: center;">
+      <h1 class="close-big">You control the phone.</h1>
+      <p class="close-sub">Or it controls you.</p>
+      <p class="close-pause">That's your choice. Every single day.</p>
+      <p class="close-brand">Talata Basketball &middot; Copenhagen</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('slide-counter');
+  const progressBar = document.getElementById('progress-bar');
+  const navPrev = document.getElementById('nav-prev');
+  const navNext = document.getElementById('nav-next');
+  const kbHint = document.getElementById('kb-hint');
+  const total = slides.length;
+  let current = 0;
+  let isAnimating = false;
+
+  function goTo(index) {
+    if (index < 0 || index >= total || isAnimating) return;
+    isAnimating = true;
+
+    const prev = slides[current];
+    const next = slides[index];
+
+    const direction = index > current ? 1 : -1;
+
+    // Setup outgoing
+    prev.classList.remove('active');
+    if (direction > 0) {
+      prev.classList.add('exit-left');
+    } else {
+      prev.style.transform = 'translateX(60px)';
+      prev.style.opacity = '0';
+    }
+
+    // Setup incoming
+    next.style.transform = direction > 0 ? 'translateX(60px)' : 'translateX(-60px)';
+    next.style.opacity = '0';
+    next.style.transition = 'none';
+    next.style.pointerEvents = 'none';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        next.style.transition = '';
+        next.classList.add('active');
+        next.style.transform = 'translateX(0)';
+        next.style.opacity = '1';
+        next.style.pointerEvents = '';
+      });
+    });
+
+    setTimeout(() => {
+      prev.classList.remove('exit-left');
+      prev.style.transform = '';
+      prev.style.opacity = '';
+      prev.style.transition = '';
+      isAnimating = false;
+    }, 460);
+
+    current = index;
+    updateUI();
+  }
+
+  function updateUI() {
+    counter.textContent = (current + 1) + ' / ' + total;
+    const pct = ((current + 1) / total) * 100;
+    progressBar.style.width = pct + '%';
+
+    navPrev.classList.toggle('hidden', current === 0);
+    navNext.classList.toggle('hidden', current === total - 1);
+
+    // Hide keyboard hint after slide 1
+    if (current > 0) {
+      kbHint.style.opacity = '0';
+    } else {
+      kbHint.style.opacity = '1';
+    }
+  }
+
+  navPrev.addEventListener('click', () => goTo(current - 1));
+  navNext.addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(current - 1);
+  });
+
+  // Touch / swipe
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) goTo(current + 1);
+      else goTo(current - 1);
+    }
+  }, { passive: true });
+
+  // Poll buttons — orange group (single select)
+  document.querySelectorAll('[data-group][data-mode="orange"]').forEach(group => {
+    group.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.poll-btn').forEach(b => b.classList.remove('selected-orange'));
+        btn.classList.add('selected-orange');
+      });
+    });
+  });
+
+  // Commit buttons — green group (single select)
+  document.querySelectorAll('[data-group][data-mode="green"]').forEach(group => {
+    group.querySelectorAll('.commit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.commit-btn').forEach(b => b.classList.remove('selected-green'));
+        btn.classList.add('selected-green');
+      });
+    });
+  });
+
+  updateUI();
+</script>
+</body>
+</html>
