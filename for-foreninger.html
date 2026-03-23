@@ -143,7 +143,7 @@
   <section class="hero">
     <div class="container">
       <div class="da-badge">Til foreninger i Danmark</div>
-      <div class="hero-badge">Ops&aelig;tning gratis frem til 1. maj &middot; <span class="spots-remaining-da">3 af 5 pladser tilbage</span></div>
+      <div class="hero-badge">Forårstilbud: Ops&aelig;tning gratis frem til 1. maj 2026</div>
 
       <h1>Stop med at lade <span class="highlight">&eacute;n person b&aelig;re det hele.</span></h1>
       <p class="hero-sub">I de fleste foreninger er det &eacute;n eller to frivillige, der g&oslash;r alt: emails, p&aring;mindelser, bestyrelsesm&oslash;der, tilskudsfrist, kontingentopkr&aelig;vning. Det slider. Rhynoflow automatiserer det, s&aring; I kan bruge kr&aelig;fterne p&aring; foreningen selv.</p>
@@ -226,9 +226,10 @@
       <p class="section-sub">Ingen binding. Ingen sl&oslash;r. Alt k&oslash;rer i jeres Google-konto.</p>
 
       <div class="early-adopter-banner" style="max-width:560px; margin: 0 auto 2rem;">
+        <span class="early-icon">🌱</span>
         <div>
-          <strong>Lanceringstilbud: ops&aelig;tning gratis &middot; 3 af 5 pladser tilbage</strong>
-          <span>Skriv under f&oslash;r 1. maj 2026 og betal kun det m&aring;nedlige.</span>
+          <strong>Forårstilbud: opsætning gratis frem til 1. maj 2026</strong>
+          <span>Skriv under før 1. maj og betal kun det månedlige. Ingen opsætningsgebyr, ingen binding.</span>
         </div>
       </div>
 
@@ -367,15 +368,6 @@
       });
     });
 
-    // Dynamic spots counter
-    fetch('spots.json')
-      .then(r => r.json())
-      .then(data => {
-        document.querySelectorAll('.spots-remaining-da').forEach(el => {
-          el.textContent = data.remaining + ' af ' + data.total + ' pladser tilbage';
-        });
-      })
-      .catch(() => {});
 
     // Mobile menu
     const toggle = document.querySelector('.mobile-toggle');

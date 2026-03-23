@@ -249,12 +249,12 @@
       <h2>Simple pricing. No surprises.</h2>
       <p class="section-sub">No contracts. Cancel anytime. Everything stays in your Google account.</p>
 
-      <!-- Early adopter banner -->
+      <!-- Spring offer banner -->
       <div class="early-adopter-banner">
-        <span class="early-icon">🎉</span>
+        <span class="early-icon">🌱</span>
         <div>
-          <strong>Launch offer: setup fee waived &middot; <span class="spots-remaining">3 of 5 spots left</span></strong>
-          <span>Sign before May 1, 2026 and pay only the monthly. First 5 clients get this deal.</span>
+          <strong>Spring offer: setup fee waived until May 1, 2026</strong>
+          <span>Sign before May 1 and pay only the monthly. No setup cost, no commitment.</span>
         </div>
       </div>
 
@@ -577,15 +577,6 @@
     });
 
 
-    // Dynamic spots counter
-    fetch('spots.json')
-      .then(r => r.json())
-      .then(data => {
-        document.querySelectorAll('.spots-remaining').forEach(el => {
-          el.textContent = data.remaining + ' of ' + data.total + ' spots left';
-        });
-      })
-      .catch(() => {});
 
     // Sticky nav shadow
     const nav = document.querySelector('.nav');

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhynoflow — Dansk Puslespilsforening</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    /* HEADER */
+    .header {
+      background: #111;
+      padding: 26px 36px 22px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .logo span { color: #4ade80; }
+    .logo-sub { color: #555; font-size: 11px; margin-top: 4px; font-weight: 400; }
+    .header-right { text-align: right; }
+    .header-right .client-name { color: #fff; font-size: 15px; font-weight: 700; }
+    .header-right .meta { color: #666; font-size: 11px; margin-top: 3px; line-height: 1.6; }
+    .header-right .meta span { color: #4ade80; }
+
+    /* GREEN STRIPE */
+    .stripe {
+      background: #4ade80;
+      padding: 11px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stripe p { font-size: 12px; font-weight: 700; color: #111; }
+    .stripe .date { font-size: 11px; font-weight: 600; color: #065f46; }
+
+    /* BODY */
+    .body { padding: 26px 36px; }
+
+    /* HEADLINE BLOCK */
+    .headline {
+      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .headline h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #111;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .headline h1 em { color: #4ade80; font-style: normal; }
+    .headline p { color: #555; font-size: 13px; line-height: 1.6; max-width: 90%; }
+
+    /* MAIN GRID */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* SECTION */
+    .section-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4ade80;
+      margin-bottom: 10px;
+    }
+
+    /* FEATURE LIST */
+    .feature-list { list-style: none; }
+    .feature-list li {
+      padding: 8px 0 8px 20px;
+      position: relative;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .feature-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4ade80;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .feature-list .feat-title { font-size: 12.5px; font-weight: 700; color: #111; }
+    .feature-list .feat-desc { font-size: 11px; color: #777; margin-top: 2px; line-height: 1.4; }
+
+    /* PRICE CARD */
+    .price-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 20px 22px;
+      height: fit-content;
+    }
+    .price-card .tier { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #4ade80; margin-bottom: 6px; }
+    .price-card .amount { font-size: 38px; font-weight: 900; color: #fff; letter-spacing: -1px; line-height: 1; }
+    .price-card .period { font-size: 12px; color: #666; margin-bottom: 14px; margin-top: 2px; }
+    .price-card .divider { border: none; border-top: 1px solid #222; margin: 10px 0; }
+    .price-card .line { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; }
+    .price-card .line-label { font-size: 11.5px; color: #aaa; }
+    .price-card .line-value { font-size: 11.5px; color: #fff; font-weight: 600; }
+    .price-card .line-strike { font-size: 11px; color: #444; text-decoration: line-through; }
+    .free-pill { background: #4ade80; color: #111; font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 20px; letter-spacing: 0.5px; }
+    .price-card .note { font-size: 10.5px; color: #555; margin-top: 12px; line-height: 1.5; text-align: center; border-top: 1px solid #222; padding-top: 10px; }
+
+    /* WORKSPACE BOX */
+    .workspace-box {
+      background: #ecfdf5;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 18px;
+    }
+    .workspace-box .ws-title { font-size: 12.5px; font-weight: 800; color: #065f46; margin-bottom: 5px; }
+    .workspace-box p { font-size: 12px; color: #166534; line-height: 1.6; }
+    .ws-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .ws-chip { background: #d1fae5; color: #065f46; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+
+    /* COMPARISON TABLE */
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 18px; }
+    .comp-table th {
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+      background: #f9f9f9;
+      border-bottom: 2px solid #eee;
+    }
+    .comp-table th:last-child { color: #4ade80; }
+    .comp-table td { padding: 8px 12px; border-bottom: 1px solid #f3f3f3; vertical-align: top; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table td:first-child { color: #555; width: 42%; font-size: 11.5px; }
+    .comp-table td:last-child { color: #111; font-weight: 500; font-size: 11.5px; }
+    .comp-table .dot { display: inline-block; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+    /* STEPS */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px; }
+    .step-box { background: #f9f9f9; border-radius: 10px; padding: 14px 14px 12px; }
+    .step-num {
+      width: 26px; height: 26px;
+      background: #4ade80; color: #111;
+      border-radius: 50%;
+      font-size: 12px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 8px;
+    }
+    .step-box .step-title { font-size: 12px; font-weight: 700; color: #111; margin-bottom: 3px; }
+    .step-box .step-desc { font-size: 10.5px; color: #888; line-height: 1.4; }
+
+    /* QUOTE */
+    .quote-block {
+      background: #111;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .quote-item { }
+    .quote-item .q-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4ade80; margin-bottom: 6px; }
+    .quote-item .q-text { font-size: 12px; color: #ccc; line-height: 1.5; font-style: italic; }
+
+    /* FOOTER */
+    .footer {
+      background: #111;
+      padding: 16px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left p { color: #555; font-size: 11px; line-height: 1.7; }
+    .footer-left strong { color: #fff; }
+    .footer-left a { color: #4ade80; text-decoration: none; }
+    .footer-right .f-logo { font-size: 16px; font-weight: 800; color: #fff; text-align: right; }
+    .footer-right .f-logo span { color: #4ade80; }
+    .footer-right .f-offer { font-size: 10px; color: #444; text-align: right; margin-top: 3px; }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; }
+      @page { margin: 0; size: A4; }
+    }
+    @media screen {
+      body { background: #e8e8e8; padding: 24px; }
+      .page { box-shadow: 0 8px 48px rgba(0,0,0,0.18); border-radius: 4px; overflow: hidden; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="logo">Rhyno<span>flow</span></div>
+      <div class="logo-sub">Din admin kører. Du behøver ikke tænke på det.</div>
+    </div>
+    <div class="header-right">
+      <div class="client-name">Dansk Puslespilsforening</div>
+      <div class="meta">
+        Forslag til bestyrelsen &middot; <span>24. marts 2026</span><br>
+        Præsenteret af Sofie Jule Andersen
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIPE -->
+  <div class="stripe">
+    <p>Hvad Rhynoflow bygger til Dansk Puslespilsforening</p>
+    <span class="date">Tidsbegrænset tilbud udløber 1. maj 2026</span>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- HEADLINE -->
+    <div class="headline">
+      <h1>Fire frivillige. 100+ medlemmer.<br><em>Ingen af jer burde bruge en weekend på admin.</em></h1>
+      <p>I dag deler alle fire bestyrelsesmedlemmer adminbyrden. Hver begivenhed skaber en måned med mails og spørgsmål. Dokumenter ligger spredt over tre konti. Ingenting sker automatisk. Rhynoflow ændrer det. Et fast månedligt beløb. Alt kører inde i jeres eksisterende Google-konto. Intet nyt software. Ingen nye logins.</p>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+
+      <!-- FEATURES -->
+      <div>
+        <div class="section-label">Hvad vi bygger til jer</div>
+        <ul class="feature-list">
+          <li>
+            <div class="feat-title">Ugentlig bestyrelsebriefing hver mandag</div>
+            <div class="feat-desc">Hvert bestyrelsesmedlem får sin egen opgaveliste. Bestyrelsesmødet kl. 20:15 er automatisk på dagsordenen.</div>
+          </li>
+          <li>
+            <div class="feat-title">Begivenhedsautomatisering fra start til slut</div>
+            <div class="feat-desc">Påmindelser til medlemmer, opfølgninger, trøjebestillinger til Norden. Alt klares, før I tænker på det.</div>
+          </li>
+          <li>
+            <div class="feat-title">Deadlineark til hele bestyrelsen</div>
+            <div class="feat-desc">Konkurrencefrister, GA-varsler, DIF/DGI-ansøgninger. Advarsler 7, 3 og 1 dag i forvejen.</div>
+          </li>
+          <li>
+            <div class="feat-title">Google Drev-omstrukturering</div>
+            <div class="feat-desc">Én klar, fælles mappestruktur. Ikke mere jagt på tværs af tre konti.</div>
+          </li>
+          <li>
+            <div class="feat-title">Bestyrelsesmødenoter og opfølgninger</div>
+            <div class="feat-desc">Dagsorden sendes ud i forvejen. Beslutninger og handlingspunkter mailes ud bagefter.</div>
+          </li>
+          <li>
+            <div class="feat-title">Automatiserede mails til medlemmerne</div>
+            <div class="feat-desc">Nye medlemmer, fornyelser, tilmeldinger til arrangementer, betalingspåmindelser. Udkast og afsendelse sker automatisk.</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PRICE -->
+      <div>
+        <div class="section-label">Investering</div>
+        <div class="price-card">
+          <div class="tier">Forening / Club Plan</div>
+          <div class="amount">200 EUR</div>
+          <div class="period">pr. måned &middot; ingen binding, opsig når som helst</div>
+          <hr class="divider">
+          <div class="line">
+            <span class="line-label">Opstartsgebyr</span>
+            <span><span class="line-strike">400 EUR</span> &nbsp;<span class="free-pill">GRATIS</span></span>
+          </div>
+          <div class="line">
+            <span class="line-label">Pris ved underskrift denne uge</span>
+            <span class="line-value">0 EUR setup</span>
+          </div>
+          <div class="line">
+            <span class="line-label">Fastlås prisen som early adopter</span>
+            <span class="line-value">For altid</span>
+          </div>
+          <div class="line">
+            <span class="line-label">Alt forbliver i jeres Google-konto</span>
+            <span class="line-value">✓</span>
+          </div>
+          <div class="note">Tidsbegrænset tilbud. Opstartsgebyret er gratis for de første 5 klienter. Tilbuddet udløber 1. maj 2026.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WORKSPACE BONUS -->
+    <div class="workspace-box">
+      <div class="ws-title">Bonus inkluderet: Gratis Google Workspace til bestyrelsen</div>
+      <p>Dansk Puslespilsforening kvalificerer sig til Google Workspace gratis. Det er Gmail, Drev, Kalender, Meet og Docs til hele bestyrelsen uden omkostning, plus op til 100 TB fælles lagerplads. Jeres tre delte konti bliver til fire ordentlige individuelle bestyrelseskonti. Vi tager os af ansøgningen. I sparer omkring 25 EUR hver måned, før I betaler os en eneste krone.</p>
+      <div class="ws-chips">
+        <span class="ws-chip">Gmail til alle bestyrelsesmedlemmer</span>
+        <span class="ws-chip">Fælles Google Drev</span>
+        <span class="ws-chip">100 TB lagerplads</span>
+        <span class="ws-chip">Google Kalender</span>
+        <span class="ws-chip">Google Meet</span>
+        <span class="ws-chip">Vi klarer ansøgningen</span>
+      </div>
+    </div>
+
+    <!-- COMPARISON -->
+    <div class="section-label">I dag kontra med Rhynoflow</div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Sådan ser det ud i dag</th>
+          <th>Med Rhynoflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 måneds mails og spørgsmål før hver begivenhed</td>
+          <td><span class="dot"></span>Automatiske påmindelser og opfølgninger sendes til tiden. Ingenting at jagte.</td>
+        </tr>
+        <tr>
+          <td>3 delte konti, dokumenter overalt</td>
+          <td><span class="dot"></span>Gratis Google Workspace til alle 4 bestyrelsesmedlemmer plus en klar Drev-struktur</td>
+        </tr>
+        <tr>
+          <td>Hvert bestyrelsesmedlem skal selv huske sine opgaver</td>
+          <td><span class="dot"></span>Ugentlig briefing med tildelte opgaver lander i alles indbakke hver mandag</td>
+        </tr>
+        <tr>
+          <td>Nordisk koordinering klaret manuelt (trøjer, logistik)</td>
+          <td><span class="dot"></span>Begivenhedsautomatisering håndterer medlemsmail, ordrebekræftelser og deadlines</td>
+        </tr>
+        <tr>
+          <td>Bestyrelsesmødepåmindelser sendes i hånden</td>
+          <td><span class="dot"></span>Mødeinvitation sendes automatisk hver uge kl. 20:15 med dagsorden inkluderet</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- QUOTE BLOCK -->
+    <div class="quote-block">
+      <div class="quote-item">
+        <div class="q-label">Det frivillige arbejde</div>
+        <div class="q-text">"Det er frivilligt arbejde. Det må ikke føles som et fuldtidsjob. Med Rhynoflow får bestyrelsen sin weekend tilbage."</div>
+      </div>
+      <div class="quote-item">
+        <div class="q-label">Hvad Sofie bad om</div>
+        <div class="q-text">"Jeg vil gerne have styr på vores Google-konto, administrere mails, lave en ugentlig tjekliste til bestyrelsen og sende mødeinvitationer ud automatisk."</div>
+      </div>
+    </div>
+
+    <!-- STEPS -->
+    <div class="section-label">Sådan kommer vi i gang</div>
+    <div class="steps-grid">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <div class="step-title">Bestyrelsen siger ja i aften</div>
+        <div class="step-desc">Ingen kontrakt. Bare et ja fra bestyrelsen.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <div class="step-title">Vi ansøger om gratis Workspace</div>
+        <div class="step-desc">Tager 3 til 5 dage. Vi klarer alt papirarbejdet.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <div class="step-title">Første briefing live inden 2 uger</div>
+        <div class="step-desc">Automatiseringerne kører. Jeres admin er klaret.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <p><strong>Deng Awak</strong> &nbsp;&middot;&nbsp; <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a> &nbsp;&middot;&nbsp; rhynoflow.com</p>
+      <p>Early adopter-tilbud udløber 1. maj 2026 &middot; Opstartsgebyr gratis for de første 5 klienter</p>
+    </div>
+    <div class="footer-right">
+      <div class="f-logo">Rhyno<span>flow</span></div>
+      <div class="f-offer">København, Danmark</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
