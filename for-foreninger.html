@@ -233,10 +233,22 @@
         </div>
       </div>
 
+      <!-- Billing toggle -->
+      <div class="billing-toggle" style="margin-bottom:1.5rem;">
+        <span class="billing-label billing-active" id="da-label-monthly">Månedlig</span>
+        <button class="toggle-switch" id="da-billing-switch" aria-label="Skift til årlig pris">
+          <span class="toggle-knob"></span>
+        </button>
+        <span class="billing-label" id="da-label-yearly">Årlig <span class="save-badge">2 måneder gratis</span></span>
+      </div>
+
       <div class="forening-price-box">
-        <div class="price-big">1.500 DKK</div>
-        <div class="price-sub">per m&aring;ned &middot; ingen binding</div>
+        <div class="price-big">
+          <span id="da-price-display">1.500 DKK</span>
+        </div>
+        <div class="price-sub" id="da-price-sub">per m&aring;ned &middot; ingen binding</div>
         <div class="setup-line"><span class="price-setup-strike">3.000 DKK ops&aelig;tning</span> <span class="free-until">Gratis til 1. maj</span></div>
+        <div id="da-yearly-note" style="display:none;margin:0.5rem 0 0;font-size:0.85rem;color:var(--green);font-weight:600;">15.000 DKK faktureret årligt &middot; du sparer 3.000 DKK</div>
         <ul class="pricing-features" style="text-align:left; margin: 1.5rem 0 1.25rem;">
           <li>Morgenbriefing og fristadvarsler</li>
           <li>Ugentlig bestyrelsesoversigt hver mandag</li>
@@ -368,6 +380,31 @@
       });
     });
 
+
+    // Yearly billing toggle
+    const daBillingSwitch = document.getElementById('da-billing-switch');
+    const daLabelMonthly = document.getElementById('da-label-monthly');
+    const daLabelYearly = document.getElementById('da-label-yearly');
+    const daPriceDisplay = document.getElementById('da-price-display');
+    const daPriceSub = document.getElementById('da-price-sub');
+    const daYearlyNote = document.getElementById('da-yearly-note');
+    let daIsYearly = false;
+
+    daBillingSwitch.addEventListener('click', () => {
+      daIsYearly = !daIsYearly;
+      daBillingSwitch.classList.toggle('active', daIsYearly);
+      daLabelMonthly.classList.toggle('billing-active', !daIsYearly);
+      daLabelYearly.classList.toggle('billing-active', daIsYearly);
+      if (daIsYearly) {
+        daPriceDisplay.textContent = '1.250 DKK';
+        daPriceSub.textContent = 'per måned · faktureret årligt';
+        daYearlyNote.style.display = 'block';
+      } else {
+        daPriceDisplay.textContent = '1.500 DKK';
+        daPriceSub.textContent = 'per måned · ingen binding';
+        daYearlyNote.style.display = 'none';
+      }
+    });
 
     // Mobile menu
     const toggle = document.querySelector('.mobile-toggle');
