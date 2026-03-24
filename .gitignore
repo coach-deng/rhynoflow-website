@@ -5,3 +5,7 @@ dpf-board-proposal.html
 dpf-board-proposal-dk.html
 brand-kit/
 *.pdf
+spots.json
+puzzle-proposal.py
+*.pdf
+*.py
