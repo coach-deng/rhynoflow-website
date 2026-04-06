@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhynoflow til revisorer og bogholderere | Stop med at bruge tid på admin</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <meta name="description" content="Rhynoflow automatiserer klientemails, dokumentindsamling og deadlinealarmer for din regnskabsvirksomhed i Google. Ingen ny software. Klar på en uge.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rhynoflow.com/for-revisorer">
+  <meta property="og:title" content="Rhynoflow til revisorer og bogholderere">
+  <meta property="og:description" content="Stop med at jagte klienter. Brug din tid på at fakturere dem. Vi automatiserer din regnskabsvirksomheds admin i Google.">
+  <meta property="og:site_name" content="Rhynoflow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="stylesheet" href="style.css?v=4">
+
+  <style>
+    .rev-badge {
+      display: inline-block;
+      background: #e8f4fd;
+      color: #1a6fa8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+    .pain-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .pain-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .pain-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+    .pain-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .roi-box {
+      background: rgba(74,222,128,0.07);
+      border: 1px solid rgba(74,222,128,0.25);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .roi-box h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+    .roi-math {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .roi-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      text-align: center;
+    }
+    .roi-item strong {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+    .roi-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .roi-operator {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .auto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+    .auto-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .auto-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+    .auto-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0 0 0.75rem;
+      line-height: 1.5;
+    }
+    .auto-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      background: rgba(74,222,128,0.1);
+      border-radius: 20px;
+      padding: 2px 10px;
+      display: inline-block;
+    }
+    .audit-cta {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .audit-cta h2 {
+      font-size: 1.6rem;
+      margin: 0 0 0.75rem;
+    }
+    .audit-cta p {
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .price-highlight {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links">
+        <a href="/#services">Services</a>
+        <a href="/#pricing">Priser</a>
+        <a href="/blog/">Blog</a>
+        <a href="/for-revisorer.html" style="font-weight:600;">For Revisorer</a>
+        <a href="/#contact" class="btn btn-sm">Book gratis audit</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="rev-badge">Til revisorer og bogholderere &middot; Danmark</div>
+      <h1>Stop med at jagte klienter. <span class="highlight">Brug din tid på at fakturere dem.</span></h1>
+      <p class="hero-sub">Du bruger timer om ugen på at rykke for dokumenter, besvare de samme emails og huske deadlines manuelt. Det er timer du ikke kan fakturere. Vi automatiserer det hele i dit Google-setup.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-cal-namespace="30min" data-cal-link="deng-awak-hzu0y1/30min" data-cal-origin="https://cal.com">Book gratis workflow-audit</button>
+        <a href="#hvad-vi-bygger" class="btn btn-ghost">Se hvad vi automatiserer</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <strong>5+ timer</strong>
+          <span>sparet per uge i gennemsnit</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <strong>5 dage</strong>
+          <span>fra opkald til live</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <strong>100%</strong>
+          <span>i din egen Google-konto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-label">Kender du det her?</div>
+      <h2>Din tid burde gå til klienterne. Ikke til at administrere dem.</h2>
+      <p class="section-sub">Disse fire ting stjæler timer fra din faktureringstid hver eneste uge.</p>
+
+      <div class="pain-grid">
+        <div class="pain-item">
+          <div class="pain-icon">📬</div>
+          <h4>Rykkere på dokumenter</h4>
+          <p>Du sender den samme email tre gange, fordi klienten ikke har sendt sin kvartalsrapport, bilag eller kontoudtog endnu.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">📅</div>
+          <h4>Deadlines du skal huske</h4>
+          <p>Momsfrister, årsregnskaber, lønkørsler. Du holder styr på dem i din kalender og dit hoved. En dag glipper det.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">📧</div>
+          <h4>Inbox der aldrig stopper</h4>
+          <p>Klientemails, statusspørgsmål, mødebekræftelser. Du bruger den første time af dagen på at svare, ikke på at arbejde.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">📊</div>
+          <h4>Manuel rapportering</h4>
+          <p>Statusopdateringer til klienter, ugentlige oversigter, kvartalsopfølgninger. Alt sammen noget du skriver manuelt igen og igen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Regnestykket</div>
+      <h2>5 timer om ugen er 20 timer om måneden. Hvad fakturerer du for 20 timer?</h2>
+
+      <div class="roi-box">
+        <h3>En typisk revisor i Danmark fakturerer 800-1.500 DKK/time</h3>
+        <div class="roi-math">
+          <div class="roi-item">
+            <strong>5 t/uge</strong>
+            <span>sparet på admin</span>
+          </div>
+          <div class="roi-operator">&times;</div>
+          <div class="roi-item">
+            <strong>4 uger</strong>
+            <span>per måned</span>
+          </div>
+          <div class="roi-operator">&times;</div>
+          <div class="roi-item">
+            <strong>1.000 DKK</strong>
+            <span>faktureringsrate</span>
+          </div>
+          <div class="roi-operator">=</div>
+          <div class="roi-item">
+            <strong>20.000 DKK</strong>
+            <span>genfundet pr. måned</span>
+          </div>
+        </div>
+        <p style="margin-top:1.25rem;color:var(--text-muted);font-size:0.9rem;">Rhynoflow koster 1.500 DKK/md. Det er 13x ROI fra første måned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Build -->
+  <section class="section section-dark" id="hvad-vi-bygger">
+    <div class="container">
+      <div class="section-label">Hvad vi bygger</div>
+      <h2>Seks automatiseringer der kører mens du arbejder.</h2>
+      <p class="section-sub">Alt bygget i Google Apps Script og kører direkte i din Google-konto. Ingen ny software. Ingen månedlig licensgebyr til tredjepart.</p>
+
+      <div class="auto-grid">
+        <div class="auto-card">
+          <h4>Morgenbriefing</h4>
+          <p>Hver morgen får du en email med dagens klientmøder, flaggede emails og en 3-dages forhåndsvisning. Du starter arbejdsdagen med overblik, ikke i inboxen.</p>
+          <span class="auto-tag">Hverdage &middot; 6:30</span>
+        </div>
+        <div class="auto-card">
+          <h4>Dokumentrykker</h4>
+          <p>Mangler du bilag fra en klient? Systemet sender automatisk en venlig rykker på dag 3, 7 og 14. Du rykkede aldrig selv igen.</p>
+          <span class="auto-tag">Automatisk &middot; ved behov</span>
+        </div>
+        <div class="auto-card">
+          <h4>Deadlinealarmer</h4>
+          <p>Momsfrister, årsregnskaber, lønkørsler. Du får notifikationer 7, 3 og 1 dag før. Aldrig en frist glippet igen.</p>
+          <span class="auto-tag">Dagligt &middot; 7:30</span>
+        </div>
+        <div class="auto-card">
+          <h4>Klientstatusmail</h4>
+          <p>En ugentlig statusopdatering til dine klienter om igangværende sager. Skrevet og sendt automatisk. Ingen klager over manglende kommunikation.</p>
+          <span class="auto-tag">Ugentligt &middot; fredag</span>
+        </div>
+        <div class="auto-card">
+          <h4>Smart svarudkast</h4>
+          <p>Når en klientin emailer ind, genererer systemet et udkast til svar baseret på sagens kontekst. Du godkender med ét klik. Du skriver aldrig et svar fra bunden.</p>
+          <span class="auto-tag">Øjeblikkeligt &middot; 24/7</span>
+        </div>
+        <div class="auto-card">
+          <h4>Leadnotifikation</h4>
+          <p>Nogen udfylder din kontaktformular? Du får besked i løbet af sekunder og klienten får en bekræftelse. Ingen henvendelser mistes igen.</p>
+          <span class="auto-tag">Øjeblikkeligt &middot; 24/7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Sådan fungerer det</div>
+      <h2>Fra første samtale til live på fem dage.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Gratis workflow-audit (30 min)</h3>
+          <p>Vi gennemgår din arbejdsuge. Du fortæller os hvad der tager tid, hvad der glipper, og hvad du ønsker kørte af sig selv. Vi kommer med et konkret forslag.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Vi bygger det</h3>
+          <p>Ingen slideshows, ingen seks-ugers tidsplan. Vi starter bygningen inden for dage. Du ser rigtige resultater, ikke mockups.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Din admin kører selv</h3>
+          <p>Automatiseringerne kører i din egen Google-konto. Alt er dit. Ingen månedlig abonnement til tredjepart. Vi holder det kørende.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section section-dark" id="priser">
+    <div class="container">
+      <div class="section-label">Priser</div>
+      <h2>Enkle priser. Ingen overraskelser.</h2>
+      <p class="section-sub">Vælg det niveau der passer til din virksomhed. Alt er bygget specifikt til dig.</p>
+
+      <div class="pricing-grid pricing-grid-3" style="max-width:900px;margin:0 auto;">
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Solo</div>
+          <p class="pricing-for">Én-til-to personers revisionsvirksomhed</p>
+          <div class="pricing-price">
+            <span class="price-monthly">1.500 DKK</span><span class="price-period">/md</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Morgenbriefing dagligt</li>
+            <li>Deadlinealarmer</li>
+            <li>Emailautomatisering</li>
+            <li>Smart svarudkast</li>
+            <li>Kører i din Google-konto</li>
+            <li>Løbende support</li>
+          </ul>
+          <a href="#audit" class="btn btn-outline">Book gratis audit</a>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-badge">Mest populær</div>
+          <div class="pricing-tier">Virksomhed</div>
+          <p class="pricing-for">To til ti personers regnskabsvirksomhed</p>
+          <div class="pricing-price">
+            <span class="price-monthly">3.500 DKK</span><span class="price-period">/md</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Alt i Solo</li>
+            <li>Dokumentrykker til klienter</li>
+            <li>Ugentlig klientstatusmail</li>
+            <li>Leadnotifikation</li>
+            <li>Medarbejderkommunikationsflows</li>
+            <li>Prioriteret support og opdateringer</li>
+          </ul>
+          <a href="#audit" class="btn btn-primary">Book gratis audit</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Skræddersyet</div>
+          <p class="pricing-for">Større virksomheder eller særlige behov</p>
+          <div class="pricing-price">
+            <span class="price-monthly">Efter aftale</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Alt i Virksomhed</li>
+            <li>Brugerdefinerede integrationer</li>
+            <li>Klientportal eller dashboard</li>
+            <li>API-forbindelser</li>
+            <li>Dedikeret support</li>
+          </ul>
+          <a href="#audit" class="btn btn-outline">Kontakt os</a>
+        </div>
+
+      </div>
+
+      <div class="addon-note" style="margin-top:1.5rem;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.3);border-radius:10px;padding:1rem 1.25rem;text-align:center;">
+        <strong style="color:var(--green);">Tidlig-adopter tilbud:</strong> Opsætningsgebyret er gratis for de første 5 klienter frem til 1. maj 2026. Månedlig pris fra dag ét.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Audit -->
+  <section class="section section-cta" id="audit">
+    <div class="container">
+      <h2>Book en gratis workflow-audit.</h2>
+      <p class="section-sub">30 minutter. Ingen salgspitch. Du fortæller os hvad der tager tid, vi viser dig konkret hvad vi ville automatisere og hvad det ville koste. Ingen forpligtelse.</p>
+
+      <div class="onboarding-steps">
+        <div class="onboarding-step">
+          <div class="onboarding-num">1</div>
+          <div>
+            <strong>30-min audit</strong>
+            <span>Vi kortlægger din admin</span>
+          </div>
+        </div>
+        <div class="onboarding-arrow">&rarr;</div>
+        <div class="onboarding-step">
+          <div class="onboarding-num">2</div>
+          <div>
+            <strong>Konkret forslag</strong>
+            <span>Præcis pris, klare leverancer</span>
+          </div>
+        </div>
+        <div class="onboarding-arrow">&rarr;</div>
+        <div class="onboarding-step">
+          <div class="onboarding-num">3</div>
+          <div>
+            <strong>Live på 5 dage</strong>
+            <span>Din admin kører af sig selv</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-options">
+        <div id="cal-inline-revisorer"></div>
+        <p class="contact-alt">eller email direkte: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">Rhyno<span>flow</span></a>
+          <p>Custom software that runs your business.</p>
+          <p class="footer-location">K&oslash;benhavn, Danmark &middot; Serving clients across Europe and North America</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/#services">Web Applications</a>
+          <a href="/#services">Automation</a>
+          <a href="/#services">Websites</a>
+          <a href="/#services">AI Solutions</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about.html">About</a>
+          <a href="/#work">Our Work</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/blog/">Blog</a>
+          <a href="/for-revisorer.html">For Accountants</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rhynoflow &middot; CVR 43367994 &middot; <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, [L, namespace, ar[2]])} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "30min", {origin:"https://cal.com"});
+    Cal.ns["30min"]("inline", {
+      elementOrSelector:"#cal-inline-revisorer",
+      config: {"layout":"month_view"},
+      calLink: "deng-awak-hzu0y1/30min",
+    });
+    Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
