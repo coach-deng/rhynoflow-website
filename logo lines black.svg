@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Social profile 500x500 — dark bg, green Flow Lines. LinkedIn, Instagram, X -->
+  <rect width="500" height="500" fill="#111111"/>
+  <rect x="220" y="155" width="210" height="58" rx="29" fill="#4ade80"/>
+  <rect x="145" y="221" width="285" height="58" rx="29" fill="#4ade80"/>
+  <rect x="75"  y="287" width="350" height="58" rx="29" fill="#4ade80"/>
+</svg>
