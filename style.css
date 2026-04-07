@@ -2353,6 +2353,17 @@ blockquote {
   color: #0d7a36;
 }
 
+/* ===== 3-column pricing ===== */
+.pricing-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .pricing-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== 4-column pricing ===== */
 .pricing-grid-4 {
   grid-template-columns: repeat(4, 1fr);
