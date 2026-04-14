@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saadan automatiserer du din sportsklubs admin med Google (og faar 20 timer tilbage) | Rhynoflow</title>
+  <link rel="canonical" href="https://rhynoflow.com/blog/automatiser-sportsklubbens-admin-google.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Din sportsklubs admin spiser din uge. Her er 5 ting du kan automatisere med Google i dag, med rigtige eksempler fra en basketballklub i Koebenhavn med 53 medlemmer.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rhynoflow.com/blog/automatiser-sportsklubbens-admin-google.html">
+  <meta property="og:title" content="Saadan automatiserer du din sportsklubs admin med Google (og faar 20 timer tilbage)">
+  <meta property="og:description" content="Din sportsklubs admin spiser din uge. Her er 5 ting du kan automatisere med Google i dag.">
+  <meta property="og:image" content="https://rhynoflow.com/og-image.svg">
+  <meta property="og:site_name" content="Rhynoflow">
+  <link rel="alternate" hreflang="en" href="https://rhynoflow.com/blog/automate-sports-club-admin-google.html" />
+  <link rel="alternate" hreflang="da" href="https://rhynoflow.com/blog/automatiser-sportsklubbens-admin-google.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=4">
+  <style>
+    .post-hero { padding: 120px 0 60px; border-bottom: 1px solid var(--border); }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 16px; align-items: center; }
+    .post-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: rgba(34,197,94,0.1); padding: 4px 10px; border-radius: 20px; }
+    .post-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.15; letter-spacing: -1.5px; max-width: 780px; margin-bottom: 20px; }
+    .post-intro { font-size: 1.15rem; color: var(--text-muted); max-width: 640px; line-height: 1.7; }
+    .post-body { padding: 60px 0 80px; max-width: 720px; margin: 0 auto; }
+    .post-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+    .post-body p strong { color: var(--text); }
+    .post-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--text); margin: 48px 0 16px; letter-spacing: -0.5px; }
+    .automation-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
+    .automation-card strong { display: block; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .automation-card p { margin: 0; font-size: 0.92rem; }
+    .post-cta-box { background: var(--card-dark, #0a0a0a); border: 1px solid var(--border); border-radius: 16px; padding: 36px; margin-top: 56px; text-align: center; }
+    .post-cta-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+    .post-cta-box p { font-size: 0.95rem; margin-bottom: 24px; }
+    .post-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .big-number { font-size: 3rem; font-weight: 900; color: var(--accent); line-height: 1; display: block; margin-bottom: 4px; }
+    .numbers-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .number-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+    .number-box span { font-size: 0.8rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .numbers-row { grid-template-columns: 1fr; } .post-body { padding: 40px 0 60px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/for-revisorer.html">For revisorer</a>
+        <a href="/for-foreninger.html">For foreninger</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contact" class="btn btn-sm">Kom i gang</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-meta">
+        <span class="post-tag">Sportsklubber</span>
+        <span>7 min laesning</span>
+        <span>Marts 2026</span>
+      </div>
+      <h1>Saadan automatiserer du din sportsklubs admin med Google. Og faar 20 timer tilbage.</h1>
+      <p class="post-intro">De fleste sportsklubber koerer allerede pa Google. Gmail, Calendar, Drive. Det hele er der. Her er hvordan du faar det til at goere arbejdet for dig.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="post-body">
+
+      <p>Hvis du driver en sportsklub, ved du allerede hvordan admin foeles. Kamppamindelser til foraeldre. Opfoelgning pa kontingent. Ugentlige traningsemails. Bookingbekraeftelser. Ansogningsfrister der sniger sig op pa dig.</p>
+
+      <p>Intet af det er kompliceret. Men det hele tager tid. Og naar du ogsaa er traeneren, manageren og ham der samler keglerne op efter traening, saa laegger det sig hurtigt sammen.</p>
+
+      <p>I Talata Basketball i Koebenhavn havde vi 53 medlemmer, to traenere og nul adminmedarbejdere. Admin spiste 20 til 25 timer om ugen pa tvaers af traenerteamet. Tid der burde vaere gaaet til traningsplanlaegning, spillerudvikling og faktisk traening.</p>
+
+      <p>Vi loeste det med Google. Ikke en ny app, ikke et abonnementsvaerktoej. Bare den Google-konto vi allerede havde, og et saet automatiseringer bygget med Google Apps Script. Gratis, koerer i baggrunden, virker mens din computer er slukket.</p>
+
+      <p>Her er de fem ting vi automatiserede foerst, og hvordan du kan goere det samme for din klub.</p>
+
+      <div class="numbers-row">
+        <div class="number-box">
+          <span class="big-number">53</span>
+          <span>medlemmer haandteret</span>
+        </div>
+        <div class="number-box">
+          <span class="big-number">20+</span>
+          <span>timer/uge sparet</span>
+        </div>
+        <div class="number-box">
+          <span class="big-number">0 kr</span>
+          <span>i ny software</span>
+        </div>
+      </div>
+
+      <h2>1. Kontingentpamindelser</h2>
+
+      <div class="automation-card">
+        <strong>Hvad det goer</strong>
+        <p>Sender automatisk en betalingspamindelse til ethvert medlem der ikke har betalt inden en fastsat dato hver maaned. Emailen indeholder beloebet, hvordan man betaler (MobilePay-nummer, bankoverfoersel, hvad I end bruger), og en deadline.</p>
+      </div>
+
+      <p>Foer vi automatiserede det, brugte en af vores traenere soendagaftener pa at krydsreferere et regneark med MobilePay-indbakken for at finde ud af hvem der ikke havde betalt. Saa skrive individuelle emails. Saa foelge op en uge senere.</p>
+
+      <p>Nu tjekker scriptet betalingsloggen hver maaned, finder alle der ikke har betalt, og sender pamindelsen automatisk. Vi har ikke manuelt jagtet en betaling i maanedsvis. Indbetalingsraten gik op, ikke ned, fordi pamindelserne er konsistente og sendes til tiden hver eneste gang.</p>
+
+      <p>Det her alene er opsaetningen vaerd. For en klub med 50 medlemmer kan manuel betalingsjagt nemt tage 4 til 5 timer om maaneden.</p>
+
+      <h2>2. Kampdagsemails til foraeldre</h2>
+
+      <div class="automation-card">
+        <strong>Hvad det goer</strong>
+        <p>Laeser din Google Calendar, finder enhver begivenhed markeret som kamp, og sender en email til foraeldre-listen 24 timer foer kampstart. Dato, tid, sted, hvad de skal medbringe, eventuelle saerlige instruktioner. Sendes automatisk, hver gang.</p>
+      </div>
+
+      <p>Foraeldre vil vide hvornaar og hvor. Det er det. Men at skrive det samme emailformat 30 gange i saesonen, soerge for at den sendes til tiden, ikke glemme nogen fordi de tilmeldte sig sent. Det er praecis den slags opgave der lyder lille indtil du sidder og skriver den kl. 23 aftenen foer en kamp.</p>
+
+      <p>Automatiseringen trækker kampdetaljerne direkte fra din kalenderbegivenhed. Hvis du opdaterer tidspunkt eller sted i Calendar, afspejler emailen det. Du behoever ikke roere den.</p>
+
+      <p>For klubber med flere hold skalerer det. Et trigger per hold, en foraeldregruppe per hold. Saet det op een gang og det koerer hele saesonen.</p>
+
+      <h2>3. Bookingbekraeftelser</h2>
+
+      <div class="automation-card">
+        <strong>Hvad det goer</strong>
+        <p>Naar en hal- eller facilitetsbooking bekraeftes, sendes en struktureret bekraeftelsesmail til relevante traenere og personale. Traeningstid, halnavn, adresse, eventuelle noter. Logges til et delt Google Sheet samtidig.</p>
+      </div>
+
+      <p>At booke en hal i Koebenhavn betyder at haandtere flere haller, flere kontaktpersoner og bekraeftelsesemails der ankommer i forskellige formater. Foer automatiseringen ledte traenere igennem deres indbakke foer hver traening for at dobbelttjekke bookingdetaljerne.</p>
+
+      <p>Med et simpelt script behandles bekraeftelser naar de ankommer, de vigtige detaljer udtraekkes, og et rent resumee sendes til alle der har brug for det. Ingen moeder op i den forkerte hal laengere.</p>
+
+      <h2>4. Ugentlige traningsplanemails</h2>
+
+      <div class="automation-card">
+        <strong>Hvad det goer</strong>
+        <p>Hver fredag eftermiddag sendes en email til hele foraldre- eller medlemslisten med traningsplanen for den kommende uge. Traninger, tider, steder, eventuelle aendringer. Trukket fra Google Calendar, sendt automatisk.</p>
+      </div>
+
+      <p>Den her er undervurderet. Foraeldre til yngre spillere har brug for planen i forvejen for at planlaegge afhentning, pasning og deres egen uge. Uden en konsistent ugentlig email faar du individuelle beskeder hele ugen der spoerger om tider og steder.</p>
+
+      <p>Den ugentlige planermail sparer dig ikke bare tid pa at skrive den. Den reducerer ogsaa indgaaende beskeder. Foraeldrene ved at emailen kommer fredag. De venter pa den i stedet for at skrive til dig.</p>
+
+      <p>I Talata sparer den ene email os formentlig 2 til 3 timers frem og tilbage hver uge. Gang det over en saeson og det er betydeligt.</p>
+
+      <h2>5. Fristalarmer</h2>
+
+      <div class="automation-card">
+        <strong>Hvad det goer</strong>
+        <p>Tjekker et Google Sheet med vigtige frister hver morgen. Sender en alarmemail naar en frist er 7 dage vaek, 3 dage vaek og 1 dag vaek. Ansogninger, tilmeldingsvinduer, halbookingfrister, bestyrelsesmoede-forberedelse.</p>
+      </div>
+
+      <p>Den her handler om at beskytte klubben. At misse en DIF- eller DGI-ansogningsfrist fordi den gled igennem i en travl uge er ikke et teoretisk problem. Det sker. Og prisen kan vaere titusindvis af kroner i stoette.</p>
+
+      <p>Systemet er simpelt. Du holder et Google Sheet med en liste over frister og datoer. Scriptet koerer hver morgen, tjekker hvad der naermer sig, og sender dig en alarmemail 7, 3 og 1 dag foer. Intet fancy. Intet du skal logge ind pa. Det fortaeller dig bare hvad der kraever din opmaerksomhed foer det er for sent.</p>
+
+      <hr class="post-divider">
+
+      <h2>Hvad det rent faktisk laegger sig sammen til</h2>
+
+      <p>De fem automatiseringer tilsammen daekker det meste af det gentagne kommunikations- og sporingsarbejde der fylder en klubleders uge. Betalingsjagt, kamppamindelser, bookingbekraeftelser, ugentlige planer og friststyring. For Talata Basketball tog de adminbelastningen fra 20 til 25 timer om ugen ned til omkring 2. De 2 timer der er tilbage er dem der faktisk kraever et menneske.</p>
+
+      <p>Vaerktoejer er alle gratis. Google Apps Script er bygget ind i enhver Google Workspace-konto. Du installerer ikke noget, du opretter ikke nye logins, og du flytter ikke dine data nogen steder hen. Alt forbliver i den Google-konto du allerede bruger.</p>
+
+      <p><strong>Hagen er at det tager tid at bygge.</strong> Opsaetning af hvert script, tilslutning til den rigtige kalender og det rigtige regneark, test, finjustering af kantsager. For vores setup tog det flere ugers aftener. De fleste klubledere har ikke det.</p>
+
+      <h2>Det er her Rhynoflow kommer ind</h2>
+
+      <p>Rhynoflow bygger praecis den slags automatisering for danske sportsklubber, foreninger og smaa virksomheder. Vi tager opsaetningsarbejdet af dine skuldre. Du fortaeller os hvad der spiser din tid, vi bygger automatiseringerne i din eksisterende Google-konto, og vi holder dem koerende.</p>
+
+      <p>Ingen ny software. Ingen migrering. Ingen maanedlige per-bruger-gebyrer for en platform du bruger 20% af. Det hele koerer i Google, hvor dine data allerede bor.</p>
+
+      <p>Foreningsplanen starter ved 1.500 kr om maaneden. Opsaetning er gratis frem til 1. maj 2026 for de foerste klienter. Det betyder at du kun betaler det maanedlige, ingen opsaetningsomkostning, og du er automatiseret foer foraarsaesonen er i fuld gang.</p>
+
+      <div class="post-cta-box">
+        <h3>Se hvad vi ville bygge til din klub.</h3>
+        <p>Book et gratis 30-minutters opkald. Vi kigger pa dit faktiske setup og fortaeller dig praecis hvad du skal automatisere foerst. Ingen salgstale, intet pres.</p>
+        <a href="/#contact" class="btn btn-primary">Book en gratis demo</a>
+        <p style="margin-top:16px; font-size:0.82rem;">eller skriv: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">Rhyno<span>flow</span></a>
+          <p>Din admin, ladet igennem.</p>
+          <p class="footer-location">K&oslash;benhavn, Danmark</p>
+        </div>
+        <div class="footer-col">
+          <h4>Produkt</h4>
+          <a href="/#how">Saadan virker det</a>
+          <a href="/#pricing">Priser</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/for-foreninger.html">Til foreninger</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressourcer</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/scorecard.html">Gratis scorecard</a>
+          <a href="/#contact">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h4>Juridisk</h4>
+          <a href="/privacy.html">Privatlivspolitik</a>
+          <a href="/terms.html">Vilkaar</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rhynoflow &middot; CVR 43367994 &middot; <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

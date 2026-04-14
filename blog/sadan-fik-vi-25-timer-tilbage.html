@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saadan fik vi 25 timer om ugen tilbage (og blev ved med at traene) | Rhynoflow</title>
+  <meta name="description" content="At drive en basketballklub i Koebenhavn laerte mig een ting om admin: det stopper aldrig. Her er praecis hvad vi automatiserede og hvad det sparede.">
+  <meta property="og:title" content="Saadan fik vi 25 timer om ugen tilbage (og blev ved med at traene)">
+  <meta property="og:description" content="53 medlemmer. 25 timers admin om ugen. 0 kr i ny software. Her er hvad vi automatiserede.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rhynoflow.com/blog/sadan-fik-vi-25-timer-tilbage.html">
+  <meta property="og:site_name" content="Rhynoflow">
+  <link rel="alternate" hreflang="en" href="https://rhynoflow.com/blog/how-i-got-12-hours-back.html" />
+  <link rel="alternate" hreflang="da" href="https://rhynoflow.com/blog/sadan-fik-vi-25-timer-tilbage.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=4">
+  <style>
+    .post-hero { padding: 120px 0 60px; border-bottom: 1px solid var(--border); }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 16px; align-items: center; }
+    .post-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: rgba(34,197,94,0.1); padding: 4px 10px; border-radius: 20px; }
+    .post-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.15; letter-spacing: -1.5px; max-width: 780px; margin-bottom: 20px; }
+    .post-intro { font-size: 1.15rem; color: var(--text-muted); max-width: 640px; line-height: 1.7; }
+    .post-body { padding: 60px 0 80px; max-width: 720px; margin: 0 auto; }
+    .post-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+    .post-body p strong { color: var(--text); }
+    .post-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--text); margin: 48px 0 16px; letter-spacing: -0.5px; }
+    .automation-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
+    .automation-card strong { display: block; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .automation-card p { margin: 0; font-size: 0.92rem; }
+    .post-cta-box { background: var(--card-dark, #0a0a0a); border: 1px solid var(--border); border-radius: 16px; padding: 36px; margin-top: 56px; text-align: center; }
+    .post-cta-box h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+    .post-cta-box p { font-size: 0.95rem; margin-bottom: 24px; }
+    .post-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .big-number { font-size: 3rem; font-weight: 900; color: var(--accent); line-height: 1; display: block; margin-bottom: 4px; }
+    .numbers-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .number-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+    .number-box span { font-size: 0.8rem; color: var(--text-muted); }
+    @media (max-width: 768px) { .numbers-row { grid-template-columns: 1fr; } .post-body { padding: 40px 0 60px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/for-revisorer.html">For revisorer</a>
+        <a href="/for-foreninger.html">For foreninger</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contact" class="btn btn-sm">Kom i gang</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-meta">
+        <span class="post-tag">Foreninger</span>
+        <span>6 min laesning</span>
+        <span>Marts 2026</span>
+      </div>
+      <h1>Saadan fik vi 25 timer om ugen tilbage. Og blev ved med at traene.</h1>
+      <p class="post-intro">At drive en basketballklub i Koebenhavn laerte mig een ting om admin: det stopper aldrig. Her er praecis hvad vi automatiserede og hvad det sparede os.</p>
+    </div>
+  </section>
+
+  <div class="post-hero-image">
+    <img src="_DSC2751.jpg" alt="Talata Basketball hold, Koebenhavn" style="width:100%; max-height:480px; object-fit:cover; object-position:center top; display:block;">
+  </div>
+
+  <div class="container">
+    <div class="post-body">
+
+      <p>Jeg er basketballtraener. Det er jobbet.</p>
+
+      <p>Men hvis du kiggede pa min uge for to aar siden, ville du tro jeg drev en emailvirksomhed med basketball som bijob.</p>
+
+      <p>Hver uge: kamppamindelser til foraeldre. Betalingsopfoelgninger. Bestyrelsesopdateringer. Ansogningsfrister. Traeningsprogrammer. Halbookinger. Og et sted midt i det hele, reel traening.</p>
+
+      <p>Jeg talte det op en gang. <strong>25 timer om ugen pa admin.</strong> Hver uge. For en klub med 53 medlemmer hvor ingen faar loen for noget af det.</p>
+
+      <p>Det er virkeligheden i at drive en klub, en forening eller en lille virksomhed i Danmark. Admin er ligeglad med at du ogsaa er traeneren, manageren og ham der samler keglerne op efter traening.</p>
+
+      <div class="numbers-row">
+        <div class="number-box">
+          <span class="big-number">53</span>
+          <span>medlemmer at haandtere</span>
+        </div>
+        <div class="number-box">
+          <span class="big-number">25+</span>
+          <span>timer/uge pa admin</span>
+        </div>
+        <div class="number-box">
+          <span class="big-number">0 kr</span>
+          <span>i ny software</span>
+        </div>
+      </div>
+
+      <h2>Saa jeg gjorde noget ved det.</h2>
+
+      <p>Jeg er ikke udvikler. Men jeg kender Google. Og Google Apps Script, som er bygget ind i enhver Google-konto gratis, kan automatisere naesten alt der koerer gennem Gmail og Calendar.</p>
+
+      <p>Seks ugers aftener. Seks scripts. Her er hvad vi byggede:</p>
+
+      <div class="automation-card">
+        <strong>Morgenbriefing</strong>
+        <p>Hver dag kl. 6:30 lander en email i min indbakke. Kalender, flaggede beskeder, aabne opgaver, kommende deadlines. Foer brugte jeg de foerste 30 minutter hver morgen pa at finde ud af hvad dagen boed pa. Nu laeser jeg det pa 3 minutter over kaffen.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Kampdagspamindelser</strong>
+        <p>Foraeldre faar en pamindelse 24 timer foer hver kamp. Dato, tid, sted, hvad de skal medbringe. Sendes automatisk. Jeg har ikke skrevet en af dem i maanedsvis.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Betalingsoversigt</strong>
+        <p>Hver MobilePay-betaling logges i det oejeblik den lander. Beloeb, dato, medlemsnavn, netto efter gebyr. Foer gjorde jeg det i haanden i et regneark hver soendag aften.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Fristalarmer</strong>
+        <p>Enhver frist jeg holder oeje med faar et flag 7, 3 og 1 dag foer. Ansogninger, halbookingvinduer, bestyrelsesmoeder. Intet glipper laengere.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Ugentlig bestyrelsesopsummering</strong>
+        <p>Hver mandag faar bestyrelsen en opsummering af ugen pa een side. Jeg skrev den ikke. Den skrev sig selv.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Smarte svarudkast</strong>
+        <p>Indgaaende emails der kraever et svar faar et udkast klar i min Gmail. Jeg gennemgaar og sender. To minutter i stedet for femten.</p>
+      </div>
+
+      <hr class="post-divider">
+
+      <p>Samlet opsaetningstid: cirka 3 ugers aftener. Pris: 0 kr. Det hele koerer i vores eksisterende Google-konto. Ingen nye vaerktojer, ingen nye logins. Det hele er i Gmail og Calendar.</p>
+
+      <p><strong>De 25 timer faldt til omkring 2.</strong> De 2 timer der er tilbage er ting der faktisk kraever et menneske.</p>
+
+      <h2>Problemet er at de fleste klubber ikke har 3 ugers aftener.</h2>
+
+      <p>De fleste foreninger, traenigscentre og smaa virksomheder i Danmark drives af en eller to personer der allerede har tre jobs pa een gang. At bygge det her selv tager tid du ikke har.</p>
+
+      <p>Derfor lavede vi det om til en service.</p>
+
+      <p>Rhynoflow tager praecis det vi byggede til Talata Basketball og bygger det til din organisation. Samme vaerktojer. Samme tilgang. Alt sammen i din eksisterende Google-konto. Vi bygger det, vi vedligeholder det, og det koerer. Du vender tilbage til det rigtige arbejde.</p>
+
+      <p>Opsaetning er gratis frem til 1. maj 2026. Skriv dig op foer da og betal kun det maanedlige. Ingen opsaetningsomkostning.</p>
+
+      <div class="post-cta-box">
+        <h3>Se hvad vi ville bygge til dig.</h3>
+        <p>Book et gratis 30-minutters opkald. Vi kigger pa dit faktiske setup og fortaeller dig praecis hvad du skal automatisere foerst. Ingen salgstale, intet pres.</p>
+        <a href="/#contact" class="btn btn-primary">Book en gratis demo</a>
+        <p style="margin-top:16px; font-size:0.82rem;">eller skriv: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">Rhyno<span>flow</span></a>
+          <p>Din admin, ladet igennem.</p>
+          <p class="footer-location">K&oslash;benhavn, Danmark</p>
+        </div>
+        <div class="footer-col">
+          <h4>Produkt</h4>
+          <a href="/#how">Saadan virker det</a>
+          <a href="/#pricing">Priser</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/for-foreninger.html">Til foreninger</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ressourcer</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/scorecard.html">Gratis scorecard</a>
+          <a href="/#contact">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h4>Juridisk</h4>
+          <a href="/privacy.html">Privatlivspolitik</a>
+          <a href="/terms.html">Vilkaar</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rhynoflow &middot; CVR 43367994 &middot; <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>
