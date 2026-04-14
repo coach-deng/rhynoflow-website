@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klientkommunikation for revisorer: stop med at skrive de samme emails | Rhynoflow</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="De fleste revisorer sender de samme emails igen og igen. Rykkere, dokumentanmodninger, statusopdateringer. Saadan automatiserer du klientkommunikationen uden at det maerkes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rhynoflow.com/blog/klientkommunikation-revisor.html">
+  <meta property="og:title" content="Klientkommunikation for revisorer: stop med at skrive de samme emails">
+  <meta property="og:description" content="Rykkere, dokumentanmodninger, statusopdateringer. Saadan automatiserer du klientkommunikationen.">
+  <meta property="og:site_name" content="Rhynoflow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=4">
+  <style>
+    .post-hero { padding: 120px 0 60px; border-bottom: 1px solid var(--border); }
+    .post-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; display: flex; gap: 16px; align-items: center; }
+    .post-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: rgba(34,197,94,0.1); padding: 4px 10px; border-radius: 20px; }
+    .post-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -1.5px; max-width: 780px; margin-bottom: 20px; }
+    .post-intro { font-size: 1.15rem; color: var(--text-muted); max-width: 640px; line-height: 1.7; }
+    .post-body { padding: 60px 0 80px; max-width: 720px; margin: 0 auto; }
+    .post-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+    .post-body p strong { color: var(--text); }
+    .post-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--text); margin: 48px 0 16px; letter-spacing: -0.5px; }
+    .example-email { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; font-size: 0.95rem; line-height: 1.7; color: var(--text); }
+    .example-email .email-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+    .flow-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+    .step-num { background: var(--accent); color: #fff; font-weight: 800; font-size: 0.85rem; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-text strong { color: var(--text); display: block; margin-bottom: 4px; }
+    .step-text span { font-size: 0.9rem; color: var(--text-muted); }
+    .cta-block { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 40px; text-align: center; margin-top: 64px; }
+    .cta-block h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-block p { color: var(--text-muted); margin-bottom: 24px; }
+    .btn-primary { display: inline-block; background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-wrap">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">Rhynoflow</a>
+      <div class="nav-links">
+        <a href="/for-revisorer.html">For revisorer</a>
+        <a href="/for-foreninger.html">For foreninger</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contact" class="btn-nav">Kom i gang</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="post-hero">
+      <div class="post-meta">
+        <span class="post-tag">Revisorer</span>
+        <span>April 2026 &middot; 4 min</span>
+      </div>
+      <h1>Stop med at skrive de samme klientemails. Automatiser dem.</h1>
+      <p class="post-intro">Rykkere for bilag. Dokumentanmodninger. Statusopdateringer. De fleste revisorer skriver disse emails manuelt flere gange om ugen. Det behoever de ikke.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="post-body">
+
+      <p>Taenk pa den seneste uge. Hvor mange emails sendte du, der var variationer af noget du har skrevet hundrede gange for? "Hej, jeg mangler stadig..." eller "Bare for at rykke for..." eller "Har du haft mulighed for at..."</p>
+
+      <p>Det er ikke vaerdilosende kommunikation. Det er noodvendig administration. Men det er ogsa det der sluger timevis af din arbejdsuge, uge efter uge, klient efter klient.</p>
+
+      <h2>De tre emails der gaar igen</h2>
+
+      <p><strong>Dokumentanmodningen.</strong> Du beder om bilag, kontoudtog, kvitteringer. Klienten svarer ikke. Du rykker. Klienten sender halvdelen. Du beder om resten. Det tager 4 emailrunder at fa det der skulle vaere enkelt.</p>
+
+      <p><strong>Statusopdateringen.</strong> Klienten vil gerne vide hvor langt du er. Det er et rimeligt spoergsmaal. Men hvis du har 50 klienter og de alle spoorger en gang om maaneden, er det 50 emails der skal skrives og sendes individuelt.</p>
+
+      <p><strong>Fristen der naermer sig.</strong> "Husk at vi har deadline den X" er en email alle revisorer sender. Ofte mere end een gang til de samme klienter. Alligevel glemmer nogen det, og du sidder med det i det sidste oejeblik.</p>
+
+      <h2>Saadan ser et automatiseret flow ud</h2>
+
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Du saetter tidsplanen</strong>
+          <span>Hvilke klienter skal have hvilke emails hvornaar. Det goer du een gang i et Google Sheet. Derefter korer det af sig selv.</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Systemet sender og registrerer</strong>
+          <span>Emails udgar automatisk fra din Gmail. Systemet registrerer hvem der har aabnet, svaret og sendt dokumenter. Du kan se det hele i et dashboard.</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Du ser kun dem der kraever dig</strong>
+          <span>I stedet for at administrere alle klienter ser du kun de klienter der kraever din aktive indsats. Resten er haandteret.</span>
+        </div>
+      </div>
+
+      <h2>Et eksempel pa en automatiseret rykker</h2>
+
+      <div class="example-email">
+        <div class="email-label">Automatisk email, dag 7 efter anmodning</div>
+        <p>Hej [Navn],</p>
+        <p>Jeg har endnu ikke modtaget dine bilag for [maaned]. For at vi kan holde tidsplanen, skal jeg have dem senest [dato].</p>
+        <p>Send dem direkte som svar pa denne email, saa er vi i gang.</p>
+        <p>Mvh. [Dit navn]</p>
+      </div>
+
+      <p>Den email skrives een gang. Den tilpasses automatisk med klientens navn, den aktuelle maaned og den rigtige frist. Og den sender sig selv.</p>
+
+      <h2>Hvad det ikke goer</h2>
+
+      <p>Det erstatter ikke den faglige dialog. Det erstatter ikke de samtaler der kraever din vurdering og dit ansvar. Det erstatter den administrative del. Den del du alligevel godt ved ikke kraever din ekspertise.</p>
+
+      <div class="cta-block">
+        <h3>Se hvad din praksis kan automatisere.</h3>
+        <p>Vi laver en gratis gennemgang og viser dig praecis hvilke emails og flows der er oplagte at automatisere for din praksis.</p>
+        <a href="/for-revisorer.html" class="btn-primary">Laes om Rhynoflow for revisorer</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Rhynoflow</span>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
