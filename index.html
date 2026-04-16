@@ -287,24 +287,116 @@
     </div>
   </section>
 
-  <!-- Demo Video -->
-  <section style="background:#0a0a0a;padding:64px 0;">
+  <!-- Terminal Demo -->
+  <section style="background:#0a0a0a;padding:72px 0;">
     <div class="container" style="max-width:860px;">
-      <div style="text-align:center;margin-bottom:32px;">
+      <div style="text-align:center;margin-bottom:40px;">
         <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#00c853;">See it in action</span>
         <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;margin:12px 0 8px;">This is what your Monday morning looks like.</h2>
         <p style="color:#888;font-size:1rem;max-width:520px;margin:0 auto;">Emails sorted. Reminders sent. Payments logged. You didn't touch any of it.</p>
       </div>
-      <div style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);">
-        <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:16px;">
-          <source src="/videos/rhynoflow-demo.mp4" type="video/mp4">
-        </video>
+
+      <!-- Terminal window -->
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.07);">
+        <!-- Chrome bar -->
+        <div style="background:#1a1a1a;padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+          <span style="width:12px;height:12px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+          <span style="width:12px;height:12px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+          <span style="font-size:12px;color:rgba(255,255,255,0.3);margin-left:12px;font-family:monospace;">rhynoflow — morning-brief — bash</span>
+        </div>
+        <!-- Terminal body -->
+        <div style="background:#0d0d0d;padding:28px 32px;font-family:'Fira Code',Consolas,monospace;font-size:0.82rem;line-height:1.8;min-height:320px;" id="terminalBody">
+          <div style="color:rgba(255,255,255,0.25);"># Rhynoflow Automation Engine v2.4 — Talata Basketball</div>
+          <div style="color:rgba(255,255,255,0.25);"># Scheduled run: Monday 08:00 CET</div>
+          <div style="height:8px;"></div>
+        </div>
       </div>
-      <div style="text-align:center;margin-top:28px;">
+
+      <div style="text-align:center;margin-top:32px;">
         <button class="btn btn-primary" data-cal-namespace="30min" data-cal-link="deng-awak-hzu0y1/30min" data-cal-origin="https://cal.com">Book a Free Workflow Audit</button>
       </div>
     </div>
   </section>
+
+  <style>
+    .t-cmd   { color: #00c853; }
+    .t-out   { color: rgba(255,255,255,0.55); }
+    .t-dim   { color: rgba(255,255,255,0.25); }
+    .t-warn  { color: #febc2e; }
+    .t-ok    { color: #00c853; }
+    .t-val   { color: #79c0ff; }
+    .t-cursor{ display:inline-block;width:8px;height:14px;background:#00c853;vertical-align:middle;animation:blink .9s step-end infinite;margin-left:2px; }
+    @keyframes blink{ 0%,100%{opacity:1}50%{opacity:0} }
+  </style>
+
+  <script>
+    (function(){
+      const tb = document.getElementById('terminalBody');
+      if (!tb) return;
+
+      const lines = [
+        { delay: 400,  html: '<span class="t-cmd">$ rhynoflow run --client=talata --schedule=morning-brief</span>' },
+        { delay: 900,  html: '<span class="t-dim">→ connecting to Google Workspace...</span>' },
+        { delay: 1500, html: '<span class="t-ok">✓</span> <span class="t-out">Connected as admin@talatabasketball.dk</span>' },
+        { delay: 2000, html: '' },
+        { delay: 2100, html: '<span class="t-ok">✓</span> <span class="t-out">Checking member payments</span> <span class="t-dim">(49 members)</span>' },
+        { delay: 2700, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-val">46 paid</span> &nbsp;<span class="t-warn">3 outstanding</span> <span class="t-dim">— Mia H, Lars B, Sofia K</span>' },
+        { delay: 3100, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-out">reminder emails queued for 3 members</span>' },
+        { delay: 3600, html: '' },
+        { delay: 3700, html: '<span class="t-ok">✓</span> <span class="t-out">Scanning this week\'s schedule</span>' },
+        { delay: 4200, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-val">Friday 18:00</span> <span class="t-out">— Brønshøj Hallen, Academy + Womens</span>' },
+        { delay: 4600, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-out">game notification sent to 49 members</span>' },
+        { delay: 5100, html: '' },
+        { delay: 5200, html: '<span class="t-ok">✓</span> <span class="t-out">Generating board digest</span>' },
+        { delay: 5700, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-val">4 open tasks</span> &nbsp;<span class="t-warn">2 deadlines this week</span>' },
+        { delay: 6000, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-out">digest delivered to board@talatabasketball.dk</span>' },
+        { delay: 6500, html: '' },
+        { delay: 6600, html: '<span class="t-ok">✓</span> <span class="t-out">Building morning briefing email</span>' },
+        { delay: 7100, html: '&nbsp;&nbsp;<span class="t-dim">→</span> <span class="t-out">sent to all coaches — 08:00:03 CET</span>' },
+        { delay: 7600, html: '' },
+        { delay: 7700, html: '<span class="t-ok">✓✓ Done.</span> <span class="t-val">2.4s</span><span class="t-dim"> &nbsp;·&nbsp; 0 manual steps &nbsp;·&nbsp; 0 emails written by a human</span>' },
+        { delay: 8300, html: '<span class="t-dim">Next run: Tuesday 08:00 CET</span>' },
+        { delay: 8700, html: '<span class="t-cmd">$ </span><span class="t-cursor"></span>' },
+      ];
+
+      let restartTimer;
+
+      function runTerminal() {
+        // Clear dynamic lines (keep first 3 comment lines)
+        const static_lines = tb.querySelectorAll('[data-static]');
+        // Remove previous dynamic lines
+        tb.querySelectorAll('[data-dyn]').forEach(el => el.remove());
+        // Remove cursor if exists
+        tb.querySelectorAll('[data-cursor]').forEach(el => el.remove());
+
+        lines.forEach(({ delay, html }) => {
+          setTimeout(() => {
+            const div = document.createElement('div');
+            div.setAttribute('data-dyn', '');
+            div.innerHTML = html;
+            tb.appendChild(div);
+            tb.scrollTop = tb.scrollHeight;
+          }, delay);
+        });
+
+        // Restart loop after 14s
+        restartTimer = setTimeout(() => {
+          tb.querySelectorAll('[data-dyn]').forEach(el => el.remove());
+          runTerminal();
+        }, 14000);
+      }
+
+      // Start when visible
+      const termObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          runTerminal();
+          termObs.disconnect();
+        }
+      }, { threshold: 0.3 });
+      termObs.observe(tb);
+    })();
+  </script>
 
   <!-- Built For -->
   <section style="background:#111;padding:32px 0;">
@@ -407,9 +499,21 @@
         <div class="portfolio-card">
           <div class="portfolio-browser">
             <div class="portfolio-dots"><span></span><span></span><span></span></div>
-            <span class="portfolio-url">Google Workspace</span>
+            <span class="portfolio-url">talatabasketball.dk · Google Workspace</span>
           </div>
           <div class="portfolio-body">
+            <div style="display:flex;gap:12px;margin-bottom:16px;">
+              <div style="flex:1;background:rgba(255,90,90,0.07);border:1px solid rgba(255,90,90,0.2);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#ff5a5a;font-weight:700;margin-bottom:2px;">Before</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">25 hrs/week</div>
+                <div style="font-size:0.75rem;color:#888;">manual admin</div>
+              </div>
+              <div style="flex:1;background:rgba(0,200,83,0.07);border:1px solid rgba(0,200,83,0.2);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#00c853;font-weight:700;margin-bottom:2px;">After</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">~2 hrs/week</div>
+                <div style="font-size:0.75rem;color:#888;">morning briefing only</div>
+              </div>
+            </div>
             <h3>Talata Basketball: Full Automation Suite</h3>
             <p>Built it for ourselves first. 25 hours of admin a week down to a morning briefing. Payments tracked, parents reminded, games announced. Nobody has to send anything manually.</p>
             <div class="portfolio-tags">
@@ -417,16 +521,28 @@
               <span>Automation</span>
               <span>Google Workspace</span>
             </div>
-            <span class="portfolio-link portfolio-live"><span class="live-dot"></span> Running live</span>
+            <span class="portfolio-link portfolio-live"><span class="live-dot"></span> Running live · 49 members · 6 automations</span>
           </div>
         </div>
 
         <div class="portfolio-card">
           <div class="portfolio-browser">
             <div class="portfolio-dots"><span></span><span></span><span></span></div>
-            <span class="portfolio-url">Google Workspace</span>
+            <span class="portfolio-url">danskpuslespilsforening.dk · Google Workspace</span>
           </div>
           <div class="portfolio-body">
+            <div style="display:flex;gap:12px;margin-bottom:16px;">
+              <div style="flex:1;background:rgba(255,90,90,0.07);border:1px solid rgba(255,90,90,0.2);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#ff5a5a;font-weight:700;margin-bottom:2px;">Before</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">4+ hrs/week</div>
+                <div style="font-size:0.75rem;color:#888;">chasing emails manually</div>
+              </div>
+              <div style="flex:1;background:rgba(0,200,83,0.07);border:1px solid rgba(0,200,83,0.2);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#00c853;font-weight:700;margin-bottom:2px;">After</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">0 hrs/week</div>
+                <div style="font-size:0.75rem;color:#888;">digest runs automatically</div>
+              </div>
+            </div>
             <h3>Dansk Puslespilsforening: Board Admin Automation</h3>
             <p>Denmark's national puzzle association was spending hours chasing emails and tracking board tasks manually. Automated email sorting, owner tagging, and a weekly digest so nothing falls through and everyone stays in the loop.</p>
             <div class="portfolio-tags">
@@ -434,18 +550,30 @@
               <span>Automation</span>
               <span>Nonprofit</span>
             </div>
-            <span class="portfolio-link portfolio-live"><span class="live-dot"></span> Running live</span>
+            <span class="portfolio-link portfolio-live"><span class="live-dot"></span> Running live · First paying client</span>
           </div>
         </div>
 
         <div class="portfolio-card">
           <div class="portfolio-browser">
             <div class="portfolio-dots"><span></span><span></span><span></span></div>
-            <span class="portfolio-url">Google Workspace</span>
+            <span class="portfolio-url">nordickits.dk · Google Workspace</span>
           </div>
           <div class="portfolio-body">
+            <div style="display:flex;gap:12px;margin-bottom:16px;">
+              <div style="flex:1;background:rgba(255,90,90,0.07);border:1px solid rgba(255,90,90,0.2);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#ff5a5a;font-weight:700;margin-bottom:2px;">Before</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">Manual</div>
+                <div style="font-size:0.75rem;color:#888;">orders, follow-ups, invoices</div>
+              </div>
+              <div style="flex:1;background:rgba(0,200,83,0.07);border:1px solid rgba(0,200,83,0.2);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#00c853;font-weight:700;margin-bottom:2px;">After</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">Fully automated</div>
+                <div style="font-size:0.75rem;color:#888;">order → confirm → invoice</div>
+              </div>
+            </div>
             <h3>Nordickits: Order and Club Outreach Automation</h3>
-            <p>Denmark's kit supplier to sports clubs was managing orders, follow-ups, and invoices by hand. We automated the full order flow: clubs get confirmation the moment they order, payment status logs itself, and new season outreach goes out to every club on schedule without anyone having to write a single email.</p>
+            <p>Denmark's kit supplier to sports clubs was managing orders, follow-ups, and invoices by hand. We automated the full order flow: clubs get confirmation the moment they order, payment status logs itself, and new season outreach goes out to every club on schedule.</p>
             <div class="portfolio-tags">
               <span>Google Apps Script</span>
               <span>Automation</span>
@@ -476,6 +604,118 @@
       </div>
     </div>
   </section>
+
+  <!-- How Automation Works — Flow Diagram -->
+  <section style="background:#f5f5f5;padding:64px 0;overflow:hidden;">
+    <div class="container" style="max-width:900px;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#00c853;">How it runs</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#1a1a1a;margin:12px 0 0;">One trigger. Everything else is automatic.</h2>
+      </div>
+      <div class="flow-diagram" id="flowDiagram">
+        <div class="flow-node" data-fi="0">
+          <div class="flow-icon">📥</div>
+          <div class="flow-node-label">Trigger</div>
+          <div class="flow-node-sub">Form submitted, schedule hit,<br>email received, payment due</div>
+        </div>
+        <div class="flow-arrow" data-fi="1"><div class="flow-arrow-line"></div><div class="flow-arrow-head">›</div></div>
+        <div class="flow-node" data-fi="2">
+          <div class="flow-icon">⚙️</div>
+          <div class="flow-node-label">Process</div>
+          <div class="flow-node-sub">Your Google account reads,<br>checks, and decides</div>
+        </div>
+        <div class="flow-arrow" data-fi="3"><div class="flow-arrow-line"></div><div class="flow-arrow-head">›</div></div>
+        <div class="flow-node" data-fi="4">
+          <div class="flow-icon">📤</div>
+          <div class="flow-node-label">Action</div>
+          <div class="flow-node-sub">Email sent, sheet updated,<br>reminder logged, digest built</div>
+        </div>
+        <div class="flow-arrow" data-fi="5"><div class="flow-arrow-line"></div><div class="flow-arrow-head">›</div></div>
+        <div class="flow-node flow-node-outcome" data-fi="6">
+          <div class="flow-icon">✅</div>
+          <div class="flow-node-label">Done</div>
+          <div class="flow-node-sub">Zero manual steps.<br>You weren't even awake.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: nowrap;
+    }
+    .flow-node {
+      background: #fff;
+      border: 1.5px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      min-width: 150px;
+      flex: 1;
+      max-width: 180px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .flow-node.visible { opacity: 1; transform: translateY(0); }
+    .flow-node.active  { border-color: #00c853; box-shadow: 0 0 0 3px rgba(0,200,83,0.12); }
+    .flow-node-outcome.active { border-color: #00c853; background: rgba(0,200,83,0.05); }
+    .flow-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .flow-node-label { font-size: 0.9rem; font-weight: 800; color: #1a1a1a; margin-bottom: 6px; }
+    .flow-node-sub { font-size: 0.73rem; color: #888; line-height: 1.5; }
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      flex-shrink: 0;
+    }
+    .flow-arrow.visible { opacity: 1; }
+    .flow-arrow-line {
+      width: 32px; height: 2px;
+      background: linear-gradient(90deg, #e0e0e0, #00c853);
+      position: relative;
+    }
+    .flow-arrow-head { font-size: 1.2rem; color: #00c853; margin-left: -4px; line-height: 1; }
+    @media (max-width: 680px) {
+      .flow-diagram { flex-direction: column; }
+      .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+      .flow-node { max-width: 100%; width: 100%; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      const diag = document.getElementById('flowDiagram');
+      if (!diag) return;
+      const nodes = diag.querySelectorAll('.flow-node, .flow-arrow');
+
+      const obs = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        obs.disconnect();
+
+        // Stagger in
+        nodes.forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 180);
+        });
+
+        // Pulse active highlight across nodes
+        const fnodes = diag.querySelectorAll('.flow-node');
+        let ai = 0;
+        setInterval(() => {
+          fnodes.forEach(n => n.classList.remove('active'));
+          fnodes[ai % fnodes.length].classList.add('active');
+          ai++;
+        }, 1200);
+      }, { threshold: 0.4 });
+      obs.observe(diag);
+    })();
+  </script>
 
   <!-- How It Works -->
   <section class="section section-dark" id="how">
