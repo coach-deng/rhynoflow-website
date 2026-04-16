@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What we learned building admin automation for a national association | Rhynoflow</title>
+  <meta name="description" content="Dansk Puslespilsforening hired us to fix their board admin. Here is exactly what we found, what we built, and what changed in the first quarter.">
+  <meta property="og:title" content="What we learned building admin automation for a national association">
+  <meta property="og:description" content="We audited a national association running on email threads and good intentions. Here is what we found and what we fixed.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rhynoflow.com/blog/what-we-learned-automating-dpf.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=3">
+  <style>
+    .post-hero {
+      padding: 120px 0 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .post-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(34,197,94,0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .post-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+    .post-intro {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .post-body {
+      padding: 60px 0 80px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .post-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .post-body p strong {
+      color: var(--text);
+    }
+    .post-body h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 48px 0 16px;
+      letter-spacing: -0.5px;
+    }
+    .automation-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .automation-card strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .automation-card p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+    .post-cta-box {
+      background: var(--card-dark, #0a0a0a);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      margin-top: 56px;
+      text-align: center;
+    }
+    .post-cta-box h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .post-cta-box p {
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .post-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    @media (max-width: 768px) {
+      .post-body { padding: 40px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Rhyno<span>flow</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#services">Services</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="/for-foreninger.html">Associations</a>
+        <a href="/#contact" class="btn btn-sm">Get Started</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-meta">
+        <span class="post-tag">Foreninger</span>
+        <span>5 min read</span>
+        <span>April 2026</span>
+      </div>
+      <h1>What we learned building admin automation for a national association</h1>
+      <p class="post-intro">Dansk Puslespilsforening hired us after seeing what we built for Talata. Here is what we found when we looked under the hood, what we built, and what happened in the first quarter after.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="post-body">
+
+      <p>Dansk Puslespilsforening reached out to us in late 2025. They are Denmark's national puzzle association. Eight board members. Volunteers, all of them. Running a national organisation on top of their regular jobs.</p>
+
+      <p>They had seen the work we did for Talata Basketball and asked a simple question: could we do something similar for a board instead of a sports club?</p>
+
+      <p>The answer was yes. But first we needed to understand what was actually happening.</p>
+
+      <h2>What we found when we audited their workflow.</h2>
+
+      <p>We spent two sessions going through how the board actually operated day to day. Not how they thought they operated. How they actually did.</p>
+
+      <p>Three things stood out immediately.</p>
+
+      <p><strong>First: three recurring email types went out every month, written from scratch every time.</strong> Same structure, same recipients, slightly different dates and numbers. Nobody had thought to template them. They just kept writing them.</p>
+
+      <p><strong>Second: the deadline tracker lived in the chairman's head.</strong> There was no shared system. If you wanted to know when something was due, you asked him. He was the single point of failure for the entire organisation's calendar.</p>
+
+      <p><strong>Third: board meeting notes were sent as reply-all email chains.</strong> By the time the fourth person responded, nobody could find the original. Items got dropped. Decisions got forgotten. The next meeting always started with ten minutes of "wait, did we agree on that?"</p>
+
+      <p>None of this was anyone's fault. These are smart, committed people. The problem was that the information had no structure. It lived in inboxes and in one person's memory, and nowhere else.</p>
+
+      <h2>What we built.</h2>
+
+      <div class="automation-card">
+        <strong>Weekly Board Digest</strong>
+        <p>Every Monday morning, every board member gets one email. Open tasks, who owns each one, and when it is due. Written automatically from a Google Sheet. Nobody has to compile it. Nobody has to send it. It just goes.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Deadline Reminders</strong>
+        <p>Any deadline entered in the sheet triggers an automatic reminder three days before it is due. The right people get notified. The chairman stops being the one who has to remember to remind everyone.</p>
+      </div>
+
+      <div class="automation-card">
+        <strong>Email Templates from Google Sheets</strong>
+        <p>The three recurring monthly emails now live as templates. One row per task in a sheet. One click to send. The person sending them spends two minutes instead of forty. The emails look identical every time.</p>
+      </div>
+
+      <hr class="post-divider">
+
+      <h2>What changed.</h2>
+
+      <p>The chairman stopped being the bottleneck. That was the biggest one. He told us after the first month that he felt like he had hired a part-time administrator, except it cost nothing and never missed a beat.</p>
+
+      <p>The board started showing up to meetings already knowing the agenda. Because the digest goes out Monday and the meeting is Thursday, everyone has had four days to look at what is open and who is responsible. The first ten minutes stopped being catch-up and started being actual work.</p>
+
+      <p>Nobody missed a deadline the next quarter. Not one.</p>
+
+      <h2>The lesson we keep taking away from these projects.</h2>
+
+      <p>The problem in most foreninger is not the people. The people are almost always capable and genuinely motivated. The problem is that the information lives in one person's inbox, and nobody else can see it.</p>
+
+      <p>When you are the only one who knows what is due, you become the bottleneck. Not because you want to be. Because the system made you one.</p>
+
+      <p>Automation does not replace people. It just makes information visible to everyone who needs it, at the right time, without someone having to remember to share it.</p>
+
+      <p>That is the whole thing. Everything else follows from that.</p>
+
+      <div class="post-cta-box">
+        <h3>Does your forening run on email threads and good intentions?</h3>
+        <p>Book a free 30-minute audit. We will show you exactly what to automate first. No pitch, no pressure. Just a clear look at your setup and where to start.</p>
+        <a href="https://cal.com/rhynoflow" class="btn btn-primary">Book a Free Audit</a>
+        <p style="margin-top:16px; font-size:0.82rem;">or visit: <a href="https://rhynoflow.com">rhynoflow.com</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">Rhyno<span>flow</span></a>
+          <p>Your admin, charged through.</p>
+          <p class="footer-location">K&oslash;benhavn, Danmark</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="/#how">How It Works</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/for-foreninger.html">Til foreninger</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/scorecard.html">Free Scorecard</a>
+          <a href="/#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rhynoflow &middot; CVR 43367994 &middot; <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>
