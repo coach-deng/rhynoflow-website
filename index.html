@@ -134,6 +134,102 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="stylesheet" href="style.css?v=4">
+
+  <style>
+    /* ── Hero Animation ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 20%, rgba(0,200,83,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 70% at 10% 90%, rgba(0,200,83,0.05) 0%, transparent 50%);
+      animation: heroGlow 9s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes heroGlow {
+      0%   { opacity: 0.5; transform: scale(1); }
+      100% { opacity: 1;   transform: scale(1.06); }
+    }
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.025;
+      background-image:
+        linear-gradient(rgba(0,0,0,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px);
+      background-size: 56px 56px;
+      animation: gridDrift 24s linear infinite;
+    }
+    @keyframes gridDrift {
+      0%   { transform: translate(0, 0); }
+      100% { transform: translate(56px, 56px); }
+    }
+    .hero .container { position: relative; z-index: 1; }
+
+    /* Live task feed */
+    .hero-live-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 480px;
+      margin: 28px auto 32px;
+      position: relative;
+      min-height: 120px;
+    }
+    .htf-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,200,83,0.18);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transform: translateY(12px);
+      opacity: 0;
+      transition: transform 0.45s cubic-bezier(0.34,1.4,0.64,1), opacity 0.4s ease;
+    }
+    .htf-card.in  { transform: translateY(0); opacity: 1; }
+    .htf-card.out { transform: translateY(-10px); opacity: 0; transition: transform 0.35s ease, opacity 0.3s ease; }
+    .htf-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #00c853;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 2px rgba(0,200,83,0.15);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    .htf-check {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid #00c853;
+      background: rgba(0,200,83,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 9px;
+      color: #00c853;
+      font-weight: 800;
+    }
+    .htf-label { flex: 1; text-align: left; }
+    .htf-time  { font-size: 0.72rem; color: #aaa; white-space: nowrap; }
+    @keyframes dotPulse {
+      0%,100% { box-shadow: 0 0 0 2px rgba(0,200,83,0.1); }
+      50%      { box-shadow: 0 0 0 5px rgba(0,200,83,0.2); }
+    }
+    @media (max-width: 600px) {
+      .hero-live-feed { margin: 20px auto 24px; }
+      .htf-time { display: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -157,11 +253,16 @@
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-grid-lines"></div>
     <div class="container">
       <div class="hero-badge">Custom Software Studio &middot; Denmark</div>
 
       <h1>Your admin, <span class="highlight">charged through.</span></h1>
       <p class="hero-sub">We build automations for small businesses and foreninger in Denmark. Payments tracked, emails out on time, nothing falling through the cracks. You stop spending Sundays catching up.</p>
+
+      <!-- Live automation feed -->
+      <div class="hero-live-feed" id="heroFeed"></div>
+
       <div class="hero-actions">
         <button class="btn btn-primary" data-cal-namespace="30min" data-cal-link="deng-awak-hzu0y1/30min" data-cal-origin="https://cal.com">Book a Free Workflow Audit</button>
         <a href="#work" class="btn btn-ghost">See Our Work</a>
@@ -909,6 +1010,81 @@
     document.addEventListener('click', function(e) {
       if (e.target.hasAttribute('data-cal-link')) loadCal();
     }, { once: true });
+
+    // ── Hero Live Automation Feed ──
+    (function() {
+      const feed = document.getElementById('heroFeed');
+      if (!feed) return;
+
+      const tasks = [
+        { label: 'Payment reminder sent → 14 members',  time: 'just now'  },
+        { label: 'Weekly digest delivered to board',     time: '2 min ago' },
+        { label: 'Tilmelding bekræftet automatisk',      time: '4 min ago' },
+        { label: 'Deadline alert: momsangivelse 48h',    time: '6 min ago' },
+        { label: 'Invoice auto-logged → DPF',            time: 'just now'  },
+        { label: 'Rykker sendt → 3 udestående',          time: '1 min ago' },
+        { label: 'Betalingsoversigt opdateret',           time: '3 min ago' },
+        { label: 'New member confirmed → Talata BK',     time: 'just now'  },
+        { label: 'Board report generated + sent',        time: '5 min ago' },
+        { label: 'Document request out → 7 klienter',   time: '2 min ago' },
+      ];
+
+      const MAX = 3;
+      let idx = 0;
+      const cards = [];
+
+      function makeCard(task, done) {
+        const c = document.createElement('div');
+        c.className = 'htf-card';
+        c.innerHTML = done
+          ? `<div class="htf-check">✓</div><span class="htf-label">${task.label}</span><span class="htf-time">${task.time}</span>`
+          : `<div class="htf-dot"></div><span class="htf-label">${task.label}</span><span class="htf-time">${task.time}</span>`;
+        return c;
+      }
+
+      function addTask() {
+        const task = tasks[idx % tasks.length];
+        idx++;
+
+        // Remove oldest if at max
+        if (cards.length >= MAX) {
+          const old = cards.shift();
+          old.classList.add('out');
+          setTimeout(() => old.remove(), 350);
+        }
+
+        const card = makeCard(task, false);
+        feed.appendChild(card);
+        cards.push(card);
+        requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('in')));
+
+        // Mark as done after 2.2s
+        setTimeout(() => {
+          card.classList.remove('in');
+          card.classList.add('out');
+          setTimeout(() => {
+            card.classList.remove('out');
+            card.innerHTML = `<div class="htf-check">✓</div><span class="htf-label">${task.label}</span><span class="htf-time">${task.time}</span>`;
+            card.classList.add('in');
+          }, 350);
+        }, 2200);
+      }
+
+      // Seed with 3 done tasks immediately
+      [0,1,2].forEach(i => {
+        const card = makeCard(tasks[i], true);
+        card.classList.add('in');
+        feed.appendChild(card);
+        cards.push(card);
+      });
+      idx = 3;
+
+      // Then cycle new tasks every 2.5s
+      setTimeout(() => {
+        addTask();
+        setInterval(addTask, 2500);
+      }, 1200);
+    })();
   </script>
 
 </body>
