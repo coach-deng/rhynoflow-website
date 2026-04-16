@@ -182,7 +182,8 @@
       max-width: 400px;
       margin: 20px auto 28px;
       position: relative;
-      min-height: 100px;
+      height: 132px;
+      overflow: hidden;
     }
     .htf-card {
       display: flex;
@@ -306,7 +307,7 @@
           <span style="font-size:12px;color:rgba(255,255,255,0.3);margin-left:12px;font-family:monospace;">rhynoflow — morning-brief — bash</span>
         </div>
         <!-- Terminal body -->
-        <div style="background:#0d0d0d;padding:28px 32px;font-family:'Fira Code',Consolas,monospace;font-size:0.82rem;line-height:1.8;min-height:320px;" id="terminalBody">
+        <div style="background:#0d0d0d;padding:28px 32px;font-family:'Fira Code',Consolas,monospace;font-size:0.82rem;line-height:1.8;height:320px;overflow-y:hidden;" id="terminalBody">
           <div style="color:rgba(255,255,255,0.25);"># Rhynoflow Automation Engine v2.4 — Talata Basketball</div>
           <div style="color:rgba(255,255,255,0.25);"># Scheduled run: Monday 08:00 CET</div>
           <div style="height:8px;"></div>
@@ -410,7 +411,7 @@
         <div style="padding:0 48px;border-right:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;gap:10px;">
           <img src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"
                alt="Dansk Puslespilsforening"
-               style="height:52px;width:52px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;"
+               style="height:52px;width:52px;object-fit:contain;opacity:0.75;border-radius:50%;"
                loading="lazy">
           <div style="text-align:center;">
             <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:0.3px;">Dansk Puslespilsforening</div>
@@ -420,10 +421,9 @@
 
         <!-- Talata -->
         <div style="padding:0 48px;border-right:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;gap:10px;">
-          <img src="/images/talata-logo.png"
-               alt="Talata Basketball"
-               style="height:52px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;"
-               loading="lazy">
+          <div style="height:52px;display:flex;align-items:center;">
+            <span style="font-size:22px;font-weight:900;color:rgba(255,255,255,0.75);letter-spacing:2px;text-transform:uppercase;">TALATA</span>
+          </div>
           <div style="text-align:center;">
             <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:0.3px;">Talata Basketball</div>
             <div style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:2px;">Sports Club · Copenhagen</div>
