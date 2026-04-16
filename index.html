@@ -534,8 +534,8 @@
             <div style="display:flex;gap:12px;margin-bottom:16px;">
               <div style="flex:1;background:rgba(255,90,90,0.07);border:1px solid rgba(255,90,90,0.2);border-radius:8px;padding:10px 12px;">
                 <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#ff5a5a;font-weight:700;margin-bottom:2px;">Before</div>
-                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">4+ hrs/week</div>
-                <div style="font-size:0.75rem;color:#888;">chasing emails manually</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#1a1a1a;">15 hrs/week</div>
+                <div style="font-size:0.75rem;color:#888;">events push it even higher</div>
               </div>
               <div style="flex:1;background:rgba(0,200,83,0.07);border:1px solid rgba(0,200,83,0.2);border-radius:8px;padding:10px 12px;">
                 <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;color:#00c853;font-weight:700;margin-bottom:2px;">After</div>
@@ -614,25 +614,33 @@
       </div>
       <div class="flow-diagram" id="flowDiagram">
         <div class="flow-node" data-fi="0">
-          <div class="flow-icon">📥</div>
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="12" y1="13" x2="12" y2="17"/><line x1="10" y1="15" x2="14" y2="15"/></svg>
+          </div>
           <div class="flow-node-label">Trigger</div>
           <div class="flow-node-sub">Form submitted, schedule hit,<br>email received, payment due</div>
         </div>
         <div class="flow-arrow" data-fi="1"><div class="flow-arrow-line"></div><div class="flow-arrow-head">›</div></div>
         <div class="flow-node" data-fi="2">
-          <div class="flow-icon">⚙️</div>
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
+          </div>
           <div class="flow-node-label">Process</div>
           <div class="flow-node-sub">Your Google account reads,<br>checks, and decides</div>
         </div>
         <div class="flow-arrow" data-fi="3"><div class="flow-arrow-line"></div><div class="flow-arrow-head">›</div></div>
         <div class="flow-node" data-fi="4">
-          <div class="flow-icon">📤</div>
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
           <div class="flow-node-label">Action</div>
           <div class="flow-node-sub">Email sent, sheet updated,<br>reminder logged, digest built</div>
         </div>
         <div class="flow-arrow" data-fi="5"><div class="flow-arrow-line"></div><div class="flow-arrow-head">›</div></div>
         <div class="flow-node flow-node-outcome" data-fi="6">
-          <div class="flow-icon">✅</div>
+          <div class="flow-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
           <div class="flow-node-label">Done</div>
           <div class="flow-node-sub">Zero manual steps.<br>You weren't even awake.</div>
         </div>
@@ -664,7 +672,7 @@
     .flow-node.visible { opacity: 1; transform: translateY(0); }
     .flow-node.active  { border-color: #00c853; box-shadow: 0 0 0 3px rgba(0,200,83,0.12); }
     .flow-node-outcome.active { border-color: #00c853; background: rgba(0,200,83,0.05); }
-    .flow-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .flow-icon { display:flex; align-items:center; justify-content:center; margin-bottom: 12px; }
     .flow-node-label { font-size: 0.9rem; font-weight: 800; color: #1a1a1a; margin-bottom: 6px; }
     .flow-node-sub { font-size: 0.73rem; color: #888; line-height: 1.5; }
     .flow-arrow {
