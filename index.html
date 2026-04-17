@@ -174,6 +174,81 @@
     }
     .hero .container { position: relative; z-index: 1; }
 
+    /* ── Hero two-column ── */
+    .hero-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-two-col { grid-template-columns: 1fr; gap: 40px; }
+      .hero-code-col { order: -1; }
+    }
+
+    /* ── Code card ── */
+    .hero-code-card {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,200,83,0.04);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      position: relative;
+    }
+    .hero-code-chrome {
+      display: flex; align-items: center; gap: 8px;
+      padding: 11px 16px;
+      background: #0a0e14;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero-code-dots { display: flex; gap: 6px; }
+    .hero-code-dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .hero-code-dots span:nth-child(1) { background: #ff5f57; }
+    .hero-code-dots span:nth-child(2) { background: #febc2e; }
+    .hero-code-dots span:nth-child(3) { background: #28c840; }
+    .hero-code-file { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-left: 8px; }
+    .hero-code-badge {
+      margin-left: auto;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #00c853;
+      padding: 3px 8px;
+      background: rgba(0,200,83,0.12);
+      border-radius: 6px;
+    }
+    .hero-code-body {
+      padding: 20px 22px;
+      font-size: 0.79rem;
+      line-height: 1.75;
+      color: #c9d1d9;
+      overflow-x: auto;
+    }
+    .hero-code-body pre { font-family: inherit; white-space: pre; margin: 0; }
+    .hc-kw  { color: #ff7b72; }
+    .hc-fn  { color: #d2a8ff; }
+    .hc-str { color: #a5d6ff; }
+    .hc-var { color: #79c0ff; }
+    .hc-num { color: #ffa657; }
+    .hc-com { color: #6b7280; font-style: italic; }
+    .hc-tag { color: #00c853; }
+    .hero-code-footer {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 18px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      background: #0a0e14;
+    }
+    .hero-code-footer-dot {
+      width: 7px; height: 7px;
+      background: #00c853; border-radius: 50%;
+      animation: dotPulse 2s infinite;
+    }
+    @media (max-width: 900px) {
+      .hero-code-card { font-size: 0.72rem; }
+    }
+
     /* Live task feed */
     .hero-live-feed {
       display: flex;
