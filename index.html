@@ -131,9 +131,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="style.css?v=4" as="style">
   <link rel="stylesheet" href="style.css?v=4">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <style>
     /* ── Hero Animation ── */
@@ -259,6 +261,7 @@
       position: relative;
       height: 132px;
       overflow: hidden;
+      contain: strict;
     }
     .htf-card {
       display: flex;
@@ -333,7 +336,7 @@
     <div class="container">
       <div class="hero-badge">Custom Software Studio &middot; Denmark</div>
 
-      <h1>Your admin, <span class="highlight">charged through.</span></h1>
+      <h1 fetchpriority="high">Your admin, <span class="highlight">charged through.</span></h1>
       <p class="hero-sub">We build automations for small businesses and foreninger in Denmark. Payments tracked, emails out on time, nothing falling through the cracks. You stop spending Sundays catching up.</p>
 
       <!-- Live automation feed -->
