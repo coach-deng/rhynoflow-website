@@ -1,0 +1,302 @@
+/* ==========================================================================
+   Rhynoflow — colors_and_type.css
+   Base tokens + semantic CSS vars + type helper classes.
+   Load Inter and JetBrains Mono from Google Fonts (or self-host into /fonts).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------
+     Colors — base
+     One saturated color (green) per screen. Everything else greyscale.
+     --------------------------------------------------------------- */
+  --canvas:        #fafafa;            /* default surface */
+  --canvas-raised: #ffffff;            /* cards, inputs, popovers */
+  --canvas-sunk:   #f5f5f5;            /* hover fill, subtle wells */
+
+  --ink:           #0a0a0a;            /* primary text / icons / borders on primary */
+  --ink-2:         #171717;            /* hover of primary ink surfaces */
+  --ink-3:         #262626;            /* press of primary ink surfaces */
+
+  --fg-1:          #0a0a0a;            /* primary text */
+  --fg-2:          #525252;            /* secondary text */
+  --fg-3:          #a3a3a3;            /* tertiary text / placeholder */
+  --fg-on-dark:    #fafafa;            /* text on dark surfaces */
+  --fg-on-green:   #0a0a0a;            /* text on green surfaces */
+
+  --line:          #e5e5e5;            /* default border */
+  --line-strong:   #d4d4d4;            /* inputs, dividers with emphasis */
+  --line-subtle:   #f0f0f0;            /* low-contrast separators inside cards */
+
+  --green:         #00c853;            /* the one brand green */
+  --green-hover:   #00b34a;            /* CTA hover */
+  --green-press:   #009d41;            /* CTA press */
+  --green-soft:    #e6faee;            /* chip / badge background (sparingly) */
+  --green-dot:     #00c853;            /* status dot, identical to --green */
+
+  /* Functional semantics.
+     Status dots and chips are the ONLY place non-green signal color appears.
+     Never use these hues for backgrounds, buttons, links, or anywhere else. */
+  --status-ok:     #00c853;            /* paid, success */
+  --status-wait:   #a3a3a3;            /* pending = neutral grey */
+  --status-warn:   #f59e0b;            /* attention / review = amber */
+  --status-warn-soft: #fef3c7;
+  --status-err:    #e11d48;            /* overdue / error = red */
+  --status-err-soft:  #ffe4e6;
+
+  --focus-ring:    #0a0a0a;            /* 2px solid focus ring on ink */
+  --focus-ring-on-green: #0a0a0a;
+
+  --overlay:       rgba(10, 10, 10, 0.32); /* modal backdrop — no blur */
+
+  /* ---------------------------------------------------------------
+     Typography — families
+     --------------------------------------------------------------- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Weights */
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-semibold: 600;
+  --w-bold:     700;
+
+  /* ---------------------------------------------------------------
+     Typography — scale (semantic)
+     --------------------------------------------------------------- */
+  --t-display-size: 64px;
+  --t-display-lh:   1.04;
+  --t-display-trk:  -0.03em;
+
+  --t-h1-size: 48px;
+  --t-h1-lh:   1.08;
+  --t-h1-trk:  -0.025em;
+
+  --t-h2-size: 32px;
+  --t-h2-lh:   1.15;
+  --t-h2-trk:  -0.02em;
+
+  --t-h3-size: 22px;
+  --t-h3-lh:   1.25;
+  --t-h3-trk:  -0.015em;
+
+  --t-h4-size: 17px;
+  --t-h4-lh:   1.35;
+  --t-h4-trk:  -0.005em;
+
+  --t-body-size: 15px;
+  --t-body-lh:   1.55;
+  --t-body-trk:  0;
+
+  --t-small-size: 13px;
+  --t-small-lh:   1.5;
+  --t-small-trk:  0;
+
+  --t-caption-size: 12px;
+  --t-caption-lh:   1.4;
+  --t-caption-trk:  0;
+
+  /* Mono */
+  --t-mono-size: 13px;
+  --t-mono-lh:   1.5;
+  --t-data-size: 15px;
+  --t-data-lh:   1.3;
+  --t-metric-size: 36px;  /* big dashboard numbers */
+  --t-metric-lh:   1.05;
+  --t-label-size: 11px;   /* uppercase section labels */
+  --t-label-lh:   1.3;
+  --t-label-trk:  0.08em;
+
+  /* ---------------------------------------------------------------
+     Spacing — 8px base, 4px half-step
+     --------------------------------------------------------------- */
+  --s-0:  0;
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+
+  /* ---------------------------------------------------------------
+     Radii
+     --------------------------------------------------------------- */
+  --r-sm:     6px;   /* chips, tight pills */
+  --r-md:     10px;  /* input fields */
+  --r-card:   12px;  /* cards */
+  --r-lg:     20px;  /* large cards, modals */
+  --r-pill:   999px; /* buttons, avatars, status pills */
+
+  /* ---------------------------------------------------------------
+     Shadows — hover only, never resting
+     --------------------------------------------------------------- */
+  --shadow-none:   none;
+  --shadow-hover:  0 1px 3px rgba(10,10,10,0.04), 0 4px 12px rgba(10,10,10,0.06);
+  --shadow-pop:    0 8px 32px rgba(10,10,10,0.10);          /* popovers, menus */
+  --shadow-modal:  0 24px 64px rgba(10,10,10,0.18);         /* modal surfaces */
+
+  /* ---------------------------------------------------------------
+     Motion
+     --------------------------------------------------------------- */
+  --motion-fast:  120ms;
+  --motion-base:  150ms;
+  --motion-slow:  180ms;
+  --ease:         cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---------------------------------------------------------------
+     Layout
+     --------------------------------------------------------------- */
+  --app-sidebar-w: 240px;
+  --app-header-h:  56px;
+  --app-pad:       24px;
+  --site-max:      1200px;
+  --prose-max:     640px;
+  --feature-max:   960px;
+}
+
+/* Dark mode is not the default. These are reserved for future needs —
+   the marketing site and primary app shell always render light. */
+[data-theme='dark'] {
+  --canvas:        #0a0a0a;
+  --canvas-raised: #171717;
+  --canvas-sunk:   #262626;
+  --fg-1:          #fafafa;
+  --fg-2:          #a3a3a3;
+  --fg-3:          #525252;
+  --line:          #262626;
+  --line-strong:   #404040;
+  --line-subtle:   #171717;
+}
+
+/* ==========================================================================
+   Type helpers — apply semantic styles with a single class.
+   Use these OR the vars directly; don't mix both in one rule.
+   ========================================================================== */
+
+.t-display {
+  font-family: var(--font-sans);
+  font-weight: var(--w-semibold);
+  font-size: var(--t-display-size);
+  line-height: var(--t-display-lh);
+  letter-spacing: var(--t-display-trk);
+  color: var(--fg-1);
+}
+
+.t-h1 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-semibold);
+  font-size: var(--t-h1-size);
+  line-height: var(--t-h1-lh);
+  letter-spacing: var(--t-h1-trk);
+  color: var(--fg-1);
+}
+
+.t-h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-semibold);
+  font-size: var(--t-h2-size);
+  line-height: var(--t-h2-lh);
+  letter-spacing: var(--t-h2-trk);
+  color: var(--fg-1);
+}
+
+.t-h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-semibold);
+  font-size: var(--t-h3-size);
+  line-height: var(--t-h3-lh);
+  letter-spacing: var(--t-h3-trk);
+  color: var(--fg-1);
+}
+
+.t-h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-semibold);
+  font-size: var(--t-h4-size);
+  line-height: var(--t-h4-lh);
+  letter-spacing: var(--t-h4-trk);
+  color: var(--fg-1);
+}
+
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: var(--w-regular);
+  font-size: var(--t-body-size);
+  line-height: var(--t-body-lh);
+  color: var(--fg-1);
+}
+
+.t-body-2 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-regular);
+  font-size: var(--t-body-size);
+  line-height: var(--t-body-lh);
+  color: var(--fg-2);
+}
+
+.t-small {
+  font-family: var(--font-sans);
+  font-weight: var(--w-regular);
+  font-size: var(--t-small-size);
+  line-height: var(--t-small-lh);
+  color: var(--fg-2);
+}
+
+.t-caption {
+  font-family: var(--font-sans);
+  font-weight: var(--w-regular);
+  font-size: var(--t-caption-size);
+  line-height: var(--t-caption-lh);
+  color: var(--fg-3);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-weight: var(--w-regular);
+  font-size: var(--t-mono-size);
+  line-height: var(--t-mono-lh);
+  color: var(--fg-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.t-data {
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-data-size);
+  line-height: var(--t-data-lh);
+  color: var(--fg-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.t-metric {
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-metric-size);
+  line-height: var(--t-metric-lh);
+  color: var(--fg-1);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.t-label {
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-label-size);
+  line-height: var(--t-label-lh);
+  letter-spacing: var(--t-label-trk);
+  color: var(--fg-2);
+  text-transform: uppercase;
+}
+
+/* Base resets appropriate for embedded previews */
+.rf-surface {
+  background: var(--canvas);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
