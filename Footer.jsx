@@ -2,9 +2,22 @@
 
 function Footer() {
   const cols = [
-    { label: 'PRODUCT', items: ['How it works', 'Pricing', 'For Foreninger', 'For Revisorer'] },
-    { label: 'COMPANY', items: ['About', 'Pilot programme', 'Contact'] },
-    { label: 'LEGAL',   items: ['Privacy', 'Terms', 'Databehandler-aftale'] },
+    { label: 'PRODUCT', items: [
+      { label: 'How it works', href: '#how' },
+      { label: 'Pricing', href: '#pricing' },
+      { label: 'For Foreninger', href: '#foreninger' },
+      { label: 'For Revisorer', href: '#revisor' },
+    ]},
+    { label: 'COMPANY', items: [
+      { label: 'About', href: '#about' },
+      { label: 'Pilot programme', href: '#proof' },
+      { label: 'Contact', href: 'mailto:hello@rhynoflow.com' },
+    ]},
+    { label: 'LEGAL', items: [
+      { label: 'Privacy', href: '#privacy' },
+      { label: 'Terms', href: '#terms' },
+      { label: 'Databehandler-aftale', href: '#dpa' },
+    ]},
   ];
   return (
     <footer style={ftStyles.root}>
@@ -31,7 +44,7 @@ function Footer() {
               <div key={col.label} style={ftStyles.col}>
                 <span style={ftStyles.colLabel}>{col.label}</span>
                 {col.items.map((it) => (
-                  <a key={it} href="#" style={ftStyles.colLink}>{it}</a>
+                  <a key={it.label} href={it.href} style={ftStyles.colLink}>{it.label}</a>
                 ))}
               </div>
             ))}

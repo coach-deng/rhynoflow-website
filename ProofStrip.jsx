@@ -2,7 +2,7 @@
 
 function ProofStrip() {
   return (
-    <section style={proofStyles.root}>
+    <section id="proof" style={proofStyles.root}>
       <div style={proofStyles.inner}>
         <span style={proofStyles.label}>PILOT · APR 2026</span>
         <div style={proofStyles.pill}>

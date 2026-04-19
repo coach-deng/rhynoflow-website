@@ -90,7 +90,7 @@ function BriefingSimulator() {
               <span style={{ ...bsStyles.tlDot, background: '#e5e5e5' }} />
             </div>
             <span style={bsStyles.windowTitle}>Morning briefing · {slot} · 19 apr 2026</span>
-            <span style={bsStyles.windowMeta}>TO: TALAT</span>
+            <span style={bsStyles.windowMeta}>TO: TALATA · FOUNDER</span>
           </div>
 
           <div style={bsStyles.summary}>
