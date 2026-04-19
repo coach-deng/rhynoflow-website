@@ -196,7 +196,7 @@ const heroStyles = {
     gridTemplateColumns: 'minmax(0, 1.05fr) minmax(0, 0.95fr)',
     gap: 56, alignItems: 'center',
   },
-  left: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', minWidth: 0 },
+  left: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', minWidth: 0, overflow: 'hidden' },
   meta: {
     display: 'flex', alignItems: 'center', gap: 10,
     fontFamily: 'JetBrains Mono, monospace', fontSize: 11,
@@ -209,14 +209,16 @@ const heroStyles = {
     margin: 0,
     color: '#0a0a0a',
     fontFamily: 'Inter, sans-serif',
-    fontSize: 80, lineHeight: 1.02, letterSpacing: '-0.04em', fontWeight: 700,
+    fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.04, letterSpacing: '-0.03em', fontWeight: 700,
     textWrap: 'balance',
+    minWidth: 0,
   },
   titleAccentWrap: {
-    position: 'relative', display: 'inline-block',
+    position: 'relative', display: 'block',
+    overflow: 'hidden',
   },
   titleAccentGhost: {
-    visibility: 'hidden', whiteSpace: 'nowrap', pointerEvents: 'none',
+    visibility: 'hidden', whiteSpace: 'nowrap', pointerEvents: 'none', display: 'block',
   },
   titleAccent: {
     position: 'absolute', left: 0, top: 0,
