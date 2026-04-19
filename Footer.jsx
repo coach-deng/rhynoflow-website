@@ -22,6 +22,7 @@ function Footer() {
             <div style={ftStyles.contact}>
               <a href="mailto:hello@rhynoflow.com" style={ftStyles.contactLink}>hello@rhynoflow.com</a>
               <a href="https://rhynoflow.com" style={ftStyles.contactLink}>rhynoflow.com</a>
+              <span style={ftStyles.cvr}>CVR 43367994</span>
             </div>
           </div>
 
@@ -52,8 +53,8 @@ function Footer() {
 const ftStyles = {
   root: { background: '#0a0a0a', color: '#a3a3a3', borderTop: '1px solid rgba(250,250,250,0.06)' },
   inner: { maxWidth: 1200, margin: '0 auto', padding: '72px 32px 40px' },
-  top: { display: 'grid', gridTemplateColumns: '1.2fr 2fr', gap: 64, alignItems: 'flex-start', paddingBottom: 56 },
-  brandCol: { display: 'flex', flexDirection: 'column', gap: 18, maxWidth: 360 },
+  top: { display: 'grid', gridTemplateColumns: 'minmax(220px, 1.2fr) minmax(0, 2fr)', gap: 64, alignItems: 'flex-start', paddingBottom: 56 },
+  brandCol: { display: 'flex', flexDirection: 'column', gap: 18 },
   brand: { display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' },
   mark: { display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 3 },
   pill: { height: 4, borderRadius: 999, background: '#00c853' },
@@ -62,6 +63,7 @@ const ftStyles = {
   mission: { margin: 0, fontSize: 14, color: '#a3a3a3', lineHeight: 1.55 },
   contact: { display: 'flex', flexDirection: 'column', gap: 6, marginTop: 4 },
   contactLink: { fontFamily: 'JetBrains Mono, monospace', fontSize: 13, color: '#fafafa', textDecoration: 'none' },
+  cvr: { fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#525252', letterSpacing: '0.04em' },
 
   cols: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 },
   col: { display: 'flex', flexDirection: 'column', gap: 12 },

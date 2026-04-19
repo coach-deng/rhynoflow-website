@@ -209,20 +209,21 @@ const heroStyles = {
     margin: 0,
     color: '#0a0a0a',
     fontFamily: 'Inter, sans-serif',
-    fontSize: 'clamp(40px, 5vw, 68px)', lineHeight: 1.04, letterSpacing: '-0.03em', fontWeight: 700,
-    textWrap: 'balance',
+    fontSize: 'clamp(32px, 3.8vw, 56px)', lineHeight: 1.08, letterSpacing: '-0.03em', fontWeight: 700,
     minWidth: 0,
   },
   titleAccentWrap: {
     position: 'relative', display: 'block',
-    overflow: 'hidden',
+    overflow: 'hidden', maxWidth: '100%',
   },
   titleAccentGhost: {
-    visibility: 'hidden', whiteSpace: 'nowrap', pointerEvents: 'none', display: 'block',
+    visibility: 'hidden', pointerEvents: 'none', display: 'block',
+    whiteSpace: 'nowrap', overflow: 'hidden',
   },
   titleAccent: {
     position: 'absolute', left: 0, top: 0,
     color: '#00c853', whiteSpace: 'nowrap',
+    maxWidth: '100%', overflow: 'hidden',
   },
   caret: {
     display: 'inline-block', marginLeft: 2,
