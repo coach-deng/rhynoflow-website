@@ -52,7 +52,7 @@ function Footer() {
         </div>
 
         <div style={ftStyles.bottom}>
-          <span style={ftStyles.copy}>© 2026 Rhynoflow ApS · København</span>
+          <span style={ftStyles.copy}>© 2026 Rhynoflow · København</span>
           <div style={ftStyles.status}>
             <span style={ftStyles.statusDot} />
             <span>All systems operational</span>

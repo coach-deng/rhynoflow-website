@@ -25,7 +25,7 @@ function RoiSlider() {
     <section style={roiStyles.root}>
       <div style={roiStyles.inner}>
         <div style={roiStyles.head}>
-          <span style={roiStyles.label}>WHAT IT'S WORTH</span>
+          <span style={roiStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>05</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ WHAT IT'S WORTH</span></span>
           <h2 style={roiStyles.title}>
             Run your own math.
           </h2>
@@ -105,7 +105,7 @@ const roiStyles = {
   root: { background: '#fafafa', padding: '120px 32px', borderTop: '1px solid #e5e5e5' },
   inner: { maxWidth: 1200, margin: '0 auto' },
   head: { maxWidth: 720, marginBottom: 48 },
-  label: { fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', color: '#00c853' },
+  label: { fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', color: '#a3a3a3' },
   title: { margin: '14px 0 16px', fontSize: 48, fontWeight: 600, letterSpacing: '-0.03em', color: '#0a0a0a', lineHeight: 1.08 },
   sub: { margin: 0, fontSize: 17, color: '#525252', lineHeight: 1.55, maxWidth: 620 },
 

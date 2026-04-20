@@ -44,7 +44,7 @@ function Pricing() {
     <section id="pricing" style={prStyles.root}>
       <div style={prStyles.inner}>
         <div style={prStyles.head}>
-          <span style={prStyles.label}>PRICING</span>
+          <span style={prStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>06</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ PRICING</span></span>
           <h2 style={prStyles.title}>Honest pricing. One invoice a month.</h2>
           <p style={prStyles.sub}>
             All plans include the briefing, the drafts, and the admin automations.
@@ -126,7 +126,7 @@ const prStyles = {
   root: { background: '#fafafa', padding: '120px 32px', borderTop: '1px solid #e5e5e5' },
   inner: { maxWidth: 1200, margin: '0 auto' },
   head: { maxWidth: 720, marginBottom: 56 },
-  label: { fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', color: '#00c853' },
+  label: { fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500, letterSpacing: '0.12em', color: '#a3a3a3' },
   title: { margin: '14px 0 16px', fontSize: 48, fontWeight: 600, letterSpacing: '-0.03em', color: '#0a0a0a', lineHeight: 1.08 },
   sub: { margin: 0, fontSize: 17, color: '#525252', lineHeight: 1.55, maxWidth: 620 },
 
