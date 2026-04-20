@@ -4,9 +4,11 @@ function Nav() {
   const [hover, setHover] = React.useState(null);
   const [ctaHover, setCtaHover] = React.useState(false);
   const links = [
-    { label: 'How it works', href: '#how' },
-    { label: 'Pricing',      href: '#pricing' },
-    { label: 'For Foreninger', href: '#foreninger' },
+    { label: 'How it works',    href: '#how' },
+    { label: 'Pricing',         href: '#pricing' },
+    { label: 'For Foreninger',  href: '/for-foreninger.html' },
+    { label: 'For Accountants', href: '/for-revisorer.html' },
+    { label: 'About',           href: '/about.html' },
   ];
   return (
     <nav style={navStyles.root}>
@@ -27,7 +29,9 @@ function Nav() {
             >{l.label}</a>
           ))}
           <a
-            href="#book"
+            href="https://cal.com/deng-awak-hzu0y1/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setCtaHover(true)}
             onMouseLeave={() => setCtaHover(false)}
             style={{
