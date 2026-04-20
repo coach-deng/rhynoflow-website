@@ -72,10 +72,12 @@ const ssStyles = {
     maxWidth: 1200, margin: '0 auto',
     padding: '14px 32px',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-    gap: 32, flexWrap: 'wrap',
+    gap: 32,
     fontFamily: 'JetBrains Mono, monospace', fontSize: 12,
+    height: 48,
+    overflow: 'hidden',
   },
-  left: { display: 'flex', alignItems: 'center', gap: 12, minWidth: 0, flex: '1 1 auto' },
+  left: { display: 'flex', alignItems: 'center', gap: 12, minWidth: 0, flex: '1 1 auto', overflow: 'hidden' },
   liveDot: { position: 'relative', width: 8, height: 8, flexShrink: 0 },
   liveDotPulse: {
     position: 'absolute', inset: -4, borderRadius: 999,
@@ -93,12 +95,16 @@ const ssStyles = {
   event: {
     color: '#a3a3a3',
     whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-    minWidth: 0,
+    minWidth: 0, flex: '1 1 0',
   },
   right: { display: 'flex', alignItems: 'center', gap: 24, flexShrink: 0 },
   metric: { display: 'flex', alignItems: 'baseline', gap: 8 },
   metricLabel: { color: '#525252', fontSize: 11 },
-  metricValue: { color: '#fafafa', fontWeight: 500 },
+  metricValue: {
+    color: '#fafafa', fontWeight: 500,
+    fontVariantNumeric: 'tabular-nums',
+    minWidth: '4ch', display: 'inline-block', textAlign: 'right',
+  },
 };
 
 // Inject keyframes once
