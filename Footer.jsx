@@ -5,18 +5,18 @@ function Footer() {
     { label: 'PRODUCT', items: [
       { label: 'How it works', href: '#how' },
       { label: 'Pricing', href: '#pricing' },
-      { label: 'For Foreninger', href: '#foreninger' },
-      { label: 'For Revisorer', href: '#revisor' },
+      { label: 'For Foreninger', href: '/for-foreninger.html' },
+      { label: 'For Revisorer', href: '/for-revisorer.html' },
     ]},
     { label: 'COMPANY', items: [
-      { label: 'About', href: '#about' },
-      { label: 'Pilot programme', href: '#proof' },
+      { label: 'About', href: '/about.html' },
+      { label: 'Pilot programme', href: '#pricing' },
       { label: 'Contact', href: 'mailto:hello@rhynoflow.com' },
     ]},
     { label: 'LEGAL', items: [
-      { label: 'Privacy', href: '#privacy' },
-      { label: 'Terms', href: '#terms' },
-      { label: 'Databehandler-aftale', href: '#dpa' },
+      { label: 'Privacy', href: '/privacy.html' },
+      { label: 'Terms', href: '/terms.html' },
+      { label: 'Databehandler-aftale', href: '/databehandler-aftale.html' },
     ]},
   ];
   return (

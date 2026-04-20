@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1584px; height: 396px; overflow: hidden; background: #0a0a0a; font-family: 'Inter', sans-serif; }
+
+  .banner {
+    width: 1584px;
+    height: 396px;
+    background: #0a0a0a;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Subtle grid */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(74,222,128,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,222,128,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Big decorative logo mark — right side */
+  .deco-mark {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.07;
+  }
+
+  /* Green glow blob */
+  .glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,222,128,0.12) 0%, transparent 70%);
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Left accent line */
+  .accent-line {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #4ade80, transparent);
+    opacity: 0.6;
+  }
+
+  /* Content — centered */
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 120px;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .logo-mark { width: 32px; height: 32px; }
+
+  .logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: -0.5px;
+  }
+  .logo-text span { color: #4ade80; }
+
+  .tagline {
+    font-size: 64px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -2px;
+    line-height: 1.0;
+    margin-bottom: 24px;
+  }
+  .tagline .green { color: #4ade80; }
+
+  /* Floating chips */
+  .chips {
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .chip {
+    padding: 6px 16px;
+    border: 1px solid rgba(74,222,128,0.2);
+    border-radius: 999px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    background: rgba(74,222,128,0.04);
+  }
+
+  /* URL */
+  .url {
+    position: absolute;
+    bottom: 28px;
+    right: 120px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.18);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    z-index: 10;
+  }
+  .url span { color: rgba(74,222,128,0.4); }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="accent-line"></div>
+
+  <!-- Big decorative mark -->
+  <div class="deco-mark">
+    <svg width="520" height="520" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="22" width="48" height="13" rx="6.5" fill="#4ade80"/>
+      <rect x="24" y="44" width="64" height="13" rx="6.5" fill="#4ade80"/>
+      <rect x="10" y="66" width="78" height="13" rx="6.5" fill="#4ade80"/>
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="logo-row">
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="22" width="48" height="13" rx="6.5" fill="#4ade80"/>
+        <rect x="24" y="44" width="64" height="13" rx="6.5" fill="#4ade80"/>
+        <rect x="10" y="66" width="78" height="13" rx="6.5" fill="#4ade80"/>
+      </svg>
+      <div class="logo-text">Rhyno<span>flow</span></div>
+    </div>
+
+    <div class="tagline">Your admin, on <span class="green">autopilot.</span></div>
+
+    <div class="chips">
+      <div class="chip">Google Workspace Automation</div>
+      <div class="chip">Built in 5 days</div>
+      <div class="chip">100% client code ownership</div>
+      <div class="chip">Copenhagen, Denmark</div>
+    </div>
+  </div>
+
+  <!-- URL -->
+  <div class="url"><span>rhyno</span>flow.com</div>
+</div>
+</body>
+</html>

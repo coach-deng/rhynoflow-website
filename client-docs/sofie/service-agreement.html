@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Rhynoflow Serviceaftale / Service Agreement — Dansk Puslespilsforening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',Arial,sans-serif;background:#e8e8e8;color:#111;font-size:10.5pt;line-height:1.55}
+  .page{width:210mm;min-height:297mm;margin:20px auto;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.08);page-break-after:always}
+  .page:last-child{page-break-after:auto}
+
+  /* Header */
+  .header{background:#0a0a0a;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;color:#fff}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand svg{width:26px;height:26px}
+  .brand .name{font-size:18px;font-weight:800;letter-spacing:-0.5px}
+  .brand .name span{color:#4ade80}
+  .header-meta{text-align:right;font-size:9.5px;color:#888;line-height:1.5}
+  .header-meta strong{color:#fff;font-size:10px}
+  .stripe{background:#4ade80;padding:7px 32px;font-size:9.5px;font-weight:700;color:#0a0a0a;letter-spacing:0.5px;display:flex;justify-content:space-between}
+
+  /* Body */
+  .body{padding:24px 32px 36px}
+  h1{font-size:19px;font-weight:800;letter-spacing:-0.4px;margin-bottom:3px}
+  .subtitle{color:#666;font-size:10px;margin-bottom:18px;font-style:italic}
+
+  /* Parties grid */
+  .parties{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;padding:14px;background:#fafafa;border:1px solid #eee;border-radius:8px}
+  .party .lbl{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4ade80;margin-bottom:5px}
+  .party .pname{font-size:12px;font-weight:700;margin-bottom:2px}
+  .party .detail{font-size:9.5px;color:#555;line-height:1.6}
+
+  /* Meta row */
+  .meta-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;font-size:9.5px;padding:10px 14px;border:1px solid #eee;border-radius:8px;background:#fafafa}
+  .meta-row .ml{font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#888;margin-bottom:2px}
+  .meta-row .mv{font-weight:600}
+
+  /* Section header — full width with bilingual label */
+  .sec{margin:18px 0 8px;border-bottom:2px solid #0a0a0a;padding-bottom:5px;display:flex;align-items:baseline;gap:8px}
+  .sec .num{color:#4ade80;font-weight:800;font-size:12px}
+  .sec .da{font-size:12px;font-weight:700}
+  .sec .en{font-size:10px;color:#888;font-style:italic}
+
+  /* Bilingual two-column body */
+  .bi{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:6px}
+  .bi .da-col{padding-right:12px;border-right:1px solid #e8e8e8;font-size:9.8pt;color:#111}
+  .bi .en-col{padding-left:12px;font-size:9.8pt;color:#555;font-style:italic}
+  .bi ul{margin-left:14px}
+  .bi li{margin-bottom:3px;font-size:9.5pt}
+
+  /* Highlight box — bilingual */
+  .hi-bi{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:10px 0;background:#f0fdf4;border-left:3px solid #4ade80;border-radius:0 6px 6px 0}
+  .hi-bi .da-col{padding:9px 12px 9px 12px;border-right:1px solid #c6f0d8;font-size:9.5pt;color:#111;font-weight:500}
+  .hi-bi .en-col{padding:9px 12px;font-size:9.5pt;color:#555;font-style:italic}
+
+  /* Total box */
+  .total-box{background:#0a0a0a;color:#fff;padding:12px 16px;border-radius:8px;margin:10px 0;display:flex;justify-content:space-between;align-items:center}
+  .total-box .lbl{font-size:8.5px;letter-spacing:1.2px;text-transform:uppercase;color:#888;line-height:1.4}
+  .total-box .lbl em{display:block;font-style:italic;color:#666;font-size:8px}
+  .total-box .val{font-size:18px;font-weight:800;color:#4ade80}
+
+  /* Signature */
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;padding-top:20px;border-top:2px solid #0a0a0a}
+  .sig .slbl{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#666;margin-bottom:3px}
+  .sig .sname{font-size:11px;font-weight:700;margin-bottom:12px}
+  .sig .sf{font-size:9.5px;margin-bottom:9px}
+  .sig .sk{color:#999;font-size:8.5px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:2px}
+  .sig .sv{border-bottom:1px solid #333;padding-bottom:3px;min-height:16px;font-weight:500}
+
+  /* Footer */
+  .footer{padding:10px 32px;background:#0a0a0a;color:#777;font-size:9px;display:flex;justify-content:space-between}
+  .footer .green{color:#4ade80}
+
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;width:100%;min-height:auto}
+    @page{size:A4;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="header">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="22" width="48" height="13" rx="6.5" fill="#4ade80"/><rect x="24" y="44" width="64" height="13" rx="6.5" fill="#4ade80"/><rect x="10" y="66" width="78" height="13" rx="6.5" fill="#4ade80"/></svg>
+      <div class="name">Rhyno<span>flow</span></div>
+    </div>
+    <div class="header-meta">
+      <strong>Serviceaftale / Service Agreement</strong><br>
+      Dansk Puslespilsforening<br>
+      21. april 2026
+    </div>
+  </div>
+  <div class="stripe">
+    <span>FORENING PLAN</span>
+    <span>DOC 01 / 02 &nbsp;·&nbsp; SIDE / PAGE 1 AF / OF 2</span>
+  </div>
+
+  <div class="body">
+    <h1>Serviceaftale / Service Agreement</h1>
+    <div class="subtitle">Indgået mellem / entered into between Rhynoflow og / and Dansk Puslespilsforening · 21. april / April 2026</div>
+
+    <div class="parties">
+      <div class="party">
+        <div class="lbl">Leverandør / Service Provider</div>
+        <div class="pname">Rhynoflow</div>
+        <div class="detail">CVR 43367994 · København, Danmark<br>hello@rhynoflow.com · rhynoflow.com</div>
+      </div>
+      <div class="party">
+        <div class="lbl">Kunde / Client</div>
+        <div class="pname">Dansk Puslespilsforening</div>
+        <div class="detail">Att: Sofie Jule Andersen<br>sofie@puslespil.dk</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div><div class="ml">Dato / Date</div><div class="mv">21. april 2026</div></div>
+      <div><div class="ml">Plan</div><div class="mv">Forening (Founding Cohort)</div></div>
+      <div><div class="ml">Sprog / Language</div><div class="mv">DA primær · EN sekundær</div></div>
+    </div>
+
+    <!-- § 1 -->
+    <div class="sec"><span class="num">§ 1</span><span class="da">Hvad Rhynoflow leverer</span><span class="en">What Rhynoflow delivers</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <p>Rhynoflow opsætter, drifter og vedligeholder følgende automatiseringer inde i Kundens Google Workspace konto:</p>
+        <ul style="margin-top:6px">
+          <li><strong>Member Onboarding.</strong> Velkomstmail, betalingslink og bestyrelsesnotifikation ved nyt medlem.</li>
+          <li><strong>Morning Briefing.</strong> Daglig digest kl. 6:30 med kalender, emails og deadlines.</li>
+          <li><strong>Payment Tracker.</strong> Automatisk logning af MobilePay betalinger.</li>
+          <li><strong>Weekly Board Summary.</strong> Mandag morgen opsummering til bestyrelsen.</li>
+          <li><strong>Deadline Alerts.</strong> Varsler 7, 3 og 1 dag før deadlines.</li>
+          <li><strong>Smart Reply Drafter.</strong> Udkast til svar på indgående emails.</li>
+        </ul>
+      </div>
+      <div class="en-col">
+        <p>Rhynoflow sets up, operates, and maintains the following automations inside the Client's own Google Workspace account:</p>
+        <ul style="margin-top:6px">
+          <li><strong>Member Onboarding.</strong> Welcome email, payment link, and board notification on every new member.</li>
+          <li><strong>Morning Briefing.</strong> Daily digest at 6:30 AM with calendar, emails, and deadlines.</li>
+          <li><strong>Payment Tracker.</strong> Automatic logging of MobilePay payments.</li>
+          <li><strong>Weekly Board Summary.</strong> Monday morning recap for the board.</li>
+          <li><strong>Deadline Alerts.</strong> Reminders at 7, 3, and 1 day before deadlines.</li>
+          <li><strong>Smart Reply Drafter.</strong> Draft replies to incoming emails.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hi-bi">
+      <div class="da-col">Alle automatiseringer kører inde i Kundens egen Google konto. Ingen tredjepartsservere. Ingen ekstra software. Kunden ejer al kode.</div>
+      <div class="en-col">All automations run inside the Client's own Google account. No third-party servers. No extra software. The Client owns all code.</div>
+    </div>
+
+    <!-- § 2 -->
+    <div class="sec"><span class="num">§ 2</span><span class="da">Pris og betalingsbetingelser</span><span class="en">Price and payment terms</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <p><strong>Måned 1 (gratis prøveperiode).</strong> Fra 21. april til 21. maj 2026. Ingen betaling.</p>
+        <p style="margin-top:6px"><strong>Måned 2 til 12 (11 måneders betaling).</strong> 1.500 DKK pr. måned ex. moms. Første faktura 21. maj 2026. MobilePay eller bankoverførsel, 14 dages forfald.</p>
+        <p style="margin-top:6px"><strong>Efter 21. april 2027.</strong> Måned til måned, 1.500 DKK/mdr. 30 dages opsigelsesvarsel fra hver side.</p>
+        <p style="margin-top:6px"><strong>Prisgaranti.</strong> Prisen stiger ikke i 24 måneder fra 21. april 2026, låst til og med 21. april 2028.</p>
+      </div>
+      <div class="en-col">
+        <p><strong>Month 1 (free trial).</strong> From April 21 to May 21, 2026. No charge.</p>
+        <p style="margin-top:6px"><strong>Months 2 to 12 (11 paid months).</strong> 1,500 DKK/month ex. VAT. First invoice May 21, 2026. MobilePay or bank transfer, 14-day terms.</p>
+        <p style="margin-top:6px"><strong>After April 21, 2027.</strong> Month-to-month at 1,500 DKK/month. 30 days notice from either party.</p>
+        <p style="margin-top:6px"><strong>Price guarantee.</strong> The monthly price will not increase for 24 months from April 21, 2026, locked through April 21, 2028.</p>
+      </div>
+    </div>
+
+    <!-- § 3 -->
+    <div class="sec"><span class="num">§ 3</span><span class="da">Bindingsperiode og opsigelse</span><span class="en">Commitment period and termination</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <p>Kunden forpligter sig til betaling fra måned 2 (21. maj 2026) til og med måned 12 (21. marts 2027). Aftalen løber 12 måneder i alt inkl. den gratis måned.</p>
+        <p style="margin-top:6px">Tidlig opsigelse kan kun ske ved: a) væsentlig misligholdelse fra Rhynoflow (drift ude i over 14 dage, databrud, eller Rhynoflow ophører), eller b) gensidig aftale via email.</p>
+      </div>
+      <div class="en-col">
+        <p>The Client commits to payment from month 2 (May 21, 2026) through month 12 (March 21, 2027). The agreement runs 12 months in total including the free month.</p>
+        <p style="margin-top:6px">Early termination is only permitted in the event of: a) material breach by Rhynoflow (outage exceeding 14 days, data breach, or Rhynoflow ceases operations), or b) mutual agreement by email.</p>
+      </div>
+    </div>
+    <div class="total-box">
+      <div class="lbl">Samlet betalingsforpligtelse<em>Total payment commitment</em></div>
+      <div class="val">16.500 DKK ex. moms / VAT</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Rhynoflow · CVR 43367994 · hello@rhynoflow.com</span>
+    <span class="green">Side / Page 1 af / of 2</span>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="header">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="22" width="48" height="13" rx="6.5" fill="#4ade80"/><rect x="24" y="44" width="64" height="13" rx="6.5" fill="#4ade80"/><rect x="10" y="66" width="78" height="13" rx="6.5" fill="#4ade80"/></svg>
+      <div class="name">Rhyno<span>flow</span></div>
+    </div>
+    <div class="header-meta">
+      <strong>Serviceaftale / Service Agreement</strong><br>
+      Dansk Puslespilsforening<br>
+      21. april 2026
+    </div>
+  </div>
+  <div class="stripe">
+    <span>FORENING PLAN</span>
+    <span>DOC 01 / 02 &nbsp;·&nbsp; SIDE / PAGE 2 AF / OF 2</span>
+  </div>
+
+  <div class="body">
+
+    <!-- § 4 -->
+    <div class="sec"><span class="num">§ 4</span><span class="da">Founding Cohort fordele</span><span class="en">Founding Cohort benefits</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <p>Som en af Rhynoflows første klienter får Dansk Puslespilsforening:</p>
+        <ul style="margin-top:6px">
+          <li>1 måned gratis (jf. § 2).</li>
+          <li>Prisgaranti i 24 måneder (jf. § 2).</li>
+          <li>Prioriteret support. Kritiske henvendelser besvares inden for 4 timer i arbejdstiden (man til fre 9 til 17).</li>
+          <li>Livstids-adgang til fremtidige standard-automatiseringer uden ekstra omkostning.</li>
+        </ul>
+        <p style="margin-top:8px">Til gengæld giver Kunden Rhynoflow ret til:</p>
+        <ul style="margin-top:6px">
+          <li>At bruge "Dansk Puslespilsforening" som reference på rhynoflow.com og i salgsmateriale.</li>
+          <li>At offentliggøre én case study efter Kundens skriftlige godkendelse.</li>
+          <li>At citere et kort udsagn (op til 2 sætninger) på LinkedIn.</li>
+        </ul>
+      </div>
+      <div class="en-col">
+        <p>As one of Rhynoflow's first clients, Dansk Puslespilsforening receives:</p>
+        <ul style="margin-top:6px">
+          <li>1 month free (see § 2).</li>
+          <li>Price guarantee for 24 months (see § 2).</li>
+          <li>Priority support. Critical issues resolved within 4 business hours (Mon to Fri, 9 to 17).</li>
+          <li>Lifetime access to future standard automations at no extra cost.</li>
+        </ul>
+        <p style="margin-top:8px">In return, the Client grants Rhynoflow the right to:</p>
+        <ul style="margin-top:6px">
+          <li>Use "Dansk Puslespilsforening" as a reference on rhynoflow.com and in sales materials.</li>
+          <li>Publish one case study upon the Client's written approval.</li>
+          <li>Quote a short statement (up to 2 sentences) on LinkedIn.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- § 5 -->
+    <div class="sec"><span class="num">§ 5</span><span class="da">Ansvar og garanti</span><span class="en">Liability and warranty</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <p>Rhynoflow garanterer at automatiseringerne kører som specificeret i § 1, og at al kode forbliver i Kundens Google konto efter aftalens ophør.</p>
+        <p style="margin-top:6px">Rhynoflow er ikke ansvarlig for Google-platformsændringer (udbedres inden 72 timer), datatab forårsaget af Kundens egne handlinger, eller indirekte tab og tabt fortjeneste.</p>
+      </div>
+      <div class="en-col">
+        <p>Rhynoflow guarantees the automations run as specified in § 1 and that all code remains in the Client's Google account after the agreement ends.</p>
+        <p style="margin-top:6px">Rhynoflow is not liable for Google platform changes (remedied within 72 hours), data loss caused by the Client's own actions, or indirect damages and lost profit.</p>
+      </div>
+    </div>
+    <div class="total-box">
+      <div class="lbl">Maksimal samlet erstatning<em>Maximum total liability — equals 3 months subscription</em></div>
+      <div class="val">4.500 DKK</div>
+    </div>
+
+    <!-- § 6 -->
+    <div class="sec"><span class="num">§ 6</span><span class="da">Data og adgang</span><span class="en">Data and access</span></div>
+    <div class="bi">
+      <div class="da-col"><p>Behandling af personoplysninger reguleres i den separate Databehandleraftale (DPA), som udgør en integreret del af denne aftale.</p></div>
+      <div class="en-col"><p>Processing of personal data is governed by the separate Data Processing Agreement (DPA), which forms an integral part of this agreement.</p></div>
+    </div>
+
+    <!-- § 7 -->
+    <div class="sec"><span class="num">§ 7</span><span class="da">Gældende lov og værneting</span><span class="en">Governing law and jurisdiction</span></div>
+    <div class="bi">
+      <div class="da-col"><p>Dansk ret. Tvister forsøges løst ved dialog. Hvis ikke muligt: Københavns Byret.</p></div>
+      <div class="en-col"><p>Danish law. Disputes are first attempted resolved by dialogue. If not possible: the Copenhagen City Court.</p></div>
+    </div>
+
+    <!-- Signatures -->
+    <div class="sig-grid">
+      <div class="sig">
+        <div class="slbl">For Dansk Puslespilsforening</div>
+        <div class="sname">Sofie Jule Andersen</div>
+        <div class="sf"><div class="sk">Titel / Title</div><div class="sv">Bestyrelsesformand / Chair</div></div>
+        <div class="sf"><div class="sk">Dato / Date</div><div class="sv">21. april 2026</div></div>
+        <div class="sf"><div class="sk">Underskrift / Signature</div><div class="sv">&nbsp;</div></div>
+      </div>
+      <div class="sig">
+        <div class="slbl">For Rhynoflow</div>
+        <div class="sname">Deng Awak</div>
+        <div class="sf"><div class="sk">Titel / Title</div><div class="sv">Direktør / Director</div></div>
+        <div class="sf"><div class="sk">Dato / Date</div><div class="sv">21. april 2026</div></div>
+        <div class="sf"><div class="sk">Underskrift / Signature</div><div class="sv">&nbsp;</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Rhynoflow · CVR 43367994 · hello@rhynoflow.com · rhynoflow.com</span>
+    <span class="green">Side / Page 2 af / of 2</span>
+  </div>
+</div>
+
+</body>
+</html>

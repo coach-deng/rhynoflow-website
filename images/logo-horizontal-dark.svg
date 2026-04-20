@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" width="260" height="48">
+  <!-- flow lines mark -->
+  <g transform="translate(4, 4)">
+    <rect x="16" y="5"  width="18" height="6" rx="3" fill="#4ade80"/>
+    <rect x="10" y="16" width="24" height="6" rx="3" fill="#4ade80"/>
+    <rect x="4"  y="27" width="30" height="6" rx="3" fill="#4ade80"/>
+  </g>
+  <!-- wordmark -->
+  <text x="58" y="33" font-family="Inter, -apple-system, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.5" fill="#ffffff">Rhyno<tspan fill="#4ade80">flow</tspan></text>
+</svg>

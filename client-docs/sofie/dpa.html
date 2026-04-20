@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Rhynoflow Databehandleraftale / DPA — Dansk Puslespilsforening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',Arial,sans-serif;background:#e8e8e8;color:#111;font-size:10.5pt;line-height:1.55}
+  .page{width:210mm;min-height:297mm;margin:20px auto;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.08);page-break-after:always}
+  .page:last-child{page-break-after:auto}
+  .header{background:#0a0a0a;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;color:#fff}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand svg{width:26px;height:26px}
+  .brand .name{font-size:18px;font-weight:800;letter-spacing:-0.5px}
+  .brand .name span{color:#4ade80}
+  .header-meta{text-align:right;font-size:9.5px;color:#888;line-height:1.5}
+  .header-meta strong{color:#fff;font-size:10px}
+  .stripe{background:#4ade80;padding:7px 32px;font-size:9.5px;font-weight:700;color:#0a0a0a;letter-spacing:0.5px;display:flex;justify-content:space-between}
+  .body{padding:24px 32px 36px}
+  h1{font-size:19px;font-weight:800;letter-spacing:-0.4px;margin-bottom:3px}
+  .subtitle{color:#666;font-size:10px;margin-bottom:18px;font-style:italic}
+  .parties{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;padding:14px;background:#fafafa;border:1px solid #eee;border-radius:8px}
+  .party .lbl{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4ade80;margin-bottom:5px}
+  .party .pname{font-size:12px;font-weight:700;margin-bottom:2px}
+  .party .detail{font-size:9.5px;color:#555;line-height:1.6}
+  .intro-bi{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:14px;background:#f0fdf4;border-left:3px solid #4ade80;border-radius:0 6px 6px 0}
+  .intro-bi .da-col{padding:10px 12px;border-right:1px solid #c6f0d8;font-size:9.5pt;color:#111;font-weight:500}
+  .intro-bi .en-col{padding:10px 12px;font-size:9.5pt;color:#555;font-style:italic}
+  .sec{margin:16px 0 7px;border-bottom:2px solid #0a0a0a;padding-bottom:5px;display:flex;align-items:baseline;gap:8px}
+  .sec .num{color:#4ade80;font-weight:800;font-size:12px}
+  .sec .da{font-size:12px;font-weight:700}
+  .sec .en{font-size:10px;color:#888;font-style:italic}
+  .bi{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:6px}
+  .bi .da-col{padding-right:12px;border-right:1px solid #e8e8e8;font-size:9.8pt;color:#111}
+  .bi .en-col{padding-left:12px;font-size:9.8pt;color:#555;font-style:italic}
+  .bi ul{margin-left:14px}
+  .bi li{margin-bottom:3px;font-size:9.5pt}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:9.5pt}
+  th{background:#0a0a0a;color:#fff;padding:7px 9px;text-align:left;font-size:8.5px;letter-spacing:0.8px;text-transform:uppercase;font-weight:600}
+  td{padding:7px 9px;border-bottom:1px solid #eee;vertical-align:top}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;padding-top:20px;border-top:2px solid #0a0a0a}
+  .sig .slbl{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#666;margin-bottom:3px}
+  .sig .sname{font-size:11px;font-weight:700;margin-bottom:12px}
+  .sig .sf{font-size:9.5px;margin-bottom:9px}
+  .sig .sk{color:#999;font-size:8.5px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:2px}
+  .sig .sv{border-bottom:1px solid #333;padding-bottom:3px;min-height:16px;font-weight:500}
+  .footer{padding:10px 32px;background:#0a0a0a;color:#777;font-size:9px;display:flex;justify-content:space-between}
+  .footer .green{color:#4ade80}
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;width:100%;min-height:auto}
+    @page{size:A4;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="header">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="22" width="48" height="13" rx="6.5" fill="#4ade80"/><rect x="24" y="44" width="64" height="13" rx="6.5" fill="#4ade80"/><rect x="10" y="66" width="78" height="13" rx="6.5" fill="#4ade80"/></svg>
+      <div class="name">Rhyno<span>flow</span></div>
+    </div>
+    <div class="header-meta">
+      <strong>Databehandleraftale / Data Processing Agreement</strong><br>
+      Dansk Puslespilsforening · GDPR Art. 28<br>
+      21. april 2026
+    </div>
+  </div>
+  <div class="stripe">
+    <span>GDPR ART. 28 · EU BEHANDLING / EU PROCESSING ONLY</span>
+    <span>DOC 02 / 02 &nbsp;·&nbsp; SIDE / PAGE 1 AF / OF 2</span>
+  </div>
+
+  <div class="body">
+    <h1>Databehandleraftale / Data Processing Agreement</h1>
+    <div class="subtitle">Indgået i henhold til / entered into pursuant to GDPR artikel / article 28</div>
+
+    <div class="parties">
+      <div class="party">
+        <div class="lbl">Dataansvarlig / Data Controller</div>
+        <div class="pname">Dansk Puslespilsforening</div>
+        <div class="detail">Att: Sofie Jule Andersen · sofie@puslespil.dk</div>
+      </div>
+      <div class="party">
+        <div class="lbl">Databehandler / Data Processor</div>
+        <div class="pname">Rhynoflow</div>
+        <div class="detail">CVR 43367994 · København, Danmark<br>hello@rhynoflow.com</div>
+      </div>
+    </div>
+
+    <div class="intro-bi">
+      <div class="da-col">Denne aftale udgør en integreret del af Serviceaftalen dateret 21. april 2026 og regulerer Rhynoflows behandling af personoplysninger på vegne af Dansk Puslespilsforening.</div>
+      <div class="en-col">This agreement forms an integral part of the Service Agreement dated April 21, 2026 and governs Rhynoflow's processing of personal data on behalf of Dansk Puslespilsforening.</div>
+    </div>
+
+    <!-- § 1 -->
+    <div class="sec"><span class="num">§ 1</span><span class="da">Formål og omfang</span><span class="en">Purpose and scope</span></div>
+    <div class="bi">
+      <div class="da-col"><p>Rhynoflow behandler personoplysninger på vegne af Dansk Puslespilsforening udelukkende med det formål at levere de automatiseringer beskrevet i Serviceaftalens § 1.</p></div>
+      <div class="en-col"><p>Rhynoflow processes personal data on behalf of Dansk Puslespilsforening solely for the purpose of delivering the automations described in the Service Agreement § 1.</p></div>
+    </div>
+
+    <!-- § 2 -->
+    <div class="sec"><span class="num">§ 2</span><span class="da">Kategorier af registrerede og personoplysninger</span><span class="en">Categories of data subjects and personal data</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <p><strong>Registrerede.</strong> Medlemmer, bestyrelsesmedlemmer, kontaktpersoner hos leverandører og fondspartnere.</p>
+        <p style="margin-top:6px"><strong>Personoplysninger.</strong> Navn, email, telefon, medlemskabsstatus, betalingsstatus (ikke kortdata), email-indhold (Smart Reply Drafter), kalenderdata (Morning Briefing, Deadline Alerts).</p>
+        <p style="margin-top:6px">Ingen særlige kategorier (GDPR art. 9) behandles.</p>
+      </div>
+      <div class="en-col">
+        <p><strong>Data subjects.</strong> Members, board members, supplier and grant contacts.</p>
+        <p style="margin-top:6px"><strong>Personal data.</strong> Name, email, phone, membership status, payment status (no card data), email content (Smart Reply Drafter), calendar events (Morning Briefing, Deadline Alerts).</p>
+        <p style="margin-top:6px">No special categories (GDPR art. 9) are processed.</p>
+      </div>
+    </div>
+
+    <!-- § 3 -->
+    <div class="sec"><span class="num">§ 3</span><span class="da">Databehandlerens forpligtelser</span><span class="en">Processor obligations</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <ul>
+          <li>Behandler kun data efter dokumenteret instruks fra Kunden.</li>
+          <li>Sikrer fortrolighed (p.t. kun Deng Awak har adgang).</li>
+          <li>Implementerer passende tekniske sikkerhedsforanstaltninger.</li>
+          <li>Bistår Kunden med registreredes rettigheder.</li>
+          <li>Underretter Kunden ved databrud inden 24 timer.</li>
+          <li>Sletter al data ved aftalens ophør.</li>
+        </ul>
+      </div>
+      <div class="en-col">
+        <ul>
+          <li>Processes data only on documented instructions from the Client.</li>
+          <li>Ensures confidentiality (currently only Deng Awak has access).</li>
+          <li>Implements appropriate technical security measures.</li>
+          <li>Assists the Client in fulfilling data subject rights.</li>
+          <li>Notifies the Client of data breaches within 24 hours.</li>
+          <li>Deletes all data upon termination of the agreement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- § 4 -->
+    <div class="sec"><span class="num">§ 4</span><span class="da">Underdatabehandlere</span><span class="en">Sub-processors</span></div>
+    <table>
+      <tr>
+        <th>Underdatabehandler / Sub-processor</th>
+        <th>Formål / Purpose</th>
+        <th>Placering / Location</th>
+      </tr>
+      <tr>
+        <td><strong>Google Ireland Ltd.</strong><br><span style="color:#888;font-size:8.5pt">Google Workspace, Apps Script</span></td>
+        <td>Hosting af al kode og data<br><em style="color:#888;font-size:8.5pt">Hosting of all code and data</em></td>
+        <td>EU (Irland / Ireland)</td>
+      </tr>
+    </table>
+    <div class="bi" style="margin-top:6px">
+      <div class="da-col"><p>Al kode kører inde i Kundens egen Google Workspace-konto. Ingen data forlader Kundens konto. Ingen tredjeparts-AI-tjenester anvendes. Ændringer varsles 30 dage i forvejen.</p></div>
+      <div class="en-col"><p>All code runs inside the Client's own Google Workspace account. No data leaves the Client's account. No third-party AI services are used. Changes notified 30 days in advance.</p></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Rhynoflow · CVR 43367994 · hello@rhynoflow.com</span>
+    <span class="green">Side / Page 1 af / of 2</span>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="header">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="22" width="48" height="13" rx="6.5" fill="#4ade80"/><rect x="24" y="44" width="64" height="13" rx="6.5" fill="#4ade80"/><rect x="10" y="66" width="78" height="13" rx="6.5" fill="#4ade80"/></svg>
+      <div class="name">Rhyno<span>flow</span></div>
+    </div>
+    <div class="header-meta">
+      <strong>Databehandleraftale / Data Processing Agreement</strong><br>
+      Dansk Puslespilsforening · GDPR Art. 28<br>
+      21. april 2026
+    </div>
+  </div>
+  <div class="stripe">
+    <span>GDPR ART. 28 · EU BEHANDLING / EU PROCESSING ONLY</span>
+    <span>DOC 02 / 02 &nbsp;·&nbsp; SIDE / PAGE 2 AF / OF 2</span>
+  </div>
+
+  <div class="body">
+
+    <!-- § 5 -->
+    <div class="sec"><span class="num">§ 5</span><span class="da">Overførsel til tredjelande</span><span class="en">Third-country transfers</span></div>
+    <div class="bi">
+      <div class="da-col"><p>Ingen overførsel til lande uden for EU eller EØS finder sted. Google Workspace-data opbevares i EU-regionen (Irland).</p></div>
+      <div class="en-col"><p>No transfer to countries outside the EU or EEA takes place. Google Workspace data is stored in the EU region (Ireland).</p></div>
+    </div>
+
+    <!-- § 6 -->
+    <div class="sec"><span class="num">§ 6</span><span class="da">Sikkerhed (Bilag A)</span><span class="en">Security (Annex A)</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <ul>
+          <li>Al kode versionskontrolleres i privat Git-repository med 2FA.</li>
+          <li>Adgang til Drive-mappe via Google-konto med 2FA.</li>
+          <li>Kun Redaktør-adgang til "Rhynoflow Automationer", ingen bredere adgang.</li>
+          <li>Logs opbevares 90 dage, gennemgås ugentligt.</li>
+          <li>Intet lokalt lager af Kundens data på Rhynoflows enheder.</li>
+        </ul>
+      </div>
+      <div class="en-col">
+        <ul>
+          <li>All code version-controlled in private Git repository with 2FA.</li>
+          <li>Drive folder access via Google account with 2FA.</li>
+          <li>Editor access only to "Rhynoflow Automationer" folder, no broader access.</li>
+          <li>Logs retained 90 days, reviewed weekly.</li>
+          <li>No local storage of Client data on Rhynoflow devices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- § 7 -->
+    <div class="sec"><span class="num">§ 7</span><span class="da">Sletning ved ophør</span><span class="en">Deletion on termination</span></div>
+    <div class="bi">
+      <div class="da-col">
+        <ul>
+          <li>Rhynoflow trækker sig fra Drive-mappen inden for 7 dage.</li>
+          <li>Al kode forbliver i Kundens ejerskab.</li>
+          <li>Ingen kopi opbevares af Rhynoflow efter 30 dage.</li>
+        </ul>
+      </div>
+      <div class="en-col">
+        <ul>
+          <li>Rhynoflow withdraws from the Drive folder within 7 days.</li>
+          <li>All code remains in the Client's ownership.</li>
+          <li>No copy retained by Rhynoflow after 30 days.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- § 8 -->
+    <div class="sec"><span class="num">§ 8</span><span class="da">Ansvar</span><span class="en">Liability</span></div>
+    <div class="bi">
+      <div class="da-col"><p>Erstatningsansvar følger Serviceaftalens § 5 med et maksimum på 4.500 DKK (svarende til 3 måneders abonnement).</p></div>
+      <div class="en-col"><p>Liability follows Service Agreement § 5 with a maximum of 4,500 DKK (equivalent to 3 months subscription).</p></div>
+    </div>
+
+    <!-- § 9 -->
+    <div class="sec"><span class="num">§ 9</span><span class="da">Gældende lov</span><span class="en">Governing law</span></div>
+    <div class="bi">
+      <div class="da-col"><p>Dansk ret. Københavns Byret som værneting.</p></div>
+      <div class="en-col"><p>Danish law. The Copenhagen City Court as jurisdiction.</p></div>
+    </div>
+
+    <!-- Signatures -->
+    <div class="sig-grid">
+      <div class="sig">
+        <div class="slbl">For Dansk Puslespilsforening</div>
+        <div class="sname">Sofie Jule Andersen</div>
+        <div class="sf"><div class="sk">Titel / Title</div><div class="sv">Bestyrelsesformand / Chair</div></div>
+        <div class="sf"><div class="sk">Dato / Date</div><div class="sv">21. april 2026</div></div>
+        <div class="sf"><div class="sk">Underskrift / Signature</div><div class="sv">&nbsp;</div></div>
+      </div>
+      <div class="sig">
+        <div class="slbl">For Rhynoflow</div>
+        <div class="sname">Deng Awak</div>
+        <div class="sf"><div class="sk">Titel / Title</div><div class="sv">Direktør / Director</div></div>
+        <div class="sf"><div class="sk">Dato / Date</div><div class="sv">21. april 2026</div></div>
+        <div class="sf"><div class="sk">Underskrift / Signature</div><div class="sv">&nbsp;</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Rhynoflow · CVR 43367994 · hello@rhynoflow.com · rhynoflow.com</span>
+    <span class="green">Side / Page 2 af / of 2</span>
+  </div>
+</div>
+
+</body>
+</html>
