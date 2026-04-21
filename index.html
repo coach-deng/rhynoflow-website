@@ -3,22 +3,93 @@
 <head>
 <meta charset="utf-8"/>
 <title>Rhynoflow — Your admin, charged through.</title>
+<meta name="description" content="Rhynoflow is an agent that runs the email, reminders, reports, and admin for Danish SMBs and foreninger. You run your business. It runs the inbox."/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="icon" href="./assets/logo-mark-green.svg"/>
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://unpkg.com">
 <link rel="stylesheet" href="./colors_and_type.css"/>
 <style>
   html, body { margin: 0; padding: 0; background: #fafafa; }
   * { box-sizing: border-box; }
-  /* LCP/CLS: reserve hero space so page doesn't shift on React mount */
-  #root:empty::before {
-    content: '';
-    display: block;
-    min-height: 100vh;
-    background: #fafafa;
-  }
   ::selection { background: #00c853; color: #0a0a0a; }
+
+  /* ===== Pre-paint hero (static HTML, inlined so LCP fires before React mounts) ===== */
+  .prehero {
+    position: relative;
+    background: #fafafa;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+  .prehero-inner {
+    position: relative;
+    max-width: 1200px; margin: 0 auto;
+    padding: 96px 32px 120px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 56px; align-items: center;
+  }
+  .prehero-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 32px;
+    border-bottom: 1px solid #e5e5e5;
+    background: rgba(250,250,250,0.72);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .prehero-brand {
+    font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px;
+    color: #0a0a0a; letter-spacing: -0.035em; text-decoration: none;
+  }
+  .prehero-brand span { color: #00c853; }
+  .prehero-meta {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px;
+    color: #525252; letter-spacing: 0.06em; margin-bottom: 28px;
+  }
+  .prehero-meta-num { color: #0a0a0a; font-weight: 600; }
+  .prehero-meta-slash { color: #d4d4d4; }
+  .prehero-h1 {
+    margin: 0;
+    color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 56px);
+    line-height: 1.08; letter-spacing: -0.03em; font-weight: 700;
+  }
+  .prehero-accent { color: #00c853; display: block; }
+  .prehero-sub {
+    margin: 24px 0 36px; max-width: 520px;
+    color: #525252; font-size: 17px; line-height: 1.55;
+    font-family: 'Inter', sans-serif;
+  }
+  .prehero-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    background: #00c853; color: #0a0a0a;
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+    text-decoration: none;
+  }
+  .prehero-caption {
+    margin-top: 48px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px;
+    color: #a3a3a3; letter-spacing: 0.04em;
+  }
+  .prehero-caption strong { color: #525252; font-weight: 500; letter-spacing: 0.08em; padding-right: 12px; border-right: 1px solid #e5e5e5; margin-right: 12px; }
+  .prehero-term {
+    background: #0a0a0a; border: 1px solid #1a1a1a;
+    border-radius: 12px; padding: 20px 18px; min-height: 260px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px;
+    color: #a3a3a3; line-height: 1.7;
+    box-shadow: 0 20px 40px -20px rgba(10,10,10,0.3);
+  }
+  .prehero-term-ok { color: #00c853; }
+  .prehero-term-cmd { color: #fafafa; }
+  @media (max-width: 860px) {
+    .prehero-inner { grid-template-columns: 1fr; padding: 72px 24px 96px; gap: 32px; }
+  }
 
   /* Range input styling — green accent thumb, 4px track */
   input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; }
@@ -46,11 +117,47 @@
 </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root"><!-- pre-paint skeleton so LCP lands before React mounts -->
+    <nav class="prehero-nav">
+      <a href="#" class="prehero-brand">Rhyno<span>flow</span></a>
+      <div></div>
+    </nav>
+    <section class="prehero">
+      <div class="prehero-inner">
+        <div>
+          <div class="prehero-meta">
+            <span class="prehero-meta-num">01</span>
+            <span class="prehero-meta-slash">/</span>
+            <span>RHYNOFLOW · LIVE · APR 2026</span>
+          </div>
+          <h1 class="prehero-h1">
+            Your admin,
+            <span class="prehero-accent">charged through.</span>
+          </h1>
+          <p class="prehero-sub">
+            Rhynoflow is an agent that runs the email, reminders, reports, and admin
+            for Danish SMBs and foreninger. You run your business. It runs the inbox.
+          </p>
+          <a href="#book" class="prehero-cta">Try the live agent</a>
+          <div class="prehero-caption">
+            <strong>BUILT FOR</strong>Foreninger · SMBs · Revisorer · Danmark
+          </div>
+        </div>
+        <div class="prehero-term">
+          <div class="prehero-term-cmd">$ rhyno status</div>
+          <div>connected · eu-west-1 · v0.4.2</div>
+          <div class="prehero-term-cmd">$ rhyno tail --inbox</div>
+          <div>[ingest]   msg_8f2c1a · kunde@example.dk</div>
+          <div>[classify] intent=invoice_question · p=med</div>
+          <div class="prehero-term-ok">[draft]    ready · 187 tokens · 1.2s</div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" defer></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" defer></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous" defer></script>
 
   <script type="text/babel" src="./Nav.jsx"></script>
   <script type="text/babel" src="./Hero.jsx"></script>
@@ -61,6 +168,7 @@
   <script type="text/babel" src="./BriefingSimulator.jsx"></script>
   <script type="text/babel" src="./RoiSlider.jsx"></script>
   <script type="text/babel" src="./Pricing.jsx"></script>
+  <script type="text/babel" src="./BookingSection.jsx"></script>
   <script type="text/babel" src="./Footer.jsx"></script>
 
   <script type="text/babel">
@@ -76,6 +184,7 @@
           <BriefingSimulator />
           <RoiSlider />
           <Pricing />
+          <BookingSection />
           <Footer />
         </>
       );
