@@ -2382,3 +2382,26 @@ blockquote {
     transform: none;
   }
 }
+
+/* ===== Mobile Polish (Apr 2026) — tighten layout on small phones ===== */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); line-height: 1.15; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem); line-height: 1.2; }
+  h3 { font-size: 1.15rem; }
+  p  { font-size: 0.97rem; }
+  .btn, button, .cta, a.btn {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  section { padding-top: 48px; padding-bottom: 48px; }
+  .nav-inner { height: 56px; }
+  img, svg, video { max-width: 100%; height: auto; }
+}
+
+/* iOS safe area + prevent input zoom */
+@supports (padding: max(0px)) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+}
+input, select, textarea { font-size: 16px; } /* prevents iOS auto-zoom on focus */
