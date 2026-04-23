@@ -106,9 +106,9 @@
     .prehero { overflow-x: hidden; }
   }
 
-  /* ===== Nav — force full width regardless of sticky/containing block ===== */
+  /* ===== Nav mount — dedicated sticky container, always full viewport width ===== */
+  #nav-root { position: sticky; top: 0; z-index: 20; width: 100%; display: block; }
   #root { display: block; width: 100%; }
-  #root > nav { display: block; width: 100% !important; box-sizing: border-box !important; }
 
   /* ===== Nav classes — defined here so they work before and after React mounts ===== */
   .rh-nav-brand, .rh-nav-brand:link, .rh-nav-brand:visited, .prehero-brand, .prehero-brand:link, .prehero-brand:visited {
@@ -155,6 +155,7 @@
 </style>
 </head>
 <body>
+  <div id="nav-root"></div>
   <div id="root"><!-- pre-paint skeleton so LCP lands before React mounts -->
     <!-- Nav owned by React — removed pre-paint nav to eliminate layout shift -->
     <section class="prehero">
@@ -373,7 +374,6 @@
     function Home() {
       return (
         <>
-          <Nav />
           <Hero />
           <StatusStrip />
           <ProofStrip />
@@ -388,6 +388,7 @@
       );
     }
     ReactDOM.createRoot(document.getElementById('root')).render(<Home />);
+    ReactDOM.createRoot(document.getElementById('nav-root')).render(<Nav />);
   </script>
 </body>
 </html>

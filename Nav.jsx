@@ -60,7 +60,7 @@ function Nav() {
 }
 
 const s = {
-  root: { position:'sticky', top:0, zIndex:20, width:'100%', boxSizing:'border-box', background:'rgba(250,250,250,0.95)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', borderBottom:'1px solid #e5e5e5' },
+  root: { width:'100%', boxSizing:'border-box', background:'rgba(250,250,250,0.95)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', borderBottom:'1px solid #e5e5e5' },
   inner: { width:'100%', maxWidth:1200, margin:'0 auto', padding:'14px 32px', boxSizing:'border-box', display:'flex', alignItems:'center', justifyContent:'space-between' },
   brand: { fontSize:18, fontWeight:800, letterSpacing:'-0.035em', fontFamily:"'Inter',sans-serif", color:'#0a0a0a', textDecoration:'none' },
   link: { fontFamily:"Inter,sans-serif", fontSize:13, fontWeight:500, textDecoration:'none', transition:'color 150ms' },
