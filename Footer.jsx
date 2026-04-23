@@ -22,7 +22,7 @@ function Footer() {
   return (
     <footer style={ftStyles.root}>
       <div style={ftStyles.inner}>
-        <div style={ftStyles.top}>
+        <div data-rh="footer-inner" style={ftStyles.top}>
           <div style={ftStyles.brandCol}>
             <a href="#" style={ftStyles.brand}>
               <span style={ftStyles.brandText}>

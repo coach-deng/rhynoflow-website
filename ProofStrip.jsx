@@ -1,14 +1,19 @@
 // ui_kits/website/ProofStrip.jsx
 
+function NordicKitsLogo() {
+  return (
+    <svg width="110" height="32" viewBox="0 0 110 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="22" fontFamily="Inter,-apple-system,sans-serif" fontWeight="800" fontSize="18" letterSpacing="-0.04em" fill="#0a0a0a">NORDIC</text>
+      <text x="72" y="22" fontFamily="Inter,-apple-system,sans-serif" fontWeight="800" fontSize="18" letterSpacing="-0.04em" fill="#00c853">KITS</text>
+    </svg>
+  );
+}
+
 function ProofStrip() {
-  const orgs = [
-    { name: 'Talata Basketball Copenhagen', tag: 'SPORTS & ASSOCIATIONS' },
-    { name: 'Dansk Puslespilsforening',     tag: 'FORENINGER' },
-  ];
   const metrics = [
     { value: '1,251', label: 'emails processed' },
     { value: '25h',   label: 'saved per org / week' },
-    { value: '2',     label: 'orgs live' },
+    { value: '3',     label: 'orgs live' },
   ];
   return (
     <section id="proof" style={proofStyles.root}>
@@ -18,19 +23,37 @@ function ProofStrip() {
           {' · APR 2026'}
         </span>
 
-        <div style={proofStyles.pills}>
-          {orgs.map((o) => (
-            <div key={o.name} style={proofStyles.pill}>
-              <span style={proofStyles.dot} />
-              <span style={proofStyles.pillText}>
-                Running for <strong style={{ color: '#0a0a0a', fontWeight: 600 }}>{o.name}</strong>
-                <span style={proofStyles.tag}>{o.tag}</span>
-              </span>
+        <div style={proofStyles.logoRow}>
+          {/* DPF */}
+          <div style={proofStyles.logoWrap} title="Dansk Puslespilsforening">
+            <span style={proofStyles.dot} />
+            <img
+              src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"
+              alt="Dansk Puslespilsforening"
+              style={proofStyles.logoImg}
+            />
+          </div>
+
+          <span style={proofStyles.logoDivider} />
+
+          {/* Talata */}
+          <div style={proofStyles.logoWrap} title="Talata Basketball Copenhagen">
+            <span style={proofStyles.dot} />
+            <div style={proofStyles.talaLogo}>
+              <img src="./assets/talata-logo.png" alt="Talata Basketball" style={{ width: 44, height: 44, objectFit: 'contain' }} />
             </div>
-          ))}
+          </div>
+
+          <span style={proofStyles.logoDivider} />
+
+          {/* Nordic Kits */}
+          <div style={proofStyles.logoWrap} title="Nordic Kits">
+            <span style={proofStyles.dot} />
+            <NordicKitsLogo />
+          </div>
         </div>
 
-        <div style={proofStyles.metrics}>
+        <div data-rh="proof-metrics" style={proofStyles.metrics}>
           {metrics.map((m, i) => (
             <React.Fragment key={m.label}>
               <div style={proofStyles.metric}>
@@ -56,33 +79,33 @@ const proofStyles = {
   },
   inner: {
     maxWidth: 860, margin: '0 auto',
-    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20,
+    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24,
     textAlign: 'center',
   },
   label: {
     fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500,
     letterSpacing: '0.12em', color: '#a3a3a3',
   },
-  pills: {
-    display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 12,
+  logoRow: {
+    display: 'flex', alignItems: 'center', gap: 32,
+    flexWrap: 'wrap', justifyContent: 'center',
   },
-  pill: {
-    display: 'inline-flex', alignItems: 'center', gap: 12,
-    padding: '10px 18px', borderRadius: 999,
-    background: '#ffffff', border: '1px solid #e5e5e5',
+  logoWrap: {
+    display: 'flex', alignItems: 'center', gap: 10,
   },
   dot: {
     width: 8, height: 8, borderRadius: 999, background: '#00c853', flexShrink: 0,
     boxShadow: '0 0 0 4px rgba(0,200,83,0.12)',
   },
-  pillText: {
-    fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#525252',
-    display: 'inline-flex', alignItems: 'center', gap: 10, flexWrap: 'wrap',
+  logoImg: {
+    width: 48, height: 48, objectFit: 'contain', borderRadius: 8,
   },
-  tag: {
-    fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fontWeight: 500,
-    letterSpacing: '0.08em', color: '#525252',
-    background: '#f5f5f5', borderRadius: 6, padding: '3px 7px',
+  talaLogo: {
+    width: 48, height: 48, borderRadius: 8, background: '#0a0a0a',
+    display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
+  },
+  logoDivider: {
+    width: 1, height: 36, background: '#e5e5e5', flexShrink: 0,
   },
   metrics: {
     display: 'flex', alignItems: 'center', gap: 32, marginTop: 8,

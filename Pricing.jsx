@@ -41,7 +41,7 @@ const TIERS = [
 
 function Pricing() {
   return (
-    <section id="pricing" style={prStyles.root}>
+    <section id="pricing" data-rh="section" style={prStyles.root}>
       <div style={prStyles.inner}>
         <div style={prStyles.head}>
           <span style={prStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>06</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ PRICING</span></span>
@@ -52,7 +52,7 @@ function Pricing() {
           </p>
         </div>
 
-        <div style={prStyles.grid}>
+        <div data-rh="pricing-grid" style={prStyles.grid}>
           {TIERS.map((t) => <Tier key={t.key} tier={t} />)}
         </div>
 

@@ -1,4 +1,4 @@
-// BookingSection.jsx — dual CTA: book a call OR send a message
+// BookingSection.jsx — inline Cal.com embed + contact form
 
 function BookingSection() {
   const [form, setForm] = React.useState({ name: '', email: '', message: '' });
@@ -19,7 +19,7 @@ function BookingSection() {
   }
 
   return (
-    <section id="book" style={bs.root}>
+    <section id="book" data-rh="section" style={bs.root}>
       <div style={bs.inner}>
         <div style={bs.head}>
           <span style={bs.label}>
@@ -33,61 +33,21 @@ function BookingSection() {
           </p>
         </div>
 
-        <div style={bs.grid}>
-          {/* Left — Book a call */}
-          <div style={bs.callCard}>
-            <div style={bs.callTop}>
-              <div style={bs.avatarWrap}>
-                <div style={bs.avatarRing}>
-                  <div style={bs.avatarInitials}>DA</div>
-                </div>
-                <div style={bs.onlineDot} />
-              </div>
-              <div>
-                <div style={bs.callerName}>Deng Awak</div>
-                <div style={bs.callerRole}>Founder, Rhynoflow</div>
-              </div>
-            </div>
+        <div data-rh="booking-inner" style={bs.grid}>
 
-            <div style={bs.callMeta}>
-              <div style={bs.metaRow}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>30 minutes</span>
-              </div>
-              <div style={bs.metaRow}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                <span>Google Meet</span>
-              </div>
-              <div style={bs.metaRow}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                <span>Europe / Copenhagen</span>
-              </div>
-            </div>
-
-            <p style={bs.callDesc}>
-              I will look at your actual inbox and calendar and tell you exactly what I would build for you. No pitch, no pressure.
-            </p>
-
-            <a
-              href="https://cal.com/deng-awak-hzu0y1/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={bs.calBtn}
-              onMouseEnter={e => e.currentTarget.style.background = '#00b34a'}
-              onMouseLeave={e => e.currentTarget.style.background = '#00c853'}
-            >
-              Pick a time
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-
-            <div style={bs.calBadge}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>Powered by Cal.com</span>
-            </div>
+          {/* Left — Cal.com iframe embed */}
+          <div style={bs.calCard}>
+            <iframe
+              src="https://cal.com/deng-awak-hzu0y1/30min?embed=true&layout=month_view&theme=dark"
+              data-rh="cal-embed"
+              style={bs.calEmbed}
+              frameBorder="0"
+              title="Book a call with Deng"
+            />
           </div>
 
           {/* Divider */}
-          <div style={bs.or}>
+          <div data-rh="hide-mobile" style={bs.or}>
             <div style={bs.orLine} />
             <span style={bs.orText}>or</span>
             <div style={bs.orLine} />
@@ -103,7 +63,7 @@ function BookingSection() {
             {sent ? (
               <div style={bs.sentMsg}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00c853" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                <span>Opening your mail app. We will get back to you shortly.</span>
+                <span>Opening your mail app. We'll get back to you shortly.</span>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={bs.form}>
@@ -116,8 +76,8 @@ function BookingSection() {
                     required
                     placeholder="Your name"
                     style={bs.input}
-                    onFocus={e => e.target.style.borderColor = '#0a0a0a'}
-                    onBlur={e => e.target.style.borderColor = '#e5e5e5'}
+                    onFocus={e => e.target.style.borderColor = '#00c853'}
+                    onBlur={e => e.target.style.borderColor = '#2a2a2a'}
                   />
                 </div>
                 <div style={bs.field}>
@@ -130,8 +90,8 @@ function BookingSection() {
                     required
                     placeholder="you@company.com"
                     style={bs.input}
-                    onFocus={e => e.target.style.borderColor = '#0a0a0a'}
-                    onBlur={e => e.target.style.borderColor = '#e5e5e5'}
+                    onFocus={e => e.target.style.borderColor = '#00c853'}
+                    onBlur={e => e.target.style.borderColor = '#2a2a2a'}
                   />
                 </div>
                 <div style={bs.field}>
@@ -144,8 +104,8 @@ function BookingSection() {
                     rows={4}
                     placeholder="Tell us what you are spending time on every week..."
                     style={{ ...bs.input, resize: 'vertical', minHeight: 100 }}
-                    onFocus={e => e.target.style.borderColor = '#0a0a0a'}
-                    onBlur={e => e.target.style.borderColor = '#e5e5e5'}
+                    onFocus={e => e.target.style.borderColor = '#00c853'}
+                    onBlur={e => e.target.style.borderColor = '#2a2a2a'}
                   />
                 </div>
                 <button
@@ -159,6 +119,7 @@ function BookingSection() {
               </form>
             )}
           </div>
+
         </div>
       </div>
     </section>
@@ -173,21 +134,20 @@ const bs = {
   title: { margin: '14px 0 16px', fontSize: 48, fontWeight: 600, letterSpacing: '-0.03em', color: '#fafafa', lineHeight: 1.08 },
   sub: { margin: 0, fontSize: 17, color: '#525252', lineHeight: 1.55, maxWidth: 620 },
 
-  grid: { display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 0, alignItems: 'stretch' },
+  grid: { display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 0, alignItems: 'start' },
 
-  // Call card
-  callCard: {
+  // Cal card (left)
+  calCard: {
     background: '#111111', border: '1px solid rgba(255,255,255,0.08)',
-    borderRadius: 20, padding: 36,
-    display: 'flex', flexDirection: 'column', gap: 20,
+    borderRadius: 20, overflow: 'hidden',
   },
-  callTop: { display: 'flex', alignItems: 'center', gap: 14 },
+  calHeader: { display: 'flex', alignItems: 'center', gap: 14 },
   avatarWrap: { position: 'relative', flexShrink: 0 },
-  avatarRing: {
+  avatarImg: {
     width: 48, height: 48, borderRadius: 999,
-    background: '#00c853', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    objectFit: 'cover', display: 'block',
+    border: '2px solid #00c853',
   },
-  avatarInitials: { fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: 16, color: '#0a0a0a' },
   onlineDot: {
     position: 'absolute', bottom: 2, right: 2,
     width: 10, height: 10, borderRadius: 999,
@@ -196,30 +156,31 @@ const bs = {
   callerName: { fontFamily: 'Inter, sans-serif', fontSize: 15, fontWeight: 600, color: '#fafafa' },
   callerRole: { fontFamily: 'Inter, sans-serif', fontSize: 13, color: '#525252', marginTop: 2 },
 
-  callMeta: { display: 'flex', flexDirection: 'column', gap: 8 },
+  calMeta: { display: 'flex', gap: 20 },
   metaRow: {
-    display: 'flex', alignItems: 'center', gap: 8,
-    fontFamily: 'Inter, sans-serif', fontSize: 13, color: '#a3a3a3',
-  },
-
-  callDesc: { margin: 0, fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#525252', lineHeight: 1.55 },
-
-  calBtn: {
-    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-    background: '#00c853', color: '#0a0a0a',
-    fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 600,
-    textDecoration: 'none', padding: '12px 20px', borderRadius: 999,
-    transition: 'background 150ms cubic-bezier(0.2,0,0,1)',
-  },
-  calBadge: {
     display: 'flex', alignItems: 'center', gap: 6,
-    fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#525252', letterSpacing: '0.06em',
+    fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#525252',
+  },
+
+  calDesc: {
+    margin: 0, fontFamily: 'Inter, sans-serif', fontSize: 14,
+    color: '#525252', lineHeight: 1.55,
+    paddingBottom: 4,
+  },
+
+  calEmbed: {
+    width: '100%',
+    minHeight: 600,
+    border: 'none',
+    borderTop: '1px solid rgba(255,255,255,0.06)',
+    marginTop: 4,
+    borderRadius: '0 0 20px 20px',
   },
 
   // OR divider
   or: {
     display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-    gap: 12, padding: '0 32px',
+    gap: 12, padding: '0 32px', minHeight: 400,
   },
   orLine: { width: 1, flex: 1, background: 'rgba(255,255,255,0.06)' },
   orText: {
@@ -227,7 +188,7 @@ const bs = {
     letterSpacing: '0.1em', flexShrink: 0,
   },
 
-  // Form card
+  // Form card (right)
   formCard: {
     background: '#111111', border: '1px solid rgba(255,255,255,0.08)',
     borderRadius: 20, padding: 36,
@@ -242,7 +203,7 @@ const bs = {
   fieldLabel: { fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fontWeight: 500, letterSpacing: '0.1em', color: '#a3a3a3' },
   input: {
     fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#fafafa',
-    background: '#0a0a0a', border: '1px solid #e5e5e5',
+    background: '#0a0a0a', border: '1px solid #2a2a2a',
     borderRadius: 10, padding: '10px 14px',
     outline: 'none', transition: 'border-color 150ms',
     width: '100%', boxSizing: 'border-box',

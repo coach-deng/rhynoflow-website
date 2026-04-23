@@ -22,7 +22,7 @@ function RoiSlider() {
     : value.toLocaleString('da-DK').replace(/,/g, ' ') + ' kr';
 
   return (
-    <section style={roiStyles.root}>
+    <section data-rh="section" style={roiStyles.root}>
       <div style={roiStyles.inner}>
         <div style={roiStyles.head}>
           <span style={roiStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>05</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ WHAT IT'S WORTH</span></span>
@@ -35,7 +35,7 @@ function RoiSlider() {
         </div>
 
         <div style={roiStyles.card}>
-          <div style={roiStyles.roleRow}>
+          <div data-rh="role-row" style={roiStyles.roleRow}>
             {Object.entries(ROLES).map(([key, meta]) => (
               <button
                 key={key}
@@ -56,7 +56,7 @@ function RoiSlider() {
             ))}
           </div>
 
-          <div style={roiStyles.grid}>
+          <div data-rh="two-col" style={roiStyles.grid}>
             <div style={roiStyles.sliderCol}>
               <div style={roiStyles.sliderHead}>
                 <span style={roiStyles.sliderLabel}>ADMIN HOURS / WEEK</span>

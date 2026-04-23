@@ -21,14 +21,15 @@ function AgentPipeline() {
   const total = stages.reduce((s, x) => s + (x.latency || 0), 0);
 
   return (
-    <section id="how" style={apStyles.root}>
+    <section id="how" data-rh="section" style={apStyles.root}>
       <div style={apStyles.inner}>
         <SectionHeader num="02" eyebrow="PIPELINE" title="See how the agent thinks." sub="Every email runs this path. No black box — you can see the trace, override the policy, edit the draft." />
 
-        <div style={apStyles.pipe}>
+        <div data-rh="pipeline-steps" style={apStyles.pipe}>
           {/* Connector line */}
           <div style={apStyles.track} aria-hidden="true" />
           <div
+            data-rh="pipeline-arrow"
             style={{
               ...apStyles.trackFill,
               width: `calc(${(active / (stages.length - 1)) * 100}% )`,

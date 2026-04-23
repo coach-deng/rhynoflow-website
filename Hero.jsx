@@ -34,7 +34,7 @@ function Hero() {
     <section style={heroStyles.root}>
       <div style={heroStyles.gridOverlay} aria-hidden="true" />
       <div style={heroStyles.gridOverlayFine} aria-hidden="true" />
-      <div style={heroStyles.inner}>
+      <div style={heroStyles.inner} data-rh="hero-inner">
         {/* Left: headline */}
         <div style={heroStyles.left}>
           <div style={heroStyles.meta}>
@@ -43,7 +43,7 @@ function Hero() {
             <span style={heroStyles.metaLabel}>RHYNOFLOW · IN PILOT · APR 2026</span>
           </div>
 
-          <h1 style={heroStyles.title}>
+          <h1 style={heroStyles.title} data-rh="hero-title">
             <span>Your admin,</span>
             <br />
             <span style={heroStyles.titleAccentWrap}>
@@ -55,17 +55,17 @@ function Hero() {
             </span>
           </h1>
 
-          <p style={heroStyles.sub}>
+          <p style={heroStyles.sub} data-rh="hero-sub">
             Rhynoflow is an agent that runs the email, reminders, reports, and admin
             for Danish SMBs and foreninger. You run your business. It runs the inbox.
           </p>
 
-          <div style={heroStyles.ctas}>
+          <div style={heroStyles.ctas} data-rh="hero-ctas">
             <a
               href="#demo"
               onMouseEnter={() => setPrimaryHover(true)}
               onMouseLeave={() => setPrimaryHover(false)}
-              style={{ ...heroStyles.primary, background: primaryHover ? '#00b34a' : '#00c853' }}
+              data-rh="hero-cta-primary" style={{ ...heroStyles.primary, background: primaryHover ? '#00b34a' : '#00c853' }}
             >
               Try the live agent
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -74,7 +74,7 @@ function Hero() {
               href="#how"
               onMouseEnter={() => setGhostHover(true)}
               onMouseLeave={() => setGhostHover(false)}
-              style={{
+              data-rh="hero-cta-ghost" style={{
                 ...heroStyles.ghost,
                 background: ghostHover ? '#f5f5f5' : '#ffffff',
                 borderColor: ghostHover ? '#d4d4d4' : '#e5e5e5',
@@ -82,7 +82,7 @@ function Hero() {
             >See how it works</a>
           </div>
 
-          <div style={heroStyles.caption}>
+          <div style={heroStyles.caption} data-rh="hero-caption">
             <span style={heroStyles.captionLabel}>BUILT FOR</span>
             <span>Foreninger · SMBs · Revisorer</span>
             <span style={heroStyles.captionDivider}>·</span>
@@ -91,7 +91,7 @@ function Hero() {
         </div>
 
         {/* Right: terminal-style live panel */}
-        <HeroTerminal />
+        <div data-rh="hero-terminal"><HeroTerminal /></div>
       </div>
     </section>
   );

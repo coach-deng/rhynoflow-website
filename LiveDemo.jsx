@@ -97,7 +97,7 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
   };
 
   return (
-    <section id="demo" style={ldStyles.root}>
+    <section id="demo" data-rh="section" style={ldStyles.root}>
       <div style={ldStyles.inner}>
         <SectionHeader
           num="03"
@@ -106,7 +106,7 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
           sub="This runs on the real model, in your browser, right now. No signup. Pick a sample or paste your own."
         />
 
-        <div style={ldStyles.grid}>
+        <div data-rh="two-col" style={ldStyles.grid}>
           {/* LEFT: input */}
           <div style={ldStyles.pane}>
             <div style={ldStyles.paneHeader}>

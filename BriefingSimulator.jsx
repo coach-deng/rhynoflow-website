@@ -45,7 +45,7 @@ function BriefingSimulator() {
   const slots = Object.keys(BRIEFINGS);
 
   return (
-    <section id="briefing" style={bsStyles.root}>
+    <section id="briefing" data-rh="section" style={bsStyles.root}>
       <div style={bsStyles.inner}>
         <div style={bsStyles.head}>
           <div style={{
@@ -98,7 +98,7 @@ function BriefingSimulator() {
             <p style={bsStyles.summaryText}>{data.summary}</p>
           </div>
 
-          <div style={bsStyles.twoCol}>
+          <div data-rh="two-col" style={bsStyles.twoCol}>
             <div style={bsStyles.col}>
               <div style={bsStyles.colHead}>
                 <span style={bsStyles.colLabel}>INBOX</span>

@@ -29,7 +29,7 @@ function StatusStrip() {
   const current = events[tick % events.length];
 
   return (
-    <section style={ssStyles.root}>
+    <section data-rh="status-strip" style={ssStyles.root}>
       <div style={ssStyles.inner}>
         <div style={ssStyles.left}>
           <span style={ssStyles.liveDot}>
