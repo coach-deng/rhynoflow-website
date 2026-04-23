@@ -45,10 +45,10 @@ function Pricing() {
       <div style={prStyles.inner}>
         <div style={prStyles.head}>
           <span style={prStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>06</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ PRICING</span></span>
-          <h2 style={prStyles.title}>Honest pricing. One invoice a month.</h2>
+          <h2 style={prStyles.title}>Simple pricing. One invoice a month.</h2>
           <p style={prStyles.sub}>
-            All plans include the briefing, the drafts, and the admin automations.
-            Setup fees are waived for organisations onboarded before 1 May 2026.
+            Every plan includes the daily briefing, email drafts, and your automations.
+            No setup fee if you get started before 1 May 2026.
           </p>
         </div>
 

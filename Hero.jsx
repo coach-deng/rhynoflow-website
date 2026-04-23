@@ -56,8 +56,8 @@ function Hero() {
           </h1>
 
           <p style={heroStyles.sub} data-rh="hero-sub">
-            Rhynoflow is an agent that runs the email, reminders, reports, and admin
-            for Danish SMBs and foreninger. You run your business. It runs the inbox.
+            Rhynoflow handles the emails, reminders, reports, and admin
+            so you don't have to. You run your business. It runs the inbox.
           </p>
 
           <div style={heroStyles.ctas} data-rh="hero-ctas">

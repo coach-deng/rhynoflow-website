@@ -26,10 +26,10 @@ function BookingSection() {
             <span style={{ fontWeight: 600, color: '#0a0a0a' }}>07</span>
             <span style={{ color: '#a3a3a3', fontWeight: 400 }}> / GET STARTED</span>
           </span>
-          <h2 style={bs.title}>Ready when you are.</h2>
+          <h2 style={bs.title}>Let's talk.</h2>
           <p style={bs.sub}>
-            Book a free 30-minute call and we will look at your actual inbox together.
-            Or send a message if you prefer to start async.
+            Book a free 30-minute call and we'll dig into your actual inbox together.
+            Prefer email? Just send a message.
           </p>
         </div>
 

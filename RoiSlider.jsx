@@ -27,10 +27,10 @@ function RoiSlider() {
         <div style={roiStyles.head}>
           <span style={roiStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>05</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ WHAT IT'S WORTH</span></span>
           <h2 style={roiStyles.title}>
-            Run your own math.
+            Run the numbers yourself.
           </h2>
           <p style={roiStyles.sub}>
-            Pick the work you do. Drag for hours you spend on admin each week. We'll show what that costs — or saves.
+            Pick your role, drag to how many hours a week you spend on admin. We'll show you what that actually costs.
           </p>
         </div>
 

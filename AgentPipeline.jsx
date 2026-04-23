@@ -23,7 +23,7 @@ function AgentPipeline() {
   return (
     <section id="how" data-rh="section" style={apStyles.root}>
       <div style={apStyles.inner}>
-        <SectionHeader num="02" eyebrow="PIPELINE" title="See how the agent thinks." sub="Every email runs this path. No black box — you can see the trace, override the policy, edit the draft." />
+        <SectionHeader num="02" eyebrow="PIPELINE" title="See how the agent thinks." sub="Every email follows this path. No black box. You can see the trace, change the rules, and edit the draft before it sends." />
 
         <div data-rh="pipeline-steps" style={apStyles.pipe}>
           {/* Connector line */}
