@@ -10,11 +10,6 @@ function NordicKitsLogo() {
 }
 
 function ProofStrip() {
-  const metrics = [
-    { value: '1,251', label: 'emails processed' },
-    { value: '25h',   label: 'saved per org / week' },
-    { value: '3',     label: 'orgs live' },
-  ];
   return (
     <section id="proof" style={proofStyles.root}>
       <div style={proofStyles.inner}>
@@ -52,20 +47,6 @@ function ProofStrip() {
             <NordicKitsLogo />
           </div>
         </div>
-
-        <div data-rh="proof-metrics" style={proofStyles.metrics}>
-          {metrics.map((m, i) => (
-            <React.Fragment key={m.label}>
-              <div style={proofStyles.metric}>
-                <span style={proofStyles.metricValue}>{m.value}</span>
-                <span style={proofStyles.metricLabel}>{m.label}</span>
-              </div>
-              {i < metrics.length - 1 && <span style={proofStyles.metricDivider} />}
-            </React.Fragment>
-          ))}
-        </div>
-
-        <p style={proofStyles.note}>Early access open. No setup fee.</p>
       </div>
     </section>
   );
