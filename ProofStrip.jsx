@@ -20,24 +20,24 @@ function ProofStrip() {
 
         <div style={proofStyles.logoRow}>
           {/* DPF */}
-          <div style={proofStyles.logoWrap} title="Dansk Puslespilsforening">
+          <a href="https://danskpuslespilsforening.dk" target="_blank" rel="noopener noreferrer" style={proofStyles.logoWrap} title="Dansk Puslespilsforening">
             <span style={proofStyles.dot} />
             <img
               src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"
               alt="Dansk Puslespilsforening"
               style={proofStyles.logoImg}
             />
-          </div>
+          </a>
 
           <span style={proofStyles.logoDivider} />
 
           {/* Talata */}
-          <div style={proofStyles.logoWrap} title="Talata Basketball Copenhagen">
+          <a href="https://talatabasketball.dk" target="_blank" rel="noopener noreferrer" style={proofStyles.logoWrap} title="Talata Basketball Copenhagen">
             <span style={proofStyles.dot} />
             <div style={proofStyles.talaLogo}>
               <img src="./assets/talata-logo.png" alt="Talata Basketball" style={{ width: 44, height: 44, objectFit: 'contain' }} />
             </div>
-          </div>
+          </a>
 
           <span style={proofStyles.logoDivider} />
 
