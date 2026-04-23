@@ -131,6 +131,11 @@
     .rh-drawer.open { display: flex !important; }
   }
 
+  @keyframes rhPulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(0,200,83,0.20); }
+    50% { box-shadow: 0 0 0 6px rgba(0,200,83,0.08); }
+  }
+
   /* Range input styling — green accent thumb, 4px track */
   input[type=range] { -webkit-appearance: none; appearance: none; background: transparent; }
   input[type=range]::-webkit-slider-runnable-track {

@@ -13,9 +13,9 @@ function ProofStrip() {
   return (
     <section id="proof" style={proofStyles.root}>
       <div style={proofStyles.inner}>
-        <span style={proofStyles.label}>
-          <span style={{ fontWeight: 600, color: '#0a0a0a' }}>LIVE</span>
-          {' · APR 2026'}
+        <span style={proofStyles.pill}>
+          <span style={proofStyles.pillDot} />
+          Live
         </span>
 
         <div style={proofStyles.logoRow}>
@@ -66,6 +66,18 @@ const proofStyles = {
   label: {
     fontFamily: 'JetBrains Mono, monospace', fontSize: 11, fontWeight: 500,
     letterSpacing: '0.12em', color: '#a3a3a3',
+  },
+  pill: {
+    display: 'inline-flex', alignItems: 'center', gap: 7,
+    background: 'rgba(0,200,83,0.10)', border: '1px solid rgba(0,200,83,0.25)',
+    borderRadius: 999, padding: '5px 14px 5px 10px',
+    fontFamily: 'Inter, sans-serif', fontSize: 12, fontWeight: 600, color: '#00a846',
+    letterSpacing: '0.01em',
+  },
+  pillDot: {
+    width: 8, height: 8, borderRadius: 999, background: '#00c853', flexShrink: 0,
+    boxShadow: '0 0 0 3px rgba(0,200,83,0.20)',
+    animation: 'rhPulse 2s ease-in-out infinite',
   },
   logoRow: {
     display: 'flex', alignItems: 'center', gap: 32,
