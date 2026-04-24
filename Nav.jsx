@@ -10,6 +10,7 @@ function Nav() {
     { label: 'Pricing',         href: '#pricing' },
     { label: 'For Foreninger',  href: '/for-foreninger.html' },
     { label: 'For Accountants', href: '/for-revisorer.html' },
+    { label: 'Guides & Cases',  href: '/blog/' },
     { label: 'About',           href: '/about.html' },
   ];
 
