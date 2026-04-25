@@ -6,67 +6,77 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/for-foreninger.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rhynoflow.com/for-revisorer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rhynoflow.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rhynoflow.com/blog/how-i-got-12-hours-back.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rhynoflow.com/blog/google-automatisering-foreninger.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rhynoflow.com/blog/5-opgaver-din-forening-boer-automatisere.html</loc>
+    <loc>https://rhynoflow.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/blog/automate-sports-club-admin-google.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://rhynoflow.com/blog</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/blog/automatiser-din-forening-google.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://rhynoflow.com/blog/how-i-got-12-hours-back</loc>
+    <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/about.html</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://rhynoflow.com/blog/sadan-fik-vi-25-timer-tilbage</loc>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/what-we-learned-automating-dpf</loc>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/google-automatisering-foreninger</loc>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/automatiser-din-forening-google</loc>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/automatiser-sportsklubbens-admin-google</loc>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/automate-sports-club-admin-google</loc>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/5-opgaver-din-forening-boer-automatisere</loc>
+    <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/one-pager.html</loc>
+    <loc>https://rhynoflow.com/blog/automatisering-for-revisorer</loc>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/blog/klientkommunikation-revisor</loc>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/scorecard</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/scorecard.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://rhynoflow.com/privacy.html</loc>
+    <loc>https://rhynoflow.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/terms.html</loc>
+    <loc>https://rhynoflow.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
