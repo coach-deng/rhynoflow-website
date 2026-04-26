@@ -4,7 +4,8 @@
    Load Inter and JetBrains Mono from Google Fonts (or self-host into /fonts).
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* Fonts now loaded from HTML head via <link rel="preload"> + <link rel="stylesheet">.
+   Removed @import: it forced a CSS-inside-CSS waterfall that delayed LCP by ~1.5s. */
 
 :root {
   /* ---------------------------------------------------------------
