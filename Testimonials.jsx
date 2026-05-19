@@ -6,16 +6,16 @@ function Testimonials() {
     {
       text: "I just saw one draft, and it was great! Made me so excited!!",
       name: "Sofie Juel Andersen",
-      role: "Secretary, Dansk Puslespilsforening",
+      role: "Board member, Dansk Puslespilsforening",
       logo: "https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png",
       alt: "DPF"
     },
     {
-      text: "Five hours a week back in my life. That's a Sunday afternoon I get to spend coaching instead of typing.",
+      text: "Eight hours a week, minimum. That's two full training sessions I get back.",
       name: "Deng Awak",
-      role: "Head Coach, Talata Basketball",
-      logo: "./assets/talata-logo.png",
-      alt: "Talata"
+      role: "Founder, Talata Basketball",
+      logo: "./assets/deng.jpg",
+      alt: "Deng Awak"
     }
   ];
 
