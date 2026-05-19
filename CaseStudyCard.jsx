@@ -5,7 +5,7 @@ function CaseStudyCard() {
   return (
     <section id="case-study" style={csStyles.root}>
       <div style={csStyles.inner}>
-        <a href="/case-studies/dpf.html" style={csStyles.card} data-rh="case-card">
+        <a href="/case-studies/dpf" style={csStyles.card} data-rh="case-card">
           <div style={csStyles.header}>
             <img
               src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"

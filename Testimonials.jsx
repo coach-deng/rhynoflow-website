@@ -24,7 +24,7 @@ function Testimonials() {
             />
             <div>
               <div style={tsStyles.cardName}>Sofie Juel Andersen</div>
-              <div style={tsStyles.cardRole}>Board member, Dansk Puslespilsforening</div>
+              <div style={tsStyles.cardRole}>Founding member &amp; board, Dansk Puslespilsforening</div>
             </div>
           </figcaption>
         </figure>
