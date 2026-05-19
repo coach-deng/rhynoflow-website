@@ -38,7 +38,7 @@ function CaseStudyCard() {
             <div style={csStyles.statDiv} />
             <div style={csStyles.stat}>
               <div style={csStyles.statVal}>06:00</div>
-              <div style={csStyles.statLabel}>daily briefing in inbox</div>
+              <div style={csStyles.statLabel}>Monday briefing in inbox</div>
             </div>
           </div>
 
