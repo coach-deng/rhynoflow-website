@@ -48,7 +48,7 @@ function Pricing() {
           <h2 style={prStyles.title}>Simple pricing. One invoice a month.</h2>
           <p style={prStyles.sub}>
             Every plan includes the daily briefing, email drafts, and your automations.
-            No setup fee if you get started before 1 May 2026.
+            No setup fee if you get started before 30 June 2026.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ function Tier({ tier }) {
       </div>
       <div style={prStyles.setupRow}>
         <span style={{ ...prStyles.setupStrike, color: hi ? '#525252' : '#a3a3a3' }}>{tier.setup} kr setup</span>
-        <span style={prStyles.setupBadge}>WAIVED · UNTIL 1 MAY</span>
+        <span style={prStyles.setupBadge}>WAIVED · UNTIL 30 JUNE</span>
       </div>
 
       <div style={{ ...prStyles.divider, background: hi ? '#171717' : '#f0f0f0' }} />
