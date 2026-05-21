@@ -84,9 +84,7 @@ function Hero() {
 
           <div style={heroStyles.caption} data-rh="hero-caption">
             <span style={heroStyles.captionLabel}>BUILT FOR</span>
-            <span>Clubs · Schools · Associations</span>
-            <span style={heroStyles.captionDivider}>·</span>
-            <span>Faith communities · Alumni networks</span>
+            <span style={heroStyles.captionList}>Clubs · Schools · Faith · Associations · Alumni · Nonprofits</span>
           </div>
         </div>
 
@@ -251,12 +249,17 @@ const heroStyles = {
     transition: 'all 150ms cubic-bezier(0.2,0,0,1)',
   },
   caption: {
-    marginTop: 48, display: 'flex', alignItems: 'center', gap: 10,
+    marginTop: 48, display: 'flex', alignItems: 'center', gap: 12,
     fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#a3a3a3', letterSpacing: '0.04em',
+    whiteSpace: 'nowrap', overflow: 'hidden',
   },
   captionLabel: {
     color: '#525252', fontWeight: 500, letterSpacing: '0.08em',
     paddingRight: 12, borderRight: '1px solid #e5e5e5',
+    flexShrink: 0,
+  },
+  captionList: {
+    overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0,
   },
   captionDivider: { color: '#d4d4d4' },
 };

@@ -5,8 +5,8 @@ function Footer() {
     { label: 'PRODUCT', items: [
       { label: 'How it works', href: '#how' },
       { label: 'Pricing', href: '#pricing' },
-      { label: 'For Foreninger', href: '/for-foreninger.html' },
-      { label: 'For Revisorer', href: '/for-revisorer.html' },
+      { label: 'For clubs', href: '/for-foreninger.html' },
+      { label: 'For schools', href: '/for-revisorer.html' },
     ]},
     { label: 'COMPANY', items: [
       { label: 'About', href: '/about.html' },
@@ -30,12 +30,12 @@ function Footer() {
               </span>
             </a>
             <p style={ftStyles.mission}>
-              Admin automation for Danish foreninger, SMBs, and revisorer. Quiet, functional, charged through.
+              Admin automation for clubs, schools, and member organizations. Built in Copenhagen. Used worldwide.
             </p>
             <div style={ftStyles.contact}>
               <a href="mailto:hello@rhynoflow.com" style={ftStyles.contactLink}>hello@rhynoflow.com</a>
               <a href="https://rhynoflow.com" style={ftStyles.contactLink}>rhynoflow.com</a>
-              <span style={ftStyles.cvr}>CVR 43367994</span>
+              <span style={ftStyles.cvr}>CVR 43599453</span>
             </div>
           </div>
 
