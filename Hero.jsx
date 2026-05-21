@@ -5,7 +5,7 @@ function Hero() {
   const [ghostHover, setGhostHover] = React.useState(false);
 
   // Typewriter for the tagline accent
-  const words = ['charged through.', 'handled.', 'done before 07:00.', 'off your plate.'];
+  const words = ['More members.', 'More time.', 'More focus.', 'More mission.'];
   const [wIdx, setWIdx] = React.useState(0);
   const [typed, setTyped] = React.useState(words[0]);
   const [dir, setDir] = React.useState(1); // 1 = typing, -1 = erasing
@@ -40,14 +40,14 @@ function Hero() {
           <div style={heroStyles.meta}>
             <span style={heroStyles.metaNum}>01</span>
             <span style={heroStyles.metaSlash}>/</span>
-            <span style={heroStyles.metaLabel}>RHYNOFLOW · IN PILOT · APR 2026</span>
+            <span style={heroStyles.metaLabel}>RHYNOFLOW · LIVE · MAY 2026</span>
           </div>
 
           <h1 style={heroStyles.title} data-rh="hero-title">
-            <span>Your admin,</span>
+            <span>Less admin.</span>
             <br />
             <span style={heroStyles.titleAccentWrap}>
-              <span style={heroStyles.titleAccentGhost} aria-hidden="true">done before 07:00.</span>
+              <span style={heroStyles.titleAccentGhost} aria-hidden="true">More members.</span>
               <span style={heroStyles.titleAccent}>
                 {typed}
                 <span style={heroStyles.caret}>▌</span>
@@ -56,8 +56,8 @@ function Hero() {
           </h1>
 
           <p style={heroStyles.sub} data-rh="hero-sub">
-            Rhynoflow handles the emails, reminders, reports, and admin
-            so you don't have to. You run your business. It runs the inbox.
+            Rhynoflow runs the busywork for clubs, schools, and member
+            organizations. Emails, dues, signups, reports. All handled.
           </p>
 
           <div style={heroStyles.ctas} data-rh="hero-ctas">
@@ -84,9 +84,9 @@ function Hero() {
 
           <div style={heroStyles.caption} data-rh="hero-caption">
             <span style={heroStyles.captionLabel}>BUILT FOR</span>
-            <span>Foreninger · SMBs · Revisorer</span>
+            <span>Clubs · Schools · Associations</span>
             <span style={heroStyles.captionDivider}>·</span>
-            <span>Danmark · EU-region</span>
+            <span>Faith communities · Alumni networks</span>
           </div>
         </div>
 
@@ -102,11 +102,11 @@ function HeroTerminal() {
     { t: 0,    txt: '$ rhyno status',                          cls: 'cmd' },
     { t: 500,  txt: 'connected · eu-west-1 · v0.4.2',          cls: 'out' },
     { t: 900,  txt: '$ rhyno tail --inbox',                    cls: 'cmd' },
-    { t: 1400, txt: '[ingest]   msg_8f2c1a · kunde@example.dk',cls: 'out' },
-    { t: 1700, txt: '[classify] intent=invoice_question · p=med', cls: 'out' },
-    { t: 2000, txt: '[policy]   tone=da_formal · cc=accountant', cls: 'out' },
+    { t: 1400, txt: '[ingest]   msg_8f2c1a · parent@club.org', cls: 'out' },
+    { t: 1700, txt: '[classify] intent=signup_question · p=med', cls: 'out' },
+    { t: 2000, txt: '[policy]   tone=warm · cc=board',         cls: 'out' },
     { t: 2400, txt: '[draft]    ready · 187 tokens · 1.2s',    cls: 'ok'  },
-    { t: 2800, txt: '[review]   → awaiting founder@talata',    cls: 'out' },
+    { t: 2800, txt: '[review]   → awaiting coach@talata',      cls: 'out' },
     { t: 3300, txt: '$ _',                                     cls: 'cmd' },
   ];
   const [shown, setShown] = React.useState(0);
@@ -155,7 +155,7 @@ function HeroTerminal() {
       <div style={termStyles.footer}>
         <span>eu-west-1</span>
         <span>·</span>
-        <span>claude-haiku-4-5</span>
+        <span>claude-opus-4-7</span>
         <span>·</span>
         <span>p95 184ms</span>
       </div>
