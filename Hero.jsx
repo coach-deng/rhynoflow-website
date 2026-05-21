@@ -40,7 +40,7 @@ function Hero() {
           <div style={heroStyles.meta}>
             <span style={heroStyles.metaNum}>01</span>
             <span style={heroStyles.metaSlash}>/</span>
-            <span style={heroStyles.metaLabel}>RHYNOFLOW · LIVE · MAY 2026</span>
+            <span style={heroStyles.metaLabel}>RHYNOFLOW · BUILT IN COPENHAGEN</span>
           </div>
 
           <h1 style={heroStyles.title} data-rh="hero-title">
