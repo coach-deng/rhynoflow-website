@@ -17,14 +17,9 @@ function Testimonials() {
             I just saw one draft, and it was great! Made me so excited!!
           </blockquote>
           <figcaption style={tsStyles.caption}>
-            <img
-              src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"
-              alt="DPF"
-              style={tsStyles.cardLogo}
-            />
             <div>
-              <div style={tsStyles.cardName}>Sofie Juel Andersen</div>
-              <div style={tsStyles.cardRole}>Founding member &amp; board, Dansk Puslespilsforening</div>
+              <div style={tsStyles.cardName}>Board member</div>
+              <div style={tsStyles.cardRole}>Danish national hobby federation · 100+ members · 4-person volunteer board</div>
             </div>
           </figcaption>
         </figure>

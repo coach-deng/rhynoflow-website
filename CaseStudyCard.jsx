@@ -7,11 +7,6 @@ function CaseStudyCard() {
       <div style={csStyles.inner}>
         <a href="/case-studies/dpf.html" style={csStyles.card} data-rh="case-card">
           <div style={csStyles.header}>
-            <img
-              src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"
-              alt="Dansk Puslespilsforening"
-              style={csStyles.logo}
-            />
             <div style={csStyles.label}>
               <span style={csStyles.labelDot} />
               CASE STUDY / FEATURED
@@ -19,10 +14,10 @@ function CaseStudyCard() {
           </div>
 
           <h3 style={csStyles.h3}>
-            How Dansk Puslespilsforening rebuilt their admin in 6 weeks.
+            How four volunteers rebuilt their admin in six weeks.
           </h3>
           <p style={csStyles.sub}>
-            A 4-person volunteer board. 100+ members. The Nordic Championship. One inbox that drafted itself, April to June 2026.
+            Four volunteers. Over 100 members. A Nordic championship to run. One shared inbox that started drafting itself.
           </p>
 
           <div style={csStyles.stats} data-rh="case-stats">

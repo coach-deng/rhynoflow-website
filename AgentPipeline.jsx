@@ -4,12 +4,11 @@
 
 function AgentPipeline() {
   const stages = [
-    { key: 'ingest',   label: 'Ingest',   desc: 'Gmail / M365 webhook',    latency: 12,  code: 'POST /inbox' },
-    { key: 'classify', label: 'Classify', desc: 'Intent + priority',       latency: 84,  code: 'intent=invoice_q' },
-    { key: 'policy',   label: 'Policy',   desc: 'Your rules + tone',       latency: 21,  code: 'tone=da_formal' },
-    { key: 'draft',    label: 'Draft',    desc: 'Generate reply',          latency: 1210,code: 'tokens=187' },
-    { key: 'review',   label: 'Review',   desc: 'You approve or edit',     latency: null,code: 'awaiting_human' },
-    { key: 'send',     label: 'Send',     desc: 'Ship or schedule',        latency: 32,  code: '→ outbox' },
+    { key: 'discover', label: 'Discover', desc: 'With the people who do it', when: 'half a day', code: 'what eats the week' },
+    { key: 'observe',  label: 'Observe',  desc: 'One week of the real inbox', when: '1 week',    code: 'who answers what' },
+    { key: 'install',  label: 'Install',  desc: 'In your own Drive or M365',  when: 'half a day', code: 'facts · rules · drafter' },
+    { key: 'train',    label: 'Train',    desc: 'Two named owners',           when: 'half a day', code: 'they run it, not us' },
+    { key: 'check',    label: 'Check in', desc: 'Is it still being used?',    when: 'day 30',     code: 'one fix included' },
   ];
   const [active, setActive] = React.useState(0);
 
@@ -18,12 +17,18 @@ function AgentPipeline() {
     return () => clearInterval(id);
   }, []);
 
-  const total = stages.reduce((s, x) => s + (x.latency || 0), 0);
+  const files = [
+    { name: 'facts.md',    desc: 'every price, date, venue and term you quote' },
+    { name: 'rules.md',    desc: 'who owns what, and what AI may never say' },
+    { name: 'drafter',     desc: 'writes the replies you send every day' },
+    { name: 'send-gate',   desc: 'holds anything that disagrees with facts.md' },
+    { name: 'owners.md',   desc: 'the two people trained to run it' },
+  ];
 
   return (
     <section id="how" data-rh="section" style={apStyles.root}>
       <div style={apStyles.inner}>
-        <SectionHeader num="02" eyebrow="PIPELINE" title="See how the agent thinks." sub="Every email follows this path. No black box. You can see the trace, change the rules, and edit the draft before it sends." />
+        <SectionHeader num="02" eyebrow="THE INSTALL" title="One day. Then it is yours." sub="We watch how your admin actually runs before we build anything, install it inside the accounts you already pay for, and train two of your people to own it. Then we come back at thirty days to see whether it stuck." />
 
         <div data-rh="pipeline-steps" style={apStyles.pipe}>
           {/* Connector line */}
@@ -43,21 +48,18 @@ function AgentPipeline() {
 
         <div style={apStyles.traceWrap}>
           <div style={apStyles.traceHeader}>
-            <span style={apStyles.traceTitle}>trace · msg_8f2c1a</span>
-            <span style={apStyles.traceTotal}>{total}ms + human review</span>
+            <span style={apStyles.traceTitle}>what lands in your Drive</span>
+            <span style={apStyles.traceTotal}>yours to keep</span>
           </div>
           <div style={apStyles.traceBody}>
-            {stages.map((s, i) => (
-              <div key={s.key} style={{
+            {files.map((f, i) => (
+              <div key={f.name} style={{
                 ...apStyles.traceRow,
                 opacity: i <= active ? 1 : 0.35,
               }}>
-                <span style={apStyles.traceIdx}>{String(i).padStart(2,'0')}</span>
-                <span style={apStyles.traceLabel}>{s.label.toLowerCase()}</span>
-                <span style={apStyles.traceCode}>{s.code}</span>
-                <span style={apStyles.traceLatency}>
-                  {s.latency != null ? `${s.latency}ms` : '—'}
-                </span>
+                <span style={apStyles.traceIdx}>{String(i + 1).padStart(2,'0')}</span>
+                <span style={apStyles.traceCode}>{f.name}</span>
+                <span style={apStyles.traceLabel}>{f.desc}</span>
               </div>
             ))}
           </div>
@@ -85,7 +87,7 @@ function Stage({ stage, index, active }) {
       <div style={apStyles.stageMeta}>
         <div style={{ ...apStyles.stageLabel, color: now ? '#0a0a0a' : '#0a0a0a' }}>{stage.label}</div>
         <div style={apStyles.stageDesc}>{stage.desc}</div>
-        <div style={apStyles.stageLatency}>{stage.latency != null ? `${stage.latency}ms` : 'human'}</div>
+        <div style={apStyles.stageLatency}>{stage.when}</div>
       </div>
     </div>
   );
@@ -96,7 +98,7 @@ const apStyles = {
   inner: { maxWidth: 1200, margin: '0 auto', padding: '120px 32px' },
   pipe: {
     position: 'relative',
-    display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 8,
+    display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8,
     marginTop: 64,
   },
   track: {
@@ -140,7 +142,7 @@ const apStyles = {
   traceBody: { padding: '8px 0' },
   traceRow: {
     display: 'grid',
-    gridTemplateColumns: '48px 100px 1fr 80px',
+    gridTemplateColumns: '40px 120px 1fr',
     gap: 16, padding: '8px 20px',
     fontFamily: 'JetBrains Mono, monospace', fontSize: 12,
     transition: 'opacity 250ms',

@@ -2,38 +2,39 @@
 
 const TIERS = [
   {
-    key: 'forening', name: 'Forening', tagline: 'For clubs and associations.',
-    monthly: '1 500', setup: '3 000',
+    key: 'workshop', name: 'Workshop', tagline: 'Half a day with your team.',
+    price: '1 500', unit: '/ seat', note: 'Minimum 6 seats',
     features: [
-      'Member briefings and renewals',
-      'Kontingent invoicing (FIK / MobilePay)',
-      'Automated reminders in Danish',
-      'Annual report prep, handed to revisor',
-      'Up to 250 members',
+      'Half a day, at your place or on Meet',
+      'Your real inbox, your real cases',
+      'Hands on with the AI you already pay for',
+      'Prompt sheets and the one-page rules, yours to keep',
+      'A short follow-up on what to do Monday',
     ],
     cta: 'Book a call', highlight: false,
   },
   {
-    key: 'solo', name: 'Solo', tagline: 'For solo operators and bureaus.',
-    monthly: '1 500', setup: '5 000',
+    key: 'install', name: 'Install day', tagline: 'We set it up and train two owners.',
+    price: '22 500', unit: 'fixed', note: 'One-off. Nothing monthly attached.',
     features: [
-      'Daily briefing, drafted replies',
-      'Invoice and VAT workflow',
-      'Bank reconciliation (Nordea, Danske)',
-      'SKAT filings queued for approval',
-      '1 workspace, 1 operator',
+      'Discovery, then a week watching the real work',
+      'Your facts file, your rules, one AI workflow',
+      'The send gate, so a wrong price never leaves',
+      'Installed in your own Google or Microsoft account',
+      'Two named people trained to run it',
+      'A check-in at thirty days, included',
     ],
     cta: 'Book a call', highlight: true,
   },
   {
-    key: 'business', name: 'Business', tagline: 'For growing teams.',
-    monthly: '3 500', setup: '12 000',
+    key: 'officehour', name: 'Office hour', tagline: 'We come back so it stays alive.',
+    price: '1 500', unit: '/ month', note: 'Rolling. Cancel any time.',
     features: [
-      'Everything in Solo',
-      'Multi-workspace, multi-client routing',
-      'Role-based approval (owner, bogholder)',
-      'Dedicated onboarding in København',
-      'Priority support via Slack Connect',
+      'One hour a month with your two owners',
+      'We check who is actually using it',
+      'One fix or one new workflow a month',
+      'Rules updated when your prices change',
+      'Answers within a working day',
     ],
     cta: 'Book a call', highlight: false,
   },
@@ -45,10 +46,10 @@ function Pricing() {
       <div style={prStyles.inner}>
         <div style={prStyles.head}>
           <span style={prStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>06</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ PRICING</span></span>
-          <h2 style={prStyles.title}>Simple pricing. One invoice a month.</h2>
+          <h2 style={prStyles.title}>Three ways in. One invoice each.</h2>
           <p style={prStyles.sub}>
-            Every plan includes the daily briefing, email drafts, and your automations.
-            Setup is a one-off. We agree the scope on the call.
+            Most people start with the install day. The workshop is the cheap way to
+            see how we work first, and the office hour is there if you want us back.
           </p>
         </div>
 
@@ -58,7 +59,7 @@ function Pricing() {
 
         <div style={prStyles.footnote}>
           <span style={prStyles.fnDot} />
-          <span>All prices ex. moms. Month-to-month, cancel any time.</span>
+          <span>All prices ex. moms. Clubs and foreninger pay a lower rate for the same install, ask.</span>
         </div>
       </div>
     </section>
@@ -83,16 +84,16 @@ function Tier({ tier }) {
     >
       <div style={prStyles.cardHead}>
         <span style={{ ...prStyles.tierName, color: hi ? '#fafafa' : '#0a0a0a' }}>{tier.name}</span>
-        {hi && <span style={prStyles.popular}>MOST PICKED</span>}
+        {hi && <span style={prStyles.popular}>START HERE</span>}
       </div>
       <p style={{ ...prStyles.tierTag, color: hi ? '#a3a3a3' : '#525252' }}>{tier.tagline}</p>
 
       <div style={prStyles.priceBlock}>
-        <span style={{ ...prStyles.price, color: hi ? '#fafafa' : '#0a0a0a' }}>{tier.monthly} kr</span>
-        <span style={{ ...prStyles.priceSuffix, color: hi ? '#a3a3a3' : '#a3a3a3' }}>/ month</span>
+        <span style={{ ...prStyles.price, color: hi ? '#fafafa' : '#0a0a0a' }}>{tier.price} kr</span>
+        <span style={{ ...prStyles.priceSuffix, color: hi ? '#a3a3a3' : '#a3a3a3' }}>{tier.unit}</span>
       </div>
       <div style={prStyles.setupRow}>
-        <span style={{ ...prStyles.setupNote, color: hi ? '#a3a3a3' : '#737373' }}>{tier.setup} kr one-off setup</span>
+        <span style={{ ...prStyles.setupNote, color: hi ? '#a3a3a3' : '#737373' }}>{tier.note}</span>
       </div>
 
       <div style={{ ...prStyles.divider, background: hi ? '#171717' : '#f0f0f0' }} />

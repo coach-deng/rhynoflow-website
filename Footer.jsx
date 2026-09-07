@@ -10,7 +10,6 @@ function Footer() {
     ]},
     { label: 'COMPANY', items: [
       { label: 'About', href: '/about.html' },
-      { label: 'Pilot programme', href: '#pricing' },
       { label: 'Contact', href: 'mailto:hello@rhynoflow.com' },
     ]},
     { label: 'LEGAL', items: [
@@ -30,7 +29,7 @@ function Footer() {
               </span>
             </a>
             <p style={ftStyles.mission}>
-              Admin automation for clubs, schools, and member organizations. Built in Copenhagen. Used worldwide.
+              We install the system that runs your admin, in your own accounts, and teach your people to run it. Copenhagen.
             </p>
             <div style={ftStyles.contact}>
               <a href="mailto:hello@rhynoflow.com" style={ftStyles.contactLink}>hello@rhynoflow.com</a>

@@ -6,40 +6,40 @@ function FAQ() {
 
   const items = [
     {
-      q: "Will my inbox look different?",
-      a: "No. Rhynoflow runs invisibly in the background. You open Gmail like always, you just see drafts waiting to be sent. Same interface, less typing."
+      q: "Do you run it for us, or teach us to run it?",
+      a: "Both, in that order. We install it, then two people on your team learn to run it. After the install day it is yours. The office hour is there if you want us back every month."
+    },
+    {
+      q: "What happens when the tools change?",
+      a: "Your facts file and your rules file do not care which AI reads them. When Gemini, Copilot or ChatGPT ships a new version, the workspace stays the same. That is the whole reason we build it as files in your own account."
+    },
+    {
+      q: "Which AI do we need to buy?",
+      a: "Whatever you already pay for. Gemini if you are on Google Workspace, Copilot if you are on Microsoft 365. If you have neither, we will tell you the cheapest thing that works for your case."
     },
     {
       q: "What if the AI writes something wrong?",
-      a: "You approve every email before it sends. No auto-send. If a draft is off, you edit or delete. The system learns from your changes over time."
+      a: "A person approves every email before it sends. Nothing auto-sends. On top of that the send gate checks every price, date and term in a draft against your own facts file, and holds the message if one disagrees."
     },
     {
-      q: "How secure is this? GDPR?",
-      a: "We use Anthropic's Claude API which doesn't train on your data. Everything happens inside your Google Workspace. We never see the content of your emails. Full DPA available on request."
+      q: "How long does it take?",
+      a: "One day on site, after a week of watching how your admin actually runs. The first workflow is live before we leave."
     },
     {
-      q: "What happens if Rhynoflow shuts down?",
-      a: "All your data stays. We don't touch anything you own. You just stop having the automation. Inbox works like before, no migration headache."
+      q: "We are a clinic. What about patient data?",
+      a: "Patient data stays in your journal system. We handle the admin around it: bookings, reminders, invoices, supplier mail, the front-desk inbox. Nothing from a journal goes into a general AI tool, and we sign a databehandleraftale before we open anything."
     },
     {
-      q: "Can we try without committing?",
-      a: "Yes. First month is free, no setup fee. If you don't like it, delete the access and you owe nothing."
+      q: "Will our inbox look different?",
+      a: "No. You open Gmail or Outlook the way you always have. Drafts are waiting, labels are tidy. Same screen, less typing."
     },
     {
-      q: "How long does setup take?",
-      a: "90 minutes. We do it together over Google Meet. No data migration, no software to install."
+      q: "What if we stop?",
+      a: "Everything stays. The files sit in your account, the rules are on one page, and the two people we trained still know how it works. There is nothing to migrate and nothing to cancel."
     },
     {
-      q: "Does it work in Danish?",
-      a: "Yes — Rhynoflow was built for Danish foreninger first. It detects the language of incoming emails and replies in kind. English is supported too."
-    },
-    {
-      q: "What does it cost?",
-      a: "1,500 DKK/month for foreninger, no setup fee. Bigger setups (multi-tenant gym chains, etc.) start at 3,500 DKK/month with priority support."
-    },
-    {
-      q: "How is this different from Spond or Holdsport?",
-      a: "Those handle signups and team lists. We handle the inbox and the board work. Different problems. We play nicely alongside both."
+      q: "How is this different from our practice system or Holdsport?",
+      a: "Those hold your patients, your cases or your members. We handle the work around them: the inbox, the quotes, the reminders, the board and front-desk admin. Different job, and we work alongside whatever you already run."
     }
   ];
 
@@ -51,7 +51,7 @@ function FAQ() {
           FAQ / QUESTIONS WE GET A LOT
         </div>
         <h2 style={faqStyles.h2}>Straight answers.</h2>
-        <p style={faqStyles.lede}>No corporate hedging. If you're considering Rhynoflow, this is what you actually need to know.</p>
+        <p style={faqStyles.lede}>What people ask on the first call, answered the way we answer it there.</p>
 
         <div style={faqStyles.list}>
           {items.map((item, i) => {

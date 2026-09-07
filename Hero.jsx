@@ -5,7 +5,7 @@ function Hero() {
   const [ghostHover, setGhostHover] = React.useState(false);
 
   // Typewriter for the tagline accent
-  const words = ['More members.', 'More time.', 'More focus.', 'More mission.'];
+  const words = ['More billable hours.', 'More time.', 'More jobs out the door.', 'More focus.'];
   const [wIdx, setWIdx] = React.useState(0);
   const [typed, setTyped] = React.useState(words[0]);
   const [dir, setDir] = React.useState(1); // 1 = typing, -1 = erasing
@@ -47,7 +47,7 @@ function Hero() {
             <span>Less admin.</span>
             <br />
             <span style={heroStyles.titleAccentWrap}>
-              <span style={heroStyles.titleAccentGhost} aria-hidden="true">More members.</span>
+              <span style={heroStyles.titleAccentGhost} aria-hidden="true">More billable hours.</span>
               <span style={heroStyles.titleAccent}>
                 {typed}
                 <span style={heroStyles.caret}>▌</span>
@@ -56,18 +56,19 @@ function Hero() {
           </h1>
 
           <p style={heroStyles.sub} data-rh="hero-sub">
-            Rhynoflow runs the busywork for clubs, schools, and member
-            organizations. Emails, dues, signups, reports. All handled.
+            We install the system that runs your admin, inside the accounts you
+            already have, and train two of your people to run it. One day, one
+            fixed fee, and it is yours.
           </p>
 
           <div style={heroStyles.ctas} data-rh="hero-ctas">
             <a
-              href="#demo"
+              href="#book"
               onMouseEnter={() => setPrimaryHover(true)}
               onMouseLeave={() => setPrimaryHover(false)}
               data-rh="hero-cta-primary" style={{ ...heroStyles.primary, background: primaryHover ? '#00b34a' : '#00c853' }}
             >
-              Try the live agent
+              Book a 20-minute call
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
             </a>
             <a
@@ -79,12 +80,12 @@ function Hero() {
                 background: ghostHover ? '#f5f5f5' : '#ffffff',
                 borderColor: ghostHover ? '#d4d4d4' : '#e5e5e5',
               }}
-            >See how it works</a>
+            >See an install day</a>
           </div>
 
           <div style={heroStyles.caption} data-rh="hero-caption">
             <span style={heroStyles.captionLabel}>BUILT FOR</span>
-            <span style={heroStyles.captionList}>Clubs · Schools · Faith · Associations · Alumni · Nonprofits</span>
+            <span style={heroStyles.captionList}>Owner-led firms · Trades · Practices · Clinics · Venues · Clubs</span>
           </div>
         </div>
 
@@ -97,15 +98,12 @@ function Hero() {
 
 function HeroTerminal() {
   const lines = [
-    { t: 0,    txt: '$ rhyno status',                          cls: 'cmd' },
-    { t: 500,  txt: 'connected · eu-west-1 · v0.4.2',          cls: 'out' },
-    { t: 900,  txt: '$ rhyno tail --inbox',                    cls: 'cmd' },
-    { t: 1400, txt: '[ingest]   msg_8f2c1a · parent@club.org', cls: 'out' },
-    { t: 1700, txt: '[classify] intent=signup_question · p=med', cls: 'out' },
-    { t: 2000, txt: '[policy]   tone=warm · cc=board',         cls: 'out' },
-    { t: 2400, txt: '[draft]    ready · 187 tokens · 1.2s',    cls: 'ok'  },
-    { t: 2800, txt: '[review]   → awaiting coach@talata',      cls: 'out' },
-    { t: 3300, txt: '$ _',                                     cls: 'cmd' },
+    { t: 0,    txt: 'send gate · draft to Mette H.',            cls: 'cmd'  },
+    { t: 600,  txt: 'price  12.450 kr    ok, matches rate card', cls: 'out'  },
+    { t: 1100, txt: 'date   14 Oct       ok, matches calendar',  cls: 'out'  },
+    { t: 1700, txt: 'terms  8 dages      WRONG, your card says 14', cls: 'err' },
+    { t: 2300, txt: 'HELD. One fact off. Nothing was sent.',     cls: 'warn' },
+    { t: 3000, txt: 'corrected, waiting for Anna to approve',    cls: 'ok'   },
   ];
   const [shown, setShown] = React.useState(0);
 
@@ -124,7 +122,7 @@ function HeroTerminal() {
   // eslint-disable-next-line
   }, [shown === 0 ? 'restart' : 'steady']);
 
-  const colorFor = { cmd: '#fafafa', out: '#a3a3a3', ok: '#00c853' };
+  const colorFor = { cmd: '#fafafa', out: '#a3a3a3', ok: '#00c853', err: '#ff5c5c', warn: '#f5a524' };
 
   return (
     <div style={termStyles.wrap}>
@@ -134,7 +132,7 @@ function HeroTerminal() {
           <span style={{ ...termStyles.dot, background: '#f59e0b' }} />
           <span style={{ ...termStyles.dot, background: '#00c853' }} />
         </div>
-        <span style={termStyles.chromeTitle}>rhyno@prod · ~/talata-bk</span>
+        <span style={termStyles.chromeTitle}>your rules, checked before send</span>
         <span style={termStyles.chromeRight}>
           <span style={termStyles.liveDotOuter}>
             <span style={termStyles.liveDotPulse} />
@@ -151,11 +149,11 @@ function HeroTerminal() {
         ))}
       </div>
       <div style={termStyles.footer}>
-        <span>eu-west-1</span>
+        <span>your Google or Microsoft account</span>
         <span>·</span>
-        <span>claude-opus-4-7</span>
+        <span>your rules</span>
         <span>·</span>
-        <span>p95 184ms</span>
+        <span>nothing auto-sent</span>
       </div>
     </div>
   );

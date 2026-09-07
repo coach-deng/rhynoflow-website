@@ -101,9 +101,9 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
       <div style={ldStyles.inner}>
         <SectionHeader
           num="03"
-          eyebrow="TRY IT LIVE"
+          eyebrow="WHAT GETS INSTALLED"
           title="Paste any email. Watch it get handled."
-          sub="This runs on the real model, in your browser, right now. No signup. Pick a sample or paste your own."
+          sub="This is the drafter we install. It runs in your browser right now, no signup. Pick a sample or paste one of your own emails."
         />
 
         <div data-rh="two-col" style={ldStyles.grid}>
@@ -150,7 +150,7 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
               >
                 {state === 'running' ? 'running…' : 'Run Rhynoflow →'}
               </button>
-              <span style={ldStyles.hint}>claude-haiku-4-5 · eu-west-1</span>
+              <span style={ldStyles.hint}>a small model · nothing stored</span>
             </div>
           </div>
 

@@ -3,23 +3,21 @@
 // Honest math: role * hours_per_week * 4.3 weeks = monthly DKK saved.
 
 const ROLES = {
-  volunteer: { label: 'Volunteer',        sub: 'Forening · kasserer, sekretær', rate: 0,     valueLabel: 'Hours reclaimed /mo', suffix: 'hours' },
-  smb:       { label: 'Small business',   sub: 'Owner, assistant admin',         rate: 350,   valueLabel: 'Saved /mo',            suffix: 'kr' },
-  revisor:   { label: 'Accountant',       sub: 'Bogholder, revisor',             rate: 850,   valueLabel: 'Saved /mo',            suffix: 'kr' },
+  frontdesk: { label: 'Front desk',   sub: 'Reception, office admin',        rate: 300,  valueLabel: 'Saved /mo', suffix: 'kr' },
+  owner:     { label: 'Owner',        sub: 'You, doing it after hours',      rate: 700,  valueLabel: 'Saved /mo', suffix: 'kr' },
+  billable:  { label: 'Billable hour', sub: 'Practice, legal, consulting',   rate: 1400, valueLabel: 'Saved /mo', suffix: 'kr' },
 };
 
 function RoiSlider() {
-  const [role, setRole] = React.useState('smb');
+  const [role, setRole] = React.useState('owner');
   const [hours, setHours] = React.useState(6);
 
   const r = ROLES[role];
   const monthly = Math.round(r.rate * hours * 4.3);
   const reclaimed = Math.round(hours * 4.3);
 
-  const value = role === 'volunteer' ? reclaimed : monthly;
-  const formatted = role === 'volunteer'
-    ? reclaimed + ' h'
-    : value.toLocaleString('da-DK').replace(/,/g, ' ') + ' kr';
+  const value = monthly;
+  const formatted = value.toLocaleString('da-DK').replace(/,/g, ' ') + ' kr';
 
   return (
     <section data-rh="section" style={roiStyles.root}>
@@ -27,10 +25,10 @@ function RoiSlider() {
         <div style={roiStyles.head}>
           <span style={roiStyles.label}><span style={{ fontWeight: 600, color: '#0a0a0a' }}>05</span> <span style={{ color: '#a3a3a3', fontWeight: 400 }}>/ WHAT IT'S WORTH</span></span>
           <h2 style={roiStyles.title}>
-            Run the numbers yourself.
+            What is the admin actually costing you?
           </h2>
           <p style={roiStyles.sub}>
-            Pick your role, drag to how many hours a week you spend on admin. We'll show you what that actually costs.
+            Pick whose time it is, drag to the hours a week it eats. The install is a one-off 22.500 kr, so the number below is what you are comparing it against.
           </p>
         </div>
 
@@ -74,25 +72,18 @@ function RoiSlider() {
                 <span>1h</span><span>5h</span><span>10h</span><span>15h</span><span>20h</span>
               </div>
               <p style={roiStyles.note}>
-                Based on {hours} h/week × 4.3 weeks
-                {role !== 'volunteer' && <> × {r.rate} kr/h typical rate</>}.
-                Figures from Danish accounting bureaus, 2025.
+                {hours} h/week × 4.3 weeks × {r.rate} kr/h. The rate is a round
+                placeholder, not a claim about your business. Bring your own
+                number to the call and we will run it properly.
               </p>
             </div>
 
             <div style={roiStyles.resultCol}>
               <span style={roiStyles.resultLabel}>{r.valueLabel.toUpperCase()}</span>
               <span style={roiStyles.resultValue}>{formatted}</span>
-              {role !== 'volunteer' && (
-                <span style={roiStyles.resultSub}>
-                  ≈ {Math.round(value * 12).toLocaleString('da-DK').replace(/,/g, ' ')} kr / year
-                </span>
-              )}
-              {role === 'volunteer' && (
-                <span style={roiStyles.resultSub}>
-                  ≈ {reclaimed * 12} h / year back to the club
-                </span>
-              )}
+              <span style={roiStyles.resultSub}>
+                ≈ {Math.round(value * 12).toLocaleString('da-DK').replace(/,/g, ' ')} kr / year · {reclaimed * 12} h back
+              </span>
             </div>
           </div>
         </div>

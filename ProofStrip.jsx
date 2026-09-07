@@ -19,18 +19,6 @@ function ProofStrip() {
         </span>
 
         <div style={proofStyles.logoRow}>
-          {/* DPF */}
-          <div style={proofStyles.logoWrap} title="Dansk Puslespilsforening">
-            <span style={proofStyles.dot} />
-            <img
-              src="https://danskpuslespilsforening.dk/wp-content/uploads/2024/03/cropped-cropped-logo-rund-dansk-150x150.png"
-              alt="Dansk Puslespilsforening"
-              style={proofStyles.logoImg}
-            />
-          </div>
-
-          <span style={proofStyles.logoDivider} />
-
           {/* Talata */}
           <a href="https://talatabasketball.dk" target="_blank" rel="noopener noreferrer" style={proofStyles.logoWrap} title="Talata Basketball Copenhagen">
             <span style={proofStyles.dot} />
