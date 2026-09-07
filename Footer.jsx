@@ -54,7 +54,7 @@ function Footer() {
           <span style={ftStyles.copy}>© 2026 Rhynoflow · København</span>
           <div style={ftStyles.status}>
             <span style={ftStyles.statusDot} />
-            <span>All systems operational</span>
+            <span>One person in Copenhagen. Replies within a working day, weekdays.</span>
           </div>
         </div>
       </div>

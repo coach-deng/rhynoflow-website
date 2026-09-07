@@ -26,7 +26,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rhynoflow.com/blog/what-we-learned-automating-dpf</loc>
+    <loc>https://rhynoflow.com/blog/what-we-learned-automating-a-national-federation</loc>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
@@ -79,5 +79,8 @@
     <loc>https://rhynoflow.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rhynoflow.com/case-studies/national-federation.html</loc>
   </url>
 </urlset>

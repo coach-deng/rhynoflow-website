@@ -11,7 +11,7 @@ function FAQ() {
     },
     {
       q: "What happens when the tools change?",
-      a: "Your facts file and your rules file do not care which AI reads them. When Gemini, Copilot or ChatGPT ships a new version, the workspace stays the same. That is the whole reason we build it as files in your own account."
+      a: "Your facts file and your rules file do not care which AI reads them. They are plain files in your own account. When Gemini, Copilot or ChatGPT ships a new version, the workspace stays the same."
     },
     {
       q: "Which AI do we need to buy?",
@@ -50,7 +50,7 @@ function FAQ() {
           <span style={faqStyles.labelDot} />
           FAQ / QUESTIONS WE GET A LOT
         </div>
-        <h2 style={faqStyles.h2}>Straight answers.</h2>
+        <h2 style={faqStyles.h2}>Before you book.</h2>
         <p style={faqStyles.lede}>What people ask on the first call, answered the way we answer it there.</p>
 
         <div style={faqStyles.list}>

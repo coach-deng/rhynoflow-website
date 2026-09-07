@@ -6,7 +6,7 @@ function AgentPipeline() {
   const stages = [
     { key: 'discover', label: 'Discover', desc: 'With the people who do it', when: 'half a day', code: 'what eats the week' },
     { key: 'observe',  label: 'Observe',  desc: 'One week of the real inbox', when: '1 week',    code: 'who answers what' },
-    { key: 'install',  label: 'Install',  desc: 'In your own Drive or M365',  when: 'half a day', code: 'facts · rules · drafter' },
+    { key: 'install',  label: 'Install',  desc: 'In your own Google or Microsoft account',  when: 'half a day', code: 'facts · rules · drafter' },
     { key: 'train',    label: 'Train',    desc: 'Two named owners',           when: 'half a day', code: 'they run it, not us' },
     { key: 'check',    label: 'Check in', desc: 'Is it still being used?',    when: 'day 30',     code: 'one fix included' },
   ];

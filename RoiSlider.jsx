@@ -28,7 +28,7 @@ function RoiSlider() {
             What is the admin actually costing you?
           </h2>
           <p style={roiStyles.sub}>
-            Pick whose time it is, drag to the hours a week it eats. The install is a one-off 22.500 kr, so the number below is what you are comparing it against.
+            Pick whose time it is, drag to the hours a week it eats. The install is a one-off 22.500 kr. Compare it to the number below.
           </p>
         </div>
 
@@ -73,8 +73,8 @@ function RoiSlider() {
               </div>
               <p style={roiStyles.note}>
                 {hours} h/week × 4.3 weeks × {r.rate} kr/h. The rate is a round
-                placeholder, not a claim about your business. Bring your own
-                number to the call and we will run it properly.
+                placeholder. Bring your own number to the call and we will run
+                it properly.
               </p>
             </div>
 

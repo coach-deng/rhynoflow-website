@@ -15,7 +15,7 @@ function ProofStrip() {
       <div style={proofStyles.inner}>
         <span style={proofStyles.pill}>
           <span style={proofStyles.pillDot} />
-          Live
+          Our own operations, every day
         </span>
 
         <div style={proofStyles.logoRow}>

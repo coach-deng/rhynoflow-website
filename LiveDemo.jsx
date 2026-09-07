@@ -6,19 +6,19 @@ function LiveDemo() {
     {
       label: 'Invoice dispute (DA)',
       from: 'kunde@example.dk',
-      subject: 'Faktura 2041 — fejl i beløb?',
+      subject: 'Faktura 2041: fejl i beløb?',
       body: 'Hej,\n\nJeg har modtaget faktura 2041 på 12.450 kr., men vi aftalte 9.800 kr. på mødet d. 3. april. Kan I kigge på det?\n\nMvh\nMette',
     },
     {
       label: 'Membership renewal',
       from: 'anna@talatabasketball.dk',
-      subject: 'Fornyelse af medlemskab — U14',
+      subject: 'Fornyelse af medlemskab, U14',
       body: 'Hej,\n\nMin datter spiller på U14. Skal vi gøre noget for at forny medlemskabet til næste sæson? Hvornår er deadline?\n\nTak,\nAnna',
     },
     {
       label: 'Accountant question (EN)',
-      from: 'mark@roskilde-revision.dk',
-      subject: 'Q1 VAT filing — missing receipts',
+      from: 'mark@example.dk',
+      subject: 'Q1 VAT filing: missing receipts',
       body: "Hi,\n\nI'm finalizing your Q1 VAT. Missing receipts for 3 expenses in March (copies attached). Can you forward originals by Friday?\n\nThanks,\nMark",
     },
   ];
@@ -29,7 +29,7 @@ function LiveDemo() {
   const [form, setForm]         = React.useState(samples[0]);
   const [tab, setTab]           = React.useState(0);
 
-  const stageLabels = ['classifying', 'checking policy', 'drafting reply', 'finalizing'];
+  const stageLabels = ['classifying', 'checking your rules', 'drafting reply', 'finalizing'];
 
   const pickSample = (i) => { setTab(i); setForm(samples[i]); setDraft(null); setState('idle'); };
 
@@ -65,7 +65,7 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
           priority: 'high',
           language: 'da',
           requires_human: true,
-          summary: 'Kunde bestrider beløb på faktura 2041 — aftalte 9.800 kr., men modtaget 12.450 kr.',
+          summary: 'Kunde bestrider beløb på faktura 2041. Aftalte 9.800 kr., men modtaget 12.450 kr.',
           draft_reply: 'Hej Mette,\n\nTak for din besked. Vi har modtaget din henvendelse vedrørende faktura 2041 og kigger på det med det samme.\n\nVi vender tilbage inden for 1 arbejdsdag med en afklaring.\n\nMed venlig hilsen\nRhynoflow',
         },
         {
@@ -102,8 +102,8 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
         <SectionHeader
           num="03"
           eyebrow="WHAT GETS INSTALLED"
-          title="Paste any email. Watch it get handled."
-          sub="This is the drafter we install. It runs in your browser right now, no signup. Pick a sample or paste one of your own emails."
+          title="Pick an email. Watch it get handled."
+          sub="This is the drafter we install. Pick a sample and watch what lands in your drafts folder. On the install day it runs on your own inbox."
         />
 
         <div data-rh="two-col" style={ldStyles.grid}>
@@ -150,14 +150,14 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
               >
                 {state === 'running' ? 'running…' : 'Run Rhynoflow →'}
               </button>
-              <span style={ldStyles.hint}>a small model · nothing stored</span>
+              <span style={ldStyles.hint}>nothing stored · nothing sent</span>
             </div>
           </div>
 
           {/* RIGHT: output */}
           <div style={{ ...ldStyles.pane, background: '#0a0a0a', borderColor: '#1a1a1a' }}>
             <div style={{ ...ldStyles.paneHeader, borderColor: '#1a1a1a' }}>
-              <span style={{ ...ldStyles.paneTitle, color: '#a3a3a3' }}>agent / output</span>
+              <span style={{ ...ldStyles.paneTitle, color: '#a3a3a3' }}>draft / output</span>
               <span style={ldStyles.statusPill(state)}>{
                 state === 'idle' ? 'ready' :
                 state === 'running' ? stageLabels[stage] + '…' :
@@ -217,7 +217,7 @@ Return ONLY valid JSON with this exact shape, no prose, no markdown:
 
             {state === 'error' && (
               <div style={ldStyles.errorWrap}>
-                <div style={ldStyles.errorTitle}>agent_error</div>
+                <div style={ldStyles.errorTitle}>error</div>
                 <div style={ldStyles.errorText}>The demo call failed. Try another sample or check your connection.</div>
                 <button onClick={() => setState('idle')} style={ldStyles.errorBtn}>reset</button>
               </div>

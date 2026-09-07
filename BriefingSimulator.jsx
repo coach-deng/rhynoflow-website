@@ -5,12 +5,12 @@ const BRIEFINGS = {
   '06:30': {
     summary: 'Overnight inbox: 12 new, 3 need attention. No blockers.',
     inbox: [
-      { from: 'SKAT',                    subject: 'Momsindberetning — kvittering Q1',    tag: 'FILING',  time: '23:14' },
+      { from: 'SKAT',                    subject: 'Momsindberetning: kvittering Q1',    tag: 'FILING',  time: '23:14' },
       { from: 'Nordea Erhverv',          subject: 'Kontoudtog · 18 apr',                  tag: 'BANK',    time: '01:02' },
-      { from: 'Foreningen Nordlys',      subject: 'Kontingent Q2 — betalt',               tag: 'PAID',    time: '05:22' },
+      { from: 'Forening (eksempel)',      subject: 'Kontingent Q2 betalt',               tag: 'PAID',    time: '05:22' },
     ],
     drafts: [
-      { to: 'louise@bogholder.dk',       subject: 'Re: Q1 afstemning',                   preview: 'Tak — vedlagt er kontoudtoget for marts. Differencen på 420 kr er fundet og bogført som…' },
+      { to: 'louise@bogholder.dk',       subject: 'Re: Q1 afstemning',                   preview: 'Tak. Vedlagt er kontoudtoget for marts. Differencen på 420 kr er fundet og bogført som…' },
       { to: 'kasserer@ifaalborg.dk',     subject: 'Kontingent Q2 · faktura vedhæftet',    preview: 'Hej Peter. Her er jeres faktura for Q2 (850 kr). Betaling via FIK 73 senest 1 maj…' },
     ],
   },
@@ -18,23 +18,23 @@ const BRIEFINGS = {
     summary: 'Ready for review: 2 drafts, 1 reminder. Cash flow is green.',
     inbox: [
       { from: 'Talata Basketball',       subject: 'Medlemsliste opdateret',              tag: 'MEMBERS', time: '06:48' },
-      { from: 'Bakery Sct. Peder',       subject: 'Regning #0183 — modtaget',            tag: 'PAID',    time: '06:51' },
+      { from: 'Bakery Sct. Peder',       subject: 'Regning #0183 modtaget',            tag: 'PAID',    time: '06:51' },
       { from: 'Café Nord',               subject: 'Re: Betalingspåmindelse',             tag: 'REPLY',   time: '06:55' },
     ],
     drafts: [
       { to: 'kontakt@cafenord.dk',       subject: 'Re: Betalingspåmindelse',              preview: 'Tak for beskeden. Betaling er registreret på kontoen i morges kl. 06:44. Afmelder påmindelsen…' },
-      { to: 'styrelsen@talata.dk',       subject: 'Ugerapport · uge 16',                  preview: '3 nye medlemmer i denne uge, 1 udmeldelse. Kontingent Q2 sendt til 42 af 44 aktive…' },
+      { to: 'styrelsen@talata.dk',       subject: 'Ugerapport · uge 16',                  preview: '3 nye medlemmer i denne uge, 1 udmeldelse. Kontingent Q2 sendt til alle aktive…' },
     ],
   },
   '07:30': {
     summary: 'All drafts approved. 2 follow-ups queued for tomorrow.',
     inbox: [
       { from: 'SKAT',                    subject: 'Frist · moms Q2 den 1 juli',           tag: 'FILING',  time: '07:12' },
-      { from: 'Advokat Brøndum',         subject: 'Årsrapport 2025 — signeret',           tag: 'SIGNED',  time: '07:18' },
+      { from: 'Advokat Brøndum',         subject: 'Årsrapport 2025 signeret',           tag: 'SIGNED',  time: '07:18' },
       { from: 'Rhynoflow',               subject: 'Briefing sendt · tak for i dag',       tag: 'SYSTEM',  time: '07:30' },
     ],
     drafts: [
-      { to: 'team@rhynoflow.com',        subject: 'I morgen · 06:30',                     preview: 'Planlagte opgaver: afstemning april, fakturering Q2 for 3 foreninger, SKAT-påmindelse 21 apr.' },
+      { to: 'team@rhynoflow.com',        subject: 'I morgen · 06:30',                     preview: 'Planlagte opgaver: afstemning april, fakturering Q2, SKAT-påmindelse 21 apr.' },
     ],
   },
 };
@@ -61,8 +61,7 @@ function BriefingSimulator() {
             A briefing on your desk, <span style={{ color: '#525252' }}>before coffee.</span>
           </h2>
           <p style={bsStyles.sub}>
-            Every morning, Rhynoflow sorts the inbox, drafts the replies, and queues the reminders.
-            You open the briefing, read three bullets, approve what matters. The rest is already done.
+            The briefing is one of the workflows we can install. Every morning it sorts the inbox and drafts the replies. You read three bullets and approve what goes out. Nothing sends until you do.
           </p>
         </div>
 
@@ -89,7 +88,7 @@ function BriefingSimulator() {
               <span style={{ ...bsStyles.tlDot, background: '#e5e5e5' }} />
               <span style={{ ...bsStyles.tlDot, background: '#e5e5e5' }} />
             </div>
-            <span style={bsStyles.windowTitle}>Morning briefing · {slot} · 19 apr 2026</span>
+            <span style={bsStyles.windowTitle}>Morning briefing · {slot} · sample</span>
             <span style={bsStyles.windowMeta}>TO: TALATA · FOUNDER</span>
           </div>
 

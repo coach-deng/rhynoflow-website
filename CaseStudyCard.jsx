@@ -1,11 +1,11 @@
 // ui_kits/website/CaseStudyCard.jsx
-// Added 2026-05-19 as part of conversion-boost sprint. Update stats after Nordics May 30-31.
+// Added 2026-05-19 as part of conversion-boost sprint.
 
 function CaseStudyCard() {
   return (
     <section id="case-study" style={csStyles.root}>
       <div style={csStyles.inner}>
-        <a href="/case-studies/dpf.html" style={csStyles.card} data-rh="case-card">
+        <a href="/case-studies/national-federation.html" style={csStyles.card} data-rh="case-card">
           <div style={csStyles.header}>
             <div style={csStyles.label}>
               <span style={csStyles.labelDot} />
@@ -14,10 +14,10 @@ function CaseStudyCard() {
           </div>
 
           <h3 style={csStyles.h3}>
-            How four volunteers rebuilt their admin in six weeks.
+            How four volunteers got five hours a week back.
           </h3>
           <p style={csStyles.sub}>
-            Four volunteers. Over 100 members. A Nordic championship to run. One shared inbox that started drafting itself.
+            A few volunteers. A hundred-odd members. One big event a year. One shared inbox that started drafting itself.
           </p>
 
           <div style={csStyles.stats} data-rh="case-stats">

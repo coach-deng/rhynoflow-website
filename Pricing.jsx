@@ -3,7 +3,7 @@
 const TIERS = [
   {
     key: 'workshop', name: 'Workshop', tagline: 'Half a day with your team.',
-    price: '1 500', unit: '/ seat', note: 'Minimum 6 seats',
+    price: '1.500', unit: '/ seat', note: 'Minimum 6 seats',
     features: [
       'Half a day, at your place or on Meet',
       'Your real inbox, your real cases',
@@ -15,11 +15,11 @@ const TIERS = [
   },
   {
     key: 'install', name: 'Install day', tagline: 'We set it up and train two owners.',
-    price: '22 500', unit: 'fixed', note: 'One-off. Nothing monthly attached.',
+    price: '22.500', unit: 'fixed', note: 'One-off. Nothing monthly attached.',
     features: [
       'Discovery, then a week watching the real work',
       'Your facts file, your rules, one AI workflow',
-      'The send gate, so a wrong price never leaves',
+      'The send gate, which holds a draft when a price or date disagrees with your facts file',
       'Installed in your own Google or Microsoft account',
       'Two named people trained to run it',
       'A check-in at thirty days, included',
@@ -28,13 +28,13 @@ const TIERS = [
   },
   {
     key: 'officehour', name: 'Office hour', tagline: 'We come back so it stays alive.',
-    price: '1 500', unit: '/ month', note: 'Rolling. Cancel any time.',
+    price: '1.500', unit: '/ month', note: 'Rolling. Cancel any time.',
     features: [
       'One hour a month with your two owners',
       'We check who is actually using it',
       'One fix or one new workflow a month',
       'Rules updated when your prices change',
-      'Answers within a working day',
+      'Answers within a working day, weekdays',
     ],
     cta: 'Book a call', highlight: false,
   },

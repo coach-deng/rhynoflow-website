@@ -7,9 +7,9 @@ function Testimonials() {
       <div style={tsStyles.inner}>
         <div style={tsStyles.label}>
           <span style={tsStyles.labelDot} />
-          PROOF / WHAT CLIENTS SAY
+          PROOF / ONE CLIENT, IN THEIR WORDS
         </div>
-        <h2 style={tsStyles.h2}>From real operators, not marketing.</h2>
+        <h2 style={tsStyles.h2}>In their words.</h2>
 
         <figure style={tsStyles.card}>
           <div style={tsStyles.quoteMark}>"</div>
@@ -19,7 +19,7 @@ function Testimonials() {
           <figcaption style={tsStyles.caption}>
             <div>
               <div style={tsStyles.cardName}>Board member</div>
-              <div style={tsStyles.cardRole}>Danish national hobby federation · 100+ members · 4-person volunteer board</div>
+              <div style={tsStyles.cardRole}>Danish hobby federation · volunteer board</div>
             </div>
           </figcaption>
         </figure>

@@ -57,7 +57,7 @@ function BookingSection() {
           <div style={bs.formCard}>
             <div style={bs.formHead}>
               <span style={bs.formTitle}>Send a message</span>
-              <span style={bs.formSub}>We reply within one business day.</span>
+              <span style={bs.formSub}>One person reads this. Replies within a working day, weekdays.</span>
             </div>
 
             {sent ? (

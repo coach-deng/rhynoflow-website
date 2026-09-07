@@ -388,7 +388,7 @@
         <a href="/#faq">FAQ</a>
         <a href="/blog/">Blog</a>
         <a href="/for-foreninger.html">Til foreninger</a>
-        <a href="/#contact" class="btn btn-sm">Get Started</a>
+        <a href="/#book" class="btn btn-sm">Get Started</a>
       </div>
       <button class="mobile-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -556,8 +556,8 @@
     <div class="sc-suggestions" id="sc-suggestions"></div>
 
     <div class="sc-cta-box">
-      <h3>Book a free 30-minute demo.</h3>
-      <p>We'll look at your actual setup and tell you what to automate first.</p>
+      <h3>Book a free 30-minute call.</h3>
+<p>We'll look at your actual inbox and tell you what we would install first.</p>
       <div id="cal-scorecard"></div>
       <div class="sc-cta-email">or email: <a href="mailto:hello@rhynoflow.com">hello@rhynoflow.com</a></div>
     </div>
@@ -570,7 +570,7 @@
         <div class="footer-brand">
           <a href="/" class="logo">Rhyno<span>flow</span></a>
 
-          <p>Your admin, charged through.</p>
+          <p>Less admin. More billable hours.</p>
           <p class="footer-location">K&oslash;benhavn, Danmark</p>
         </div>
         <div class="footer-col">
@@ -584,7 +584,7 @@
           <h4>Resources</h4>
           <a href="/blog/">Blog</a>
           <a href="/scorecard.html">Free Scorecard</a>
-          <a href="/#contact">Contact</a>
+          <a href="/#book">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
@@ -664,7 +664,28 @@
       },
       payment: {
         name: 'Payment Tracker',
-        desc: 'Every payment logged the moment it lands. Fee deducted. Nothing to enter.'
+        const AUTOMATIONS = {
+  morning: {
+    name: 'Facts file',
+    desc: 'Every price, date, venue and term you quote, in one file the AI drafts from.'
+  },
+  reply: {
+    name: 'Reply drafter',
+    desc: 'Incoming emails get a draft waiting in your inbox. A person reads it and presses send.'
+  },
+  deadline: {
+    name: 'Rules file',
+    desc: 'Who owns what, and what the AI may never say. One page, yours to keep.'
+  },
+  digest: {
+    name: 'Send gate',
+    desc: 'Holds any draft where a price, date or term disagrees with your facts file.'
+  },
+  payment: {
+    name: 'Two trained owners',
+    desc: 'Two named people on your team run it after the install day. We come back at 30 days.'
+  }
+};
       }
     };
 
@@ -690,7 +711,7 @@
         badgeClass: 'sc-badge-high',
         badgeText: 'High admin load',
         headline: "Admin is eating 6 to 10 hours of your week.",
-        sub: "That's not a time management problem. It's a systems problem. Rhynoflow is built exactly for this.",
+        sub: "It is a systems problem, and Rhynoflow is built exactly for this.",
         automations: ['morning', 'reply', 'deadline', 'digest']
       },
       {
@@ -698,7 +719,7 @@
         badgeClass: 'sc-badge-heavy',
         badgeText: "Admin is a full-time job you didn't sign up for.",
         headline: "You're losing more than 10 hours a week. Let's fix that.",
-        sub: "This is the exact situation Rhynoflow was built for. Everything you described can be automated inside your existing Google account.",
+        sub: "This is the exact situation Rhynoflow was built for. Everything you described can be installed inside the Google or Microsoft account you already have.",
         automations: ['morning', 'reply', 'deadline', 'digest', 'payment']
       }
     ];
