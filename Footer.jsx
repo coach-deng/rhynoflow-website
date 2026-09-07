@@ -6,7 +6,7 @@ function Footer() {
       { label: 'How it works', href: '#how' },
       { label: 'Pricing', href: '#pricing' },
       { label: 'For clubs', href: '/for-foreninger.html' },
-      { label: 'For schools', href: '/for-revisorer.html' },
+      { label: 'For practices', href: '/for-revisorer.html' },
     ]},
     { label: 'COMPANY', items: [
       { label: 'About', href: '/about.html' },
@@ -35,7 +35,7 @@ function Footer() {
             <div style={ftStyles.contact}>
               <a href="mailto:hello@rhynoflow.com" style={ftStyles.contactLink}>hello@rhynoflow.com</a>
               <a href="https://rhynoflow.com" style={ftStyles.contactLink}>rhynoflow.com</a>
-              <span style={ftStyles.cvr}>CVR 43599453</span>
+              <span style={ftStyles.cvr}>CVR 43367994</span>
             </div>
           </div>
 

@@ -22,7 +22,7 @@ function CaseStudyCard() {
             How Dansk Puslespilsforening rebuilt their admin in 6 weeks.
           </h3>
           <p style={csStyles.sub}>
-            A 4-person volunteer board. 100+ members. The Nordic Championship. All run from one inbox that drafts itself.
+            A 4-person volunteer board. 100+ members. The Nordic Championship. One inbox that drafted itself, April to June 2026.
           </p>
 
           <div style={csStyles.stats} data-rh="case-stats">
@@ -32,8 +32,8 @@ function CaseStudyCard() {
             </div>
             <div style={csStyles.statDiv} />
             <div style={csStyles.stat}>
-              <div style={csStyles.statVal}>48</div>
-              <div style={csStyles.statLabel}>tasks extracted from one meeting</div>
+              <div style={csStyles.statVal}>&lt;1 min</div>
+              <div style={csStyles.statLabel}>board meeting to a sorted task list</div>
             </div>
             <div style={csStyles.statDiv} />
             <div style={csStyles.stat}>

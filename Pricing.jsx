@@ -48,7 +48,7 @@ function Pricing() {
           <h2 style={prStyles.title}>Simple pricing. One invoice a month.</h2>
           <p style={prStyles.sub}>
             Every plan includes the daily briefing, email drafts, and your automations.
-            No setup fee if you get started before 30 June 2026.
+            Setup is a one-off. We agree the scope on the call.
           </p>
         </div>
 
@@ -92,8 +92,7 @@ function Tier({ tier }) {
         <span style={{ ...prStyles.priceSuffix, color: hi ? '#a3a3a3' : '#a3a3a3' }}>/ month</span>
       </div>
       <div style={prStyles.setupRow}>
-        <span style={{ ...prStyles.setupStrike, color: hi ? '#525252' : '#a3a3a3' }}>{tier.setup} kr setup</span>
-        <span style={prStyles.setupBadge}>WAIVED · UNTIL 30 JUNE</span>
+        <span style={{ ...prStyles.setupNote, color: hi ? '#a3a3a3' : '#737373' }}>{tier.setup} kr one-off setup</span>
       </div>
 
       <div style={{ ...prStyles.divider, background: hi ? '#171717' : '#f0f0f0' }} />
@@ -150,12 +149,7 @@ const prStyles = {
   priceSuffix: { fontFamily: 'JetBrains Mono, monospace', fontSize: 13 },
 
   setupRow: { display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' },
-  setupStrike: { fontFamily: 'JetBrains Mono, monospace', fontSize: 12, textDecoration: 'line-through' },
-  setupBadge: {
-    fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fontWeight: 500,
-    letterSpacing: '0.08em', color: '#006b2a',
-    background: '#e6faee', padding: '3px 7px', borderRadius: 6,
-  },
+  setupNote: { fontFamily: 'JetBrains Mono, monospace', fontSize: 12 },
 
   divider: { height: 1, margin: '8px 0' },
 

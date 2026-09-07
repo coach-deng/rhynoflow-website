@@ -9,7 +9,7 @@ function Nav() {
     { label: 'How it works',   href: '#how' },
     { label: 'Pricing',        href: '#pricing' },
     { label: 'For clubs',      href: '/for-foreninger.html' },
-    { label: 'For schools',    href: '/for-revisorer.html' },
+    { label: 'For practices',  href: '/for-revisorer.html' },
     { label: 'Guides & Cases', href: '/blog/' },
   ];
 
